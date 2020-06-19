@@ -32,13 +32,13 @@ main{
   display: flex;
   display:-ms-flexbox;
   max-width: 1280px;
-  flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
+  flex: 1 1 0;
+  -ms-flex: 1 1 0;
   margin: 0 auto;
 }
 .main-contents{
-  flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
+  flex: 1 1 0;
+  -ms-flex: 1 1 0;
   height: 100%;
 }
 aside{
@@ -120,7 +120,6 @@ footer{
   color: #ccc;
 }
 .footer-wrapper{
-  /* max-width: 1280px; */
   margin: 0 auto;
 }
 .upper-header > ul{
