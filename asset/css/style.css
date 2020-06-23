@@ -168,19 +168,19 @@ header{
   height: 100%;
 }
 .slide1{
-  background-color: #aaa;
+  background-color: gray;
 }
 .slide2{
-  background-color: #bbb;
+  background-color:lightskyblue;
 }
 .slide3{
-  background-color: #ccc;
+  background-color:purple;
 }
 .slide4{
-  background-color: #ddd;
+  background-color:palevioletred;
 }
 .slide5{
-  background-color: #eee;
+  background-color: orange;
 }
 .visual-select{
   margin: 0 auto;
