@@ -189,7 +189,7 @@ header{
   display: flex;
   display:-ms-flexbox;
   justify-content: center;
-  -ms-flex-pack: justify;
+  -ms-flex-pack: center;
 }
 .visual-select ul li{
   margin: 0 8px;
