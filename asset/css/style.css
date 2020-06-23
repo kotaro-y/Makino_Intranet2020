@@ -296,6 +296,7 @@ header{
 .rules-desc a{
   display: block;
   color: #666;
+  transition: .3s;
 }
 .rules-desc > a::before,
 .rules-desc > ul a::before{
@@ -307,7 +308,7 @@ header{
   font-size: 0.5rem;
   margin-right: 2px;
 }
-.rules-desc > ul > li:not(:last-child){
+.rules-desc > ul > li:not(:last-child) a{
   border-bottom: 1px dotted rgba(18,39,74,.8);
 }
 .rules-desc > a,
@@ -325,11 +326,23 @@ header{
   font-weight: 900;
   font-size: 1.2rem;
   margin-right: 3px;
+  transition: .3s;
 }
-.rules-desc > ul{margin-top: 5px;}
-.rules-desc > ul > li{
-  margin-left: 15px;
-  padding: 5px 0;
+.rules-desc > ul{
+  margin-top: 5px;
+}
+.rules-desc > ul > li a{
+  margin: 0 12px;
+  padding: 5px 3px;
+  transition: .3s;
+}
+.rules-desc > ul > li a:hover{
+  transform: translateX(4px);
+  color: #fff;
+  background-color: rgba(18,39,74, .7);
+}
+.rules-desc > ul > li a:hover::before{
+  color: #fff;
 }
 .more a{
   width: 60px;
