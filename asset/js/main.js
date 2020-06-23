@@ -83,4 +83,11 @@ $(function(){
       slideTimer();
       return false;
     });
+    $(window).blur(function(){
+      clearInterval(timer);
+    });
+    $(window).focus(function(){
+      timer = setInterval(slideTimer,interval);
+    });
+
 });
