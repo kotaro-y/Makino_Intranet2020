@@ -250,8 +250,11 @@ header{
 }
 
     /* メンバーリスト */
-.member-list ul li:nth-child(even){
+/* .member-list ul li:nth-child(even){
   background-color:rgba(18,39,74, .1);
+} */
+.member-list ul li:not(:last-child){
+  border-bottom: 1px dotted rgba(18,39,74,.8);
 }
 .member-list ul li a{
   display: block;
