@@ -254,9 +254,6 @@ header{
 }
 
     /* メンバーリスト */
-/* .member-list ul li:nth-child(even){
-  background-color:rgba(18,39,74, .1);
-} */
 .member-list ul li:not(:last-child){
   border-bottom: 1px dotted rgba(18,39,74,.8);
 }
@@ -283,8 +280,15 @@ header{
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  background-color: skyblue;
+  background-image:url("../images/user.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: 3px 22px 3px 12px;
+  transition: .3s;
+}
+.member-list ul li:hover .member-img{
+  transform: scale(1.2);
 }
 .name{
   width: 40%;
@@ -412,9 +416,63 @@ header{
 }
 .indent{
   margin-left: 12.5rem;
+}
+.system-desc .more{
+  margin-bottom: 25px;
+}
+/* 各種フォーム ※基本構成は規則規定を使いまわし */
 
+/* 役立ち情報 */
+.tips-desc{
+  padding: 10px;
+}
+.tips-desc > a{
+  display: block;
+  padding: 5px;
+  margin-left: -5px;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: normal;
+  transition: .3s;
 }
 
+.tips-desc > a:hover{
+  transform: translateX(4px);
+  color: #fff;
+  background-color: rgba(18,39,74, .7);
+}
+.tips-desc > a:hover::before{
+  color: #fff;
+}
+.tips-desc > a:first-child::before{
+  content: '\f073';   /*カレンダー*/
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin-right: 3px;
+  padding-left: 2px;
+  transition: .3s;
+}
+.tips-desc > a:nth-child(2)::before{
+  content: '\f51c';  /*講義*/
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-weight: 900;
+  font-size: 1rem;
+  margin-right: 3px;
+  transition: .3s;
+}
+.tips-desc > a:nth-child(3)::before{
+  content: '\f468'; /*BOX*/
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin-right: 3px;
+  transition: .3s;
+}
 /* サイド */
 aside{
   margin: 10px;
