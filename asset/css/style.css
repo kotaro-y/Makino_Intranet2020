@@ -65,8 +65,8 @@ header{
   -ms-flex-pack: justify;
   align-items: center;
   -ms-flex-align: center;
-  margin: 0 auto;
-  max-width: 1280px;
+  /* margin: 0 auto; */
+  /* max-width: 1280px; */
 }
 .title{
   margin: 10px 0 10px 50px;
@@ -80,7 +80,7 @@ header{
   margin: 3px 0;
 }
 .global-nav{
-  margin: 20px 80px 20px 0;
+  margin: 20px 100px 20px 0;
 }
 .global-nav > ul{
   display: flex;
@@ -247,6 +247,7 @@ header{
 .section-desc{
   height: 45%;
   margin: 0 -10px;
+  white-space: nowrap;
   overflow: hidden;
   overflow-y: auto;
   border: 0.5px solid #ddd;
@@ -321,6 +322,7 @@ header{
 .rules-desc > a,
 .rules-desc > h3{
   font-size: 1.2rem;
+  font-weight: bold;
   color: #333;
 }
 .rules-desc > a:hover{
@@ -379,6 +381,38 @@ header{
   transform: scale(1.2);
 }
 
+/* 人事制度  ※基本構成は規則規定を使いまわし*/
+.system-desc ul p{
+  display: inline-block;
+  margin: 0 8px 0 4px;
+}
+.manual::before{
+  content: '\f02d'; /*Book*/
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-weight: 900;
+  font-size: 1rem;
+  color: #666;
+  margin-right: 3px;
+}
+.document::before{
+  content: '\f15c'; /*file*/
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #666;
+  margin-right: 3px;
+}
+.system-desc > ul:not(:last-child) > li > a{
+  display: inline-block;
+}
+.system-desc ul li a{
+  margin: 0 8px;
+}
+.indent{
+  margin-left: 12.5rem;
+}
 
 /* サイド */
 aside{
