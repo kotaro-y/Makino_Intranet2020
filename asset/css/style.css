@@ -35,8 +35,8 @@ main{
   display:-ms-flexbox;
   width: 100vw;
   max-width: 1368px;
-  flex: 1 1 0%;
-  -ms-flex: 1 1 0%;
+  flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
   padding: 0 15px;
   margin: 0 auto 30px;
 }
@@ -129,6 +129,7 @@ header{
   height: 50%;
   line-height: 43px;
   letter-spacing: 1px;
+  white-space: nowrap;
   padding: 0  10px;
   color: #fff;
   transition: .3s;
