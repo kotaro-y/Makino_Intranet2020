@@ -76,18 +76,19 @@ $(function(){
     }
     timer = setInterval(slideTimer,interval);
   
+    $(window).blur(function(){
+      clearInterval(timer);
+    });
+    $(window).focus(function(){
+      clearInterval(timer);
+      timer = setInterval(slideTimer,interval);
+    });
     $('.visual-select ul li').click(function(){
       next = $(this).html();
       clearInterval(timer);
       timer = setInterval(slideTimer,interval);
       slideTimer();
       return false;
-    });
-    $(window).blur(function(){
-      clearInterval(timer);
-    });
-    $(window).focus(function(){
-      timer = setInterval(slideTimer,interval);
     });
 
 });
