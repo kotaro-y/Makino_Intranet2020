@@ -149,7 +149,7 @@ header{
 
 /* メインビジュアル */
 .main-visual{
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 .slide-wrapper{
   position: relative;
@@ -171,23 +171,23 @@ header{
   background-repeat: no-repeat;
 }
 .slide1{
+  background-image: url('../images/books-2596809_1920.jpg');
+  background-position: left 22%;
+}
+.slide2{
   background-image: url('../images/working.jpg');
   background-position: left 15%;
 }
-.slide2{
+.slide3{
   background-image: url('../images/water-5318700_1920.jpg');
   background-position: left center;
 }
-.slide3{
+.slide4{
   background-image: url('../images/landscapes-5323529_1920.jpg');
   background-position: left center;
 }
-.slide4{
-  background-image: url('../images/nature-3656121_1920.jpg');
-}
 .slide5{
-  background-image: url('../images/books-2596809_1920.jpg');
-  background-position: left 22%;
+  background-image: url('../images/nature-3656121_1920.jpg');
 }
 .visual-select{
   margin: 0 auto;
@@ -220,38 +220,60 @@ header{
   padding-right: 30px;
 }
 .main-contents section{
+  position: relative;
   display: flex;
   display:-ms-flexbox;
   flex-direction: column;
   -ms-flex-direction: column;
   width: 33%;
   height: 500px;
-  padding: 10px;
+  padding: 1rem;
 }
 .main-contents h2{
+  position: relative;
   order: -2;
   font-size: 2.2rem;
   font-weight: bold;
   letter-spacing: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
+.main-contents h2::before,
 .main-contents h2::after{
   content: '';
-  display: block;
-  margin-top: 5px;
-  width: 55%;
-  border-bottom: 2px solid rgba(18,39,74,.6);
+  position: absolute;
+  display: inline-block;
+  top: 2.5rem;
+  left: 0;
+  width: 40%;
+  border-bottom: 2px solid rgba(18,39,74);
+}
+.main-contents h2::after{
+  left: 49%;
+  width: 5%;
+  border-bottom: 2px dotted rgba(18,39,74);
+}
+.main-contents > section::after{
+  content: '';
+  position: absolute;
+  display: inline-block;
+  top: 3.5rem;
+  left: 1rem;
+  width: 47%;
+  border-bottom: 2px dashed rgba(18,39,74);
 }
 .main-contents > section:nth-child(2) .section-desc,
 .main-contents > section:nth-child(5) .section-desc{
   order: -1;
 }
 .section-img{
+  position: relative;
   height: 45%;
   margin: 0 -10px;
-  background-color: rgba(240,240,240, .7);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .section-desc{
+  position: relative;
   height: 45%;
   margin: 0 -10px;
   white-space: nowrap;
@@ -259,6 +281,53 @@ header{
   overflow-y: auto;
   border: 0.5px solid #ddd;
 }
+.main-contents > section:nth-child(2) .section-desc::after,
+.main-contents > section:nth-child(5) .section-desc::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 18px;
+  backdrop-filter: blur(6px);
+}
+.main-contents > section:nth-child(2) .section-desc.no-blur::after,
+.main-contents > section:nth-child(5) .section-desc.no-blur::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  backdrop-filter: blur(0px);
+}
+
+/* 各コンテンツビジュアル */
+.member-list-img{
+  background-image: url('../images/majid-rangraz-xZMghzq01UQ-unsplash.jpg');
+  background-position: center 75%;
+}
+.rules-img{
+  background-image: url('../images/watch-4638673_1920.jpg');
+  /* background-position: center center; */
+}
+.system-img{
+  background-image: url('../images/map-4896141_1920.jpg');
+  background-position: center center;
+}
+.learning-img{
+  background-image: url('../images/knowledge-1052010_1920.jpg');
+  background-position: center top;
+}
+.form-img{
+  background-image: url('../images/writing.jpg');
+  /* background-position: center center; */
+}
+.tips-img{
+  background-image: url('../images/light-bulb-1246043_1920.jpg');
+  background-position: center center;
+}
+
 
     /* メンバーリスト */
 .member-list ul li:not(:last-child){
@@ -459,7 +528,6 @@ header{
   font-size: 1.2rem;
   margin-right: 3px;
   padding-left: 2px;
-  transition: .3s;
 }
 .tips-desc > a:nth-child(2)::before{
   content: '\f51c';  /*講義*/
@@ -468,7 +536,6 @@ header{
   font-weight: 900;
   font-size: 1rem;
   margin-right: 3px;
-  transition: .3s;
 }
 .tips-desc > a:nth-child(3)::before{
   content: '\f468'; /*BOX*/
@@ -477,7 +544,6 @@ header{
   font-weight: 900;
   font-size: 1.2rem;
   margin-right: 3px;
-  transition: .3s;
 }
   /* サイド */
 aside{
@@ -495,7 +561,8 @@ aside > h2{
 .news-list{
   width: 100%;
   height: 650px;
-  border: 0.5px solid #ddd;
+  background-image: url('../images/paper-fibers.png');
+  background-repeat: repeat;
 }
 
 
@@ -617,12 +684,13 @@ aside > h2{
 /* フッタ */
 footer{
   background-color: rgba(18,39,74, .7);
-  color: #ccc;
+  color: #eee;
+  letter-spacing: 1.5px;
 }
 .footer-wrapper{
   margin: 0 auto;
 }
-.upper-header > ul{
+.upper-footer > ul{
   display: flex;
   display:-ms-flexbox;
   justify-content: flex-end;
@@ -631,35 +699,34 @@ footer{
   margin: 8px 30px 0 0;
   opacity: 0.7;
 }
-.upper-header > ul > li{
+.upper-footer > ul > li{
   padding-right: 8px;
 }
-.upper-header > ul > li:not(:first-of-type)::before{
+.upper-footer > ul > li:not(:first-of-type)::before{
   content: '/';
   display: inline-block;
   margin-right: 8px;
 }
-.upper-header > ul > li > a{
+.upper-footer > ul > li > a{
   position: relative;
   display: inline-block;
-  color: #ccc;
+  color: #eee;
 }
-.upper-header > ul > li > a::after{
+.upper-footer > ul > li > a::after{
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: -3px;
   left: 0;
   display: inline-block;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
   width: 100%;
   transform: scale(0);
-  transition: .4s;
+  transition:  .3s;
 }
-.upper-header > ul > li > a:hover::after{
+.upper-footer > ul > li > a:hover::after{
   transform: scale(1);
 }
-
-.lower-header{
+.lower-footer{
   margin-top: 32px;
   text-align: center;
 }

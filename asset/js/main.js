@@ -93,4 +93,13 @@ $(function(){
       return false;
     });
 
+
+    // コンテンツの下部分ぼかしの制御
+    $('.section-desc').scroll(function(){
+      if($(this).scrollTop() > 0){
+        $(this).addClass('no-blur');
+      }else{
+        $(this).removeClass('no-blur');
+      }
+    });
 });
