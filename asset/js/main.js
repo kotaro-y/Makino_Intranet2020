@@ -22,8 +22,9 @@ $(function(){
         'left' : '50%',
         'transform' : 'translateX(-50%)',
         'margin' : '8px 0 10px 0',
-        'background-color' : 'rgba(220,220,220, .7)',
+        'background-color' : 'rgba(18,39,74, .6)',
       });
+      $('.global-nav a').css('color', '#fff');
       $('.contact-list').css({
         'position' : 'fixed',
         'z-index' : '10',
@@ -43,6 +44,7 @@ $(function(){
         'margin' : '',
         'background-color' : '',
       });
+      $('.global-nav a').css('color', '');
       $('.contact-list').css({
         'display' : '',
         'position' : '',

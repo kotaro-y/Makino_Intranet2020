@@ -105,7 +105,7 @@ header{
   bottom: 0;
   left: 0;
   display: inline-block;
-  border-bottom: 2px solid rgba(18,39,74,.7);
+  border-bottom: 2px solid currentColor;
   width: 100%;
   transform: scale(0);
   transition: .4s;
@@ -155,7 +155,7 @@ header{
   position: relative;
   margin-bottom: 10px;
   width: 100%;
-  height: 400px;
+  height: 360px;
 }
 .slide-wrapper ul{
   width: 100%;
@@ -166,20 +166,28 @@ header{
   width: 100%;
   height: 100%;
 }
+.slide{
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .slide1{
-  background-color: gray;
+  background-image: url('../images/working.jpg');
+  background-position: left 15%;
 }
 .slide2{
-  background-color:lightskyblue;
+  background-image: url('../images/water-5318700_1920.jpg');
+  background-position: left center;
 }
 .slide3{
-  background-color:purple;
+  background-image: url('../images/landscapes-5323529_1920.jpg');
+  background-position: left center;
 }
 .slide4{
-  background-color:palevioletred;
+  background-image: url('../images/nature-3656121_1920.jpg');
 }
 .slide5{
-  background-color: orange;
+  background-image: url('../images/books-2596809_1920.jpg');
+  background-position: left 22%;
 }
 .visual-select{
   margin: 0 auto;
@@ -203,7 +211,7 @@ header{
   background-color:rgba(18,39,74, .4);
 }
 
-/* メインコンテンツ */
+/* メインコンテンツ(トップページ) */
 .main-contents{
   display: flex;
   display:-ms-flexbox;
@@ -347,7 +355,6 @@ header{
   font-weight: 900;
   font-size: 1.2rem;
   margin-right: 3px;
-  transition: .3s;
 }
 .rules-desc > ul{
   margin-top: 5px;
@@ -384,7 +391,7 @@ header{
   transform: scale(1.2);
 }
 
-/* 人事制度  ※基本構成は規則規定を使いまわし*/
+  /* 人事制度  ※基本構成は規則規定を使いまわし*/
 .system-desc ul p{
   display: inline-block;
   margin: 0 8px 0 4px;
@@ -419,9 +426,9 @@ header{
 .system-desc .more{
   margin-bottom: 25px;
 }
-/* 各種フォーム ※基本構成は規則規定を使いまわし */
+  /* 各種フォーム ※基本構成は規則規定を使いまわし */
 
-/* 役立ち情報 */
+  /* 役立ち情報 */
 .tips-desc{
   padding: 10px;
 }
@@ -472,7 +479,7 @@ header{
   margin-right: 3px;
   transition: .3s;
 }
-/* サイド */
+  /* サイド */
 aside{
   margin: 10px;
 }
@@ -491,6 +498,121 @@ aside > h2{
   border: 0.5px solid #ddd;
 }
 
+
+/* 各種固定ページの設定 */
+.page-title-wrapper{
+  position: relative;
+  height: 180px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+.page-title-rules{
+  background-image: url('../images/banner_sunlight.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.page-title-wrapper::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.page-title-rules::after{
+  background-color:rgba(255,255,255, .6);
+}
+.page-title{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  font-weight: bold;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.page-title::before{
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  border-bottom: 3px solid rgba(18,39,74, .7);
+}
+.page-title::after{
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  border-bottom: 3px solid rgba(18,39,74, .7);
+}
+.page-content-wrapper{
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 84px;
+}
+.rules-wrapper{
+  display: flex;
+  display:-ms-flexbox;
+}
+.rules-content{
+  width: 33%;
+  padding: 15px;
+  border-left: 1px solid #ccc;
+}
+.rules-content:nth-child(2){
+  width: 34%;
+}
+.rules-content:last-child{
+  border-right: 1px solid #ccc;
+}
+.section-title{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.section-title > a{
+  display: inline-block;
+  width: 75%;
+  padding: 0.5rem 0;
+  transition: .3s;
+}
+.rules-list li{
+  font-size: 1.4rem;
+  margin-left: 30px;
+  margin-bottom: 1.5rem;
+}
+.rules-list li:last-child{
+  margin-bottom: 20px;
+}
+.rules-list li > a{
+  display: inline-block;
+  width: 70%;
+  padding: 0.5rem 0;
+  border-bottom: 1px dotted #ccc;
+  transition: .3s;
+}
+.section-title > a::before,
+.rules-list li > a::before{
+  content: '\f0da';
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-weight: 900;
+  font-size: 1.5rem;
+  padding-left: 3px;
+  margin-right: 6px;
+}
+.section-title > a:hover,
+.rules-list li > a:hover{
+  background-color: rgba(18,39,74, .7);
+  color: #fff;
+}
 
 /* フッタ */
 footer{
