@@ -857,3 +857,8 @@ footer{
 _:-ms-lang(x)::-ms-backdrop, .starting-page{
   display: none;
 }
+@media all and (-ms-high-contrast: none){
+  .starting-page{
+    display: none;
+  }
+}
