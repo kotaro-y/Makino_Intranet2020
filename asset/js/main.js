@@ -1,7 +1,13 @@
 'use strict';
 
 $(function(){
-
+  // トップページの最初の表示
+  setTimeout(() => {
+    $('.starting').fadeOut(1300);
+  }, 200);
+  setTimeout(() => {
+    $('.starting-page').fadeOut(650);
+  }, 200);
   // コンタクト項目ホバー時変化
   $('.contact-list a').hover(function(){
     $(this).find('.mail').removeClass('fa-envelope').addClass('fa-envelope-open');

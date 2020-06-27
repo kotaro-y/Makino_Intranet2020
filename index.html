@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HR_Intranet</title>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Didact+Gothic&family=Josefin+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Josefin+Sans:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
   <!-- リセットCSS -->
@@ -65,7 +65,9 @@
       <div class="main-contents">
         <section class="member-list">
           <h2>Members</h2>
-          <div class="section-img member-list-img"></div>
+          <div class="section-img-wrapper">
+            <div class="section-img member-list-img"></div>
+          </div>
           <div class="section-desc member-list-desc">
             <ul>
               <li>
@@ -133,16 +135,18 @@
         </section>
         <section class="rules">
           <h2>Rules</h2>
-          <div class="section-img rules-img"></div>
+          <div class="section-img-wrapper">
+            <div class="section-img rules-img"></div>
+          </div>
           <div class="section-desc rules-desc">
-            <a href="#">就業規則</a>
+            <a href="rules.html">就業規則</a>
             <h3>給与</h3>
             <ul>
               <li><a href="#">給与規定</a></li>
               <li><a href="#">旅費規定</a></li>
               <li><a href="#">通勤手当支給規定</a></li>
             </ul>
-            <p class="more"><a href="#">More</a></p>
+            <p class="more"><a href="rules.html">More</a></p>
 
             <h3>就業･休暇</h3>
             <ul>
@@ -150,7 +154,7 @@
               <li><a href="#">フレックスタイム制度運用規定</a></li>
               <li><a href="#">育児･介護支援規定</a></li>
             </ul>
-            <p class="more"><a href="#">More</a></p>
+            <p class="more"><a href="rules.html">More</a></p>
 
             <h3>転勤･処遇</h3>
             <ul>
@@ -158,7 +162,7 @@
               <li><a href="#">国内転勤規定</a></li>
               <li><a href="#">厚木･富士勝山間転勤者取扱規定</a></li>
             </ul>
-            <p class="more"><a href="#">More</a></p>
+            <p class="more"><a href="rules.html">More</a></p>
 
             <h3>その他</h3>
             <ul>
@@ -166,19 +170,21 @@
               <li><a href="#">慶弔見舞金規定</a></li>
               <li><a href="#">個人情報取扱規定</a></li>
             </ul>
-            <p class="more"><a href="#">More</a></p>
+            <p class="more"><a href="rules.html">More</a></p>
           </div>
         </section>
         <section class="system">
           <h2>System</h2>
-          <div class="section-img system-img"></div>
+          <div class="section-img-wrapper">
+            <div class="section-img system-img"></div>
+          </div>
           <div class="section-desc system-desc rules-desc">
             <h3>人事制度 ( MERCURY )</h3>
             <ul>
               <li><p class="manual">マニュアル</p><a href="#">管理職･専門職層</a><span>/</span><a href="#">総合職層</a></li>
               <li><p class="document">説明会資料</p><a href="#">管理職･専門職層</a><span>/</span><a href="#">総合職層</a></li>
             </ul>
-            <p class="more"><a href="#">More</a></p>
+            <p class="more"><a href="system.html">More</a></p>
           
             <h3>海外駐在員規定 ( Global Mobility Policy )</h3>
             <ul>
@@ -190,18 +196,28 @@
             <ul>
               <li><a href="#" target="_blank">ログインページ</a></li>
               <li><a href="#" target="_blank">マニュアル</a></li>
-              <li><a href="https://www.pa-consul.co.jp/TalentPalette/" target="_blank">公式HP</a></li>
+              <li><a href="https://www.pa-consul.co.jp/TalentPalette/" target="_blank">公式HP<span class="fa fa-external-link-alt"></span></a></li>
             </ul>
           </div>
         </section>
         <section class="learning"> 
           <h2>Learning</h2>
-          <div class="section-img learning-img"></div>
-          <div class="section-desc learning-desc"></div>
+          <div class="section-img-wrapper">
+            <div class="section-img learning-img"></div>
+          </div>
+          <div class="section-desc learning-desc rules-desc">
+            <h3>ToMo Learning</h3>
+            <ul>
+              <li><a href="#" class="form-file">ログインページ(LMS)</a></li>
+              <li><a href="#" class="form-file">マニュアル</a></li>
+            </ul>
+          </div>
         </section>
         <section class="form"> 
           <h2>Form</h2>
-          <div class="section-img form-img"></div>
+          <div class="section-img-wrapper">
+            <div class="section-img form-img"></div>
+          </div>
           <div class="section-desc form-desc rules-desc">
             <h3>異動･昇格</h3>
             <ul>
@@ -229,7 +245,9 @@
         </section>
         <section class="tips"> 
           <h2>Tips</h2>
-          <div class="section-img tips-img"></div>
+          <div class="section-img-wrapper">
+            <div class="section-img tips-img"></div>
+          </div>
           <div class="section-desc tips-desc">
             <a href="#">人事イベントスケジュール</a>
             <a href="#">学生向け会社案内資料</a>
@@ -266,6 +284,7 @@
       </div>
     </footer>
   </div>
+  <div class="starting"></div>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="asset/js/main.js"></script>
 </body>
