@@ -386,16 +386,16 @@ header{
   width: 30%;
 }
 
-  /* 規則規定 */
-.rules-desc{
+  /* 規則規定その他共用 */
+.common-desc{
   padding: 10px;
 }
-.rules-desc a{
+.common-desc a{
   display: block;
   color: #666;
   transition: .3s;
 }
-.rules-desc > ul a::before{
+.common-desc > ul a::before{
   content: '\f054';
   font-family: "Font Awesome 5 Free";
   display: inline-block;
@@ -404,33 +404,33 @@ header{
   font-size: 0.5rem;
   margin-right: 2px;
 }
-.rules-desc > ul > li:not(:last-child) a{
+.common-desc > ul > li:not(:last-child) a{
   border-bottom: 1px dotted rgba(18,39,74,.8);
 }
-.rules-desc > a{
+.common-desc > a{
   padding: 5px;
   margin-left: -5px;
   transition: .3s;
 }
-.rules-desc > a,
-.rules-desc > h3{
+.common-desc > a,
+.common-desc > h3{
   font-size: 1.2rem;
   font-weight: bold;
   color: #333;
 }
-.rules-desc > a:hover{
+.common-desc > a:hover{
   transform: translateX(4px);
   color: #fff;
   background-color: rgba(18,39,74, .7);
 }
-.rules-desc > a:hover::before{
+.common-desc > a:hover::before{
   color: #fff;
 }
-.rules-desc > h3{
+.common-desc > h3{
   margin-top: 10px;
 }
-.rules-desc > a::before,
-.rules-desc > h3::before{
+.common-desc > a::before,
+.common-desc > h3::before{
   content: '\f0da';
   font-family: "Font Awesome 5 Free";
   display: inline-block;
@@ -438,20 +438,20 @@ header{
   font-size: 1.2rem;
   margin-right: 3px;
 }
-.rules-desc > ul{
+.common-desc > ul{
   margin-top: 5px;
 }
-.rules-desc > ul > li a{
+.common-desc > ul > li a{
   margin: 0 12px;
   padding: 5px 3px;
   transition: .3s;
 }
-.rules-desc > ul > li a:hover{
+.common-desc > ul > li a:hover{
   transform: translateX(4px);
   color: #fff;
   background-color: rgba(18,39,74, .7);
 }
-.rules-desc > ul > li a:hover::before{
+.common-desc > ul > li a:hover::before{
   color: #fff;
 }
 .more a{
@@ -853,4 +853,7 @@ footer{
   width: 100%;
   height: 100%;
   background-color: #fff;
+}
+_:-ms-lang(x)::-ms-backdrop, .starting-page{
+  display: none;
 }
