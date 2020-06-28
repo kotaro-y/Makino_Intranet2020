@@ -1,0 +1,227 @@
+@charset "UTF-8";
+/* 固定ページの設定をするCSS */
+
+/* 各種固定ページの設定 */
+.pages-main{
+  display: block;                   /* style.cssのmainタグ flex設定を解除する */
+}
+.page-title-wrapper{
+  position: relative;
+  height: 180px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.page-title-wrapper::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(50,50,50, .4);
+}
+.page-title{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  font-size: 3rem;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #eee;
+}
+.page-title::before{
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  border-bottom: 3px solid currentColor;
+  opacity: .7;
+}
+.page-title::after{
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  border-bottom: 3px solid currentColor;
+  opacity: .7;
+}
+.page-wrapper{
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 84px;
+}
+.contents-wrapper{
+  display: flex;
+  display:-ms-flexbox;
+}
+.contents-wrapper > section{
+  padding: 15px;
+  border-left: 1px solid #ccc;
+}
+.contents-wrapper > section:last-child{
+  border-right: 1px solid #ccc;
+}
+.section-title{
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+.section-title > a{
+  display: inline-block;
+  width: 75%;
+  padding: 0.5rem 0;
+  transition: .3s;
+}
+.contents-wrapper > section > ul > li{
+  font-size: 1.4rem;
+  margin-left: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.contents-wrapper > section > ul > li:last-child{
+  margin-bottom: 20px;
+}
+.contents-wrapper > section > ul > li > a{
+  display: inline-block;
+  width: 70%;
+  padding: 0.75rem 0;
+  border-bottom: 1px dotted #ccc;
+  transition: .3s;
+}
+.section-title > a::before,
+.contents-wrapper > section > ul > li > a::before{
+  content: '\f0da';
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-weight: 900;
+  font-size: 1.5rem;
+  padding-left: 3px;
+  margin-right: 6px;
+}
+.section-title > a:hover,
+.contents-wrapper > section > ul > li > a:hover{
+  background-color: rgba(18,39,74, .7);
+  color: #fff;
+}
+
+  /*規則規定ページ*/
+.page-title-rules{
+  background-image: url('../images/banner_sunlight.jpg');
+}
+.rules-content{
+  width: 33%;
+}
+.rules-content:nth-child(2){
+  width: 34%;
+}
+.rules-content:not(:first-child) .section-title{
+  padding-top: 5px;
+}
+  /*人事制度ページ*/
+.page-title-system{
+  background-image: url('../images/laptop.jpg');
+  background-position: left 35%;
+}
+.pages-main hr{
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+.system-content{
+  width: 50%;
+}
+.system-content > h2{
+  text-align: center;
+}
+.system-content > h3{
+  margin-left: 10rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.system-list{
+  width: 50%;
+  margin: 0 auto;
+}
+.system-wrapper .system-content .system-list > li{
+  margin-left: 0;
+}
+.system-wrapper .system-content .system-list > li > a{
+  width: 100%;
+}
+.tp-wrapper{
+  width: 100%;
+  padding: 30px 84px;
+  margin: 0 auto;
+}
+.tp-contents{
+  width: 100%;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+.tp-contents h2{
+  text-align: center;
+}
+.tp-contents > .system-content{
+  width: 100%;
+}
+.tp-contents ul{
+  width: 30%;
+  margin: 0 auto;
+}
+.tp-contents li{
+  font-size: 1.4rem;
+}
+.tp-contents a{
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px dotted #ccc;
+  transition: .3s;
+}
+.tp-contents a::before{
+  content: '\f0da';
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-weight: 900;
+  font-size: 1.5rem;
+  padding-left: 3px;
+  margin-right: 6px;
+}
+.tp-contents a:hover{
+  background-color: rgba(18,39,74, .7);
+  color: #fff;
+}
+.tp-contents a > span{
+  margin-left: 10px;;
+}
+
+/* JS用表示設定 */
+.starting-page{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+/* HACK: IEのみ適用*/
+_:-ms-lang(x)::-ms-backdrop, .starting-page{
+  display: none;
+}
+@media all and (-ms-high-contrast: none){
+  .starting-page{
+    display: none;
+  }
+}
