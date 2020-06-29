@@ -3,12 +3,11 @@
 $(function(){
   // ページ表示時のエフェクト用
   setTimeout(() => {
-    $('.starting').fadeOut(1300);
+  $('.starting').fadeOut(1300);
   }, 200);
   setTimeout(() => {
-    $('.starting-page').fadeOut(650);
+  $('.starting-page').fadeOut(650);
   }, 200);
-
   // ヘッダのコンタクト項目ホバー時アイコン変化
   $('.contact-list a').hover(function(){
     $(this).find('.mail').removeClass('fa-envelope').addClass('fa-envelope-open');

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* 全体の基本設定、ヘッダ/フッタ、フロントページの設定をするCSS */
 
-/* 全体設定 */
+/* ベーススタイル */
 html{
   font-size: 62.5%;
 }
@@ -323,7 +323,7 @@ header{
   /* background-position: center center; */
 }
 .system-img{
-  background-image: url('../images/map-4896141_1920.jpg');
+  background-image: url('../images/light-5083606_1920.jpg');
   background-position: center center;
 }
 .learning-img{
@@ -476,23 +476,21 @@ header{
   display: inline-block;
   margin: 0 8px 0 4px;
 }
-.manual::before{
-  content: '\f02d'; /*Book*/
-  font-family: "Font Awesome 5 Free";
-  display: inline-block;
-  font-weight: 900;
-  font-size: 1rem;
-  color: #666;
-  margin-right: 3px;
-}
-.document::before{
-  content: '\f15c'; /*file*/
+.before-icon::before{
   font-family: "Font Awesome 5 Free";
   display: inline-block;
   font-weight: 900;
   font-size: 1.2rem;
+  margin-right: 0.5em;
+}
+.icon-manual::before{
+  content: '\f02d'; /*Book*/
+  font-size: 1rem;
   color: #666;
-  margin-right: 3px;
+}
+.icon-document::before{
+  content: '\f15c'; /*file*/
+  color: #666;
 }
 .system-desc > ul:not(:last-child) > li > a{
   display: inline-block;
@@ -508,7 +506,7 @@ header{
 }
   /*ラーニング */
 .learning-desc h3{
-  font-size: 1.6rem;
+  font-size: 1.6rem;  /* 英語文字は小さく見えるのでここだけ修正 */
 }
 .section-desc span{
   margin-left: 1rem;
@@ -530,7 +528,6 @@ header{
   font-weight: normal;
   transition: .3s;
 }
-
 .tips-desc > a:hover{
   transform: translateX(4px);
   color: #fff;
@@ -539,30 +536,16 @@ header{
 .tips-desc > a:hover::before{
   color: #fff;
 }
-.tips-desc > a:first-child::before{
+.icon-calendar::before{
   content: '\f073';   /*カレンダー*/
-  font-family: "Font Awesome 5 Free";
-  display: inline-block;
-  font-weight: 900;
-  font-size: 1.2rem;
-  margin-right: 3px;
   padding-left: 2px;
 }
-.tips-desc > a:nth-child(2)::before{
+.icon-seminar::before{
   content: '\f51c';  /*講義*/
-  font-family: "Font Awesome 5 Free";
-  display: inline-block;
-  font-weight: 900;
   font-size: 1rem;
-  margin-right: 3px;
 }
-.tips-desc > a:nth-child(3)::before{
+.icon-box::before{
   content: '\f468'; /*BOX*/
-  font-family: "Font Awesome 5 Free";
-  display: inline-block;
-  font-weight: 900;
-  font-size: 1.2rem;
-  margin-right: 3px;
 }
   /* サイド */
 aside{
