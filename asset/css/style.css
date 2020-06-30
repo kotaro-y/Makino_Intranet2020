@@ -175,8 +175,8 @@ header{
   background-position: left 22%;
 }
 .slide2{
-  background-image: url('../images/cafe.jpg');
-  background-position: left 47%;
+  background-image: url('../images/steinhuder-sea-4909703.jpg');
+  background-position: left 40%;
 }
 .slide3{
   background-image: url('../images/water-5318700_1920.jpg');
@@ -187,7 +187,8 @@ header{
   background-position: left center;
 }
 .slide5{
-  background-image: url('../images/nature-3656121_1920.jpg');
+  background-image: url('../images/autumn-4501856_1920.jpg');
+  background-position: left 42%;
 }
 .visual-select{
   margin: 0 auto;
@@ -282,6 +283,22 @@ header{
 .section-img:hover{
   transform: scale(1.1);
   opacity: .7;
+}
+.section-img > a{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.link-text{       /* jQueryで生成するp要素に付加する*/
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+  font-size: 1.6rem;
+  color: #eee;
+  letter-spacing: 2px;
+}
+.form-img > a > p{
+  bottom: 5%;
 }
 .section-desc{
   position: relative;

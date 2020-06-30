@@ -111,4 +111,16 @@ $(function(){
         $(this).removeClass('no-blur');
       }
     });
+
+    // コンテンツホバー時に日本語表示
+    const linkText = ['メンバー紹介', '規則･規定', '人事制度', '研修', '各種フォーム', 'その他情報'];
+    $('.section-img > a').each(function(index){
+      $(this).hover(function(){
+        $(this).append(`<p>${linkText[index]}</p>`);
+        $(this).find('p').addClass('link-text').hide();
+        $(this).find('p').fadeIn(400);
+      },function(){
+        $(this).find('p').remove();
+      });
+    });
 });
