@@ -598,7 +598,7 @@ aside > h2{
   transition: .3s;
 }
 .news-item > a:hover{
-  opacity: .5;
+  opacity: .6;
   font-weight: bold;
   box-shadow: 0px 3px #333;
 }
