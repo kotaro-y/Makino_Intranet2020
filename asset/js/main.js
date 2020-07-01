@@ -118,7 +118,7 @@ $(function(){
       $(this).hover(function(){
         $(this).append(`<p>${linkText[index]}</p>`);
         $(this).find('p').addClass('link-text').hide();
-        $(this).find('p').fadeIn(400);
+        $(this).find('p').fadeIn(800);
       },function(){
         $(this).find('p').remove();
       });
