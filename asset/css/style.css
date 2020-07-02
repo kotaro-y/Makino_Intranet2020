@@ -47,7 +47,7 @@ main{
   height: 100%;
 }
 aside{
-  width: 300px;
+  width: 350px;
   height: 100%;
 }
 footer{
@@ -571,7 +571,7 @@ header{
 }
   /* サイド */
 aside{
-  margin: 10px;
+  margin-top: 10px;
 }
 aside > h2{
   font-size: 1.8rem;
@@ -628,6 +628,8 @@ aside > h2{
   -ms-flex-pack: center;
 }
 .news-category{
+  width: 45px;
+  text-align: center;
   padding: 3px;
   color: #fff;
 }
@@ -644,7 +646,7 @@ aside > h2{
   background-color:rgba(18,39,74);
 }
 .news-desc{
-  padding-left: 22px;
+  padding-left: 10px;
   font-size: 1.1rem;
   color: #666;
 }
