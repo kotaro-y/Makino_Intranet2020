@@ -134,10 +134,24 @@ $(function(){
 
 // ダークモード切替
 const darkModeBtn = document.getElementById('btn-mode');
+const darkModeSelect = Cookies.get('darkModeOn');
+if(darkModeSelect === 'on'){
+  darkModeBtn.checked = true;
+} else{
+  darkModeBtn.checked = false;
+}
+if(darkModeBtn.checked === true){
+  document.body.classList.add('dark-mode');
+}
+
 darkModeBtn.addEventListener('change',function(){
   if(darkModeBtn.checked === true){
-    document.body.classList.add('dark-mode')
+    document.body.classList.add('dark-mode');
+    Cookies.set('darkModeOn','on',{expires:1/48});
+    console.log(Cookies.get('darkModeOn'));
   }else{
     document.body.classList.remove('dark-mode');
+    Cookies.remove('darkModeOn');
   }
 })
+
