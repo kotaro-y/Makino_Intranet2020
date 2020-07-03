@@ -206,6 +206,122 @@
   margin-left: 10px;;
 }
 
+/* ダークモードon/offスイッチ */
+.btn-on-off-wrapper{
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 12px;
+  height: 24px;
+  width: 53px;
+  opacity: .7;
+}
+.btn-on-off {
+  position: relative;
+  line-height: 24px;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0;
+  width: 100%;
+}
+.btn-on-off input[type="checkbox"] {
+  display: none;
+}
+.btn-on-off label {
+  display: inline-block;
+  height: 24px;
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 12px;
+}
+.btn-on-off input[type="checkbox"]:checked ~ label {
+  /* border-color: #333; */
+}
+.btn-on-off label span::after{
+  content: "ON";
+  letter-spacing: 1px;
+  padding-left: 18px;
+  color: #eee;
+}
+.btn-on-off input[type="checkbox"]:checked ~ label span::after{
+  content: "OFF";
+  padding: 0 18px 0 0;
+  /* color: #333; */
+}
+.switch-img {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  background: #eee;
+  border-radius: 50%;
+  transition: .2s;
+}
+.btn-on-off input[type="checkbox"]:checked ~ .switch-img {
+  transform: translateX(29px);
+  /* background: #333; */
+}
+.btn-on-off input[type="checkbox"]:checked ~ p{
+  /* color: #333; */
+  font-weight: bold;
+}
+
+/* 言語選択ボタン */
+.lang-select-wrapper{
+  top: 0;
+  left: 76px;
+}
+.lang-select label{
+  border-radius: 0%;
+}
+.lang-select input[type="checkbox"]:checked ~ label {
+  border-color: #eee;
+}
+.lang-select label span::before{
+  content: "JPN";
+  color: #333;
+  padding-right: 3px;
+  font-weight: bold;
+}
+.lang-select label span::after{
+  content: "ENG";
+  padding-left: 6px;
+  color: #eee;
+  font-weight: normal;
+  letter-spacing: 0px;
+}
+.lang-select input[type="checkbox"]:checked ~ label span::before{
+  color: #eee;
+  font-weight: normal;
+}
+.lang-select input[type="checkbox"]:checked ~ label span::after{
+  content: "ENG";
+  padding: 0 0 0 6px;
+  color: #333;
+  font-weight: bold;
+}
+.lang-select .switch-img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 25.5px;
+  height: 24px;
+  background: #eee;
+  border-radius: 0%;
+  transition: .2s;
+}
+.lang-select input[type="checkbox"]:checked ~ .switch-img {
+  transform: translateX(26.5px);
+  background: #eee;
+}
+.lang-select input[type="checkbox"]:checked ~ p{
+  color: #eee;
+  font-weight: normal;
+}
+
+
 /* JS用表示設定 */
 .starting-page{
   position: fixed;
@@ -224,4 +340,17 @@ _:-ms-lang(x)::-ms-backdrop, .starting-page{
   .starting-page{
     display: none;
   }
+}
+
+/* ダークモードの設定 */
+.dark-mode .page-title-wrapper{
+  border: unset;
+}
+.dark-mode .page-title-wrapper::after{
+  background-color: rgba(30,30,30, .7);
+}
+.dark-mode .section-title > a:hover,
+.dark-mode .contents-wrapper > section > ul > li > a:hover,
+.tp-contents a:hover{
+  background-color: #666;
 }

@@ -32,7 +32,10 @@ $(function(){
       });
       $('.global-nav a').css(
         'color', '#fff'
-      );
+        );
+      $('.dark-mode .global-nav').css({
+        'background-color' : '#000',
+      });
       $('.contact-list').css({
         'position' : 'fixed',
         'z-index' : '10',
@@ -40,6 +43,9 @@ $(function(){
         'right' : '0',
         'background-color' : 'rgba(18,39,74, .7)',
         'height' : headerPos,
+      });
+      $('.dark-mode .contact-list').css({
+        'background-color' : '#000',
       });
     }else{
       $('.global-nav').css({
@@ -124,3 +130,14 @@ $(function(){
       });
     });
 });
+
+
+// ダークモード切替
+const darkModeBtn = document.getElementById('btn-mode');
+darkModeBtn.addEventListener('change',function(){
+  if(darkModeBtn.checked === true){
+    document.body.classList.add('dark-mode')
+  }else{
+    document.body.classList.remove('dark-mode');
+  }
+})

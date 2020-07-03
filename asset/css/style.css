@@ -480,6 +480,7 @@ header{
   padding: 3px;
   margin: 5px auto 15px;
   border-radius: 8px;
+  letter-spacing: 1px;
   background-color: rgba(18,39,74,.7);
   transition: .3s;
 }
@@ -581,6 +582,7 @@ aside > h2{
   padding: 7.5px 0;
   background-color: rgba(18,39,74,.8);
   color: #fff;
+  border: 1px solid rgba(18,39,74,.8);
 }
 .news-list-wrapper{
   width: 100%;
@@ -731,7 +733,7 @@ footer{
   border-radius: 12px;
 }
 .btn-on-off input[type="checkbox"]:checked ~ label {
-  border-color: #333333;
+  /* border-color: #333333; */
 }
 .btn-on-off label span::after{
   content: "ON";
@@ -742,7 +744,7 @@ footer{
 .btn-on-off input[type="checkbox"]:checked ~ label span::after{
   content: "OFF";
   padding: 0 18px 0 0;
-  color: #333333;
+  /* color: #333333; */
 }
 .switch-img {
   position: absolute;
@@ -756,10 +758,10 @@ footer{
 }
 .btn-on-off input[type="checkbox"]:checked ~ .switch-img {
   transform: translateX(29px);
-  background: #333333;
+  /* background: #333333; */
 }
 .btn-on-off input[type="checkbox"]:checked ~ p{
-  color: #333;
+  /* color: #333; */
   font-weight: bold;
 }
 
@@ -836,4 +838,113 @@ _:-ms-lang(x)::-ms-backdrop, .starting{
   .starting{
     display: none;
   }
+}
+
+/* ダークモードの設定 */
+body.dark-mode{
+  color: #e8e8e8;
+  background-color: #414039;
+  border-bottom: 1px solid #eee;
+}
+.dark-mode header{
+  background-color: #000;
+}
+.dark-mode a, 
+.dark-mode a:link,
+.dark-mode a:visited,
+.dark-mode a:hover,
+.dark-mode a:active{
+  color: #e8e8e8;
+}
+.dark-mode .contact-list{
+  background-color:#000;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+.dark-mode .contact-list a:hover{
+  color: #fff;
+}
+.dark-mode header{
+  border-color: #414039;
+}
+.dark-mode .visual-select ul li{
+  background-color:rgba(18,39,74, .4);
+}
+.dark-mode .visual-select .selected{
+  background-color:#e8e8e8;
+}
+.dark-mode .main-contents h2::before,
+.dark-mode .main-contents h2::after,
+.dark-mode .main-contents > section::after{
+  border-color: #e8e8e8;
+}
+.dark-mode .member-list ul li:not(:last-child){
+  border-color: #666;
+}
+.dark-mode .section-desc{
+  background-color: #3c3d34;
+  border-color: #666;
+}
+.dark-mode .common-desc > a,
+.dark-mode .common-desc > h3{
+  color: #e8e8e8;
+}
+.dark-mode .common-desc > ul > li:not(:last-child) a{
+  border-color: #666;
+}
+.dark-mode .contact-list a:hover,
+.dark-mode .member-list ul li a:hover,
+.dark-mode .common-desc > a:hover,
+.dark-mode .common-desc > ul > li a:hover,
+.dark-mode .tips-desc > a:hover{
+  background-color: #666;
+}
+.dark-mode .more a{
+  background-color: #3c3d34;
+  border: 1px solid #ddd;
+}
+.dark-mode aside > h2{
+  background-color: #3c3d34;
+  border-color: #666;
+}
+.dark-mode .news-list-wrapper{
+  background-image: unset;
+  background-color: #3c3d34; 
+  border-left: 1px solid #666;
+  border-right: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+.dark-mode .news-category{
+  background-color: rgb(199,157,58);
+  color: #000;
+}
+.dark-mode .news-desc{
+  color: #ddd;
+}
+.dark-mode .news-item:not(:last-child) > a{
+  border-color: #666;
+}
+.dark-mode .news-item > a:hover{
+  box-shadow: 0px 3px #ddd;
+}
+.dark-mode footer{
+  color: #ddd;
+  background-color: #000;
+}
+.dark-mode .slide1{
+  background-image: url('../images/sunset-1373171_1920.jpg');
+}
+.dark-mode .slide2{
+  background-image: url('../images/sunset.jpg');
+  background-position: left 60%;
+}
+.dark-mode .slide3{
+  background-image: url('../images/night.jpg');
+  background-position: left 90%;
+}
+.dark-mode .slide4{
+  background-image: url('../images/nature-3656121_1920.jpg');
+}
+.dark-mode .slide5{
+  background-image: url('../images/sunrise-1756274.jpg');
 }
