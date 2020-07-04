@@ -962,6 +962,18 @@ body.dark-mode{
   background-image: url('../images/sunrise-1756274.jpg');
 }
 
+/*英語対応*/
+.en{
+  font-size: 1.2rem;
+}
+.no-display{
+  display: none !important;
+}
+.ja{
+  /* display: none !important;   */
+}
+
+
 /* レスポンシブ対応 */
 @media screen and (max-width : 1024px){ /*タブレットなど*/
   .title{
@@ -1072,7 +1084,7 @@ body.dark-mode{
     display: none;
   }
   /*ハンバーガーメニューここまで*/
-  
+
   .main-visual{
     margin-top: 74px;
   }

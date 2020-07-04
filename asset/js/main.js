@@ -123,12 +123,19 @@ $(function(){
     });
 
     // コンテンツホバー時に日本語表示
-    const linkText = ['メンバー紹介', '規則･規定', '人事制度', '研修', '各種フォーム', 'その他情報'];
+    const linkTextJpn = ['メンバー紹介', '規則･規定', '人事制度', '研修', '各種フォーム', 'その他情報'];
+    const linkTextEng = ['Member', 'Rules', 'HR System', 'Learning', 'Forms', 'Others'];
     $('.section-img > a').each(function(index){
       $(this).hover(function(){
-        $(this).append(`<p>${linkText[index]}</p>`);
-        $(this).find('p').addClass('link-text').hide();
-        $(this).find('p').fadeIn(800);
+        if($('#eng-check').hasClass('no-display')){
+          $(this).append(`<p>${linkTextJpn[index]}</p>`);
+          $(this).find('p').addClass('link-text').hide();
+          $(this).find('p').fadeIn(800);
+        }else{
+          $(this).append(`<p>${linkTextEng[index]}</p>`);
+          $(this).find('p').addClass('link-text').hide();
+          $(this).find('p').fadeIn(800);
+        }
       },function(){
         $(this).find('p').remove();
       });
@@ -147,6 +154,7 @@ if(darkModeSelect === 'on'){
 if(darkModeBtn.checked === true){
   document.body.classList.add('dark-mode');
 }
+
 darkModeBtn.addEventListener('change',function(){
   if(darkModeBtn.checked === true){
     document.body.classList.add('dark-mode');
@@ -154,6 +162,47 @@ darkModeBtn.addEventListener('change',function(){
   }else{
     document.body.classList.remove('dark-mode');
     Cookies.remove('darkModeOn');
+  }
+})
+
+//日⇔英切替(切替状態はCookie保存する)
+const langSwitchBtn = document.getElementById('btn-lang');
+const EngSelect = Cookies.get('EngOn');
+const JpnText = document.querySelectorAll('.ja');
+const EngText = document.querySelectorAll('.en');
+
+if(EngSelect === 'on'){
+  langSwitchBtn.checked = true;
+}else{
+  langSwitchBtn.checked = false;
+}
+
+if(langSwitchBtn.checked === true){
+  JpnText.forEach(function(jaText){
+    jaText.classList.add('no-display');
+  });
+  EngText.forEach(function(enText){
+    enText.classList.remove('no-display');
+  });
+}
+
+langSwitchBtn.addEventListener('change',function(){
+  if(langSwitchBtn.checked === true){
+    JpnText.forEach(function(jaText){
+      jaText.classList.add('no-display');
+    });
+    EngText.forEach(function(enText){
+      enText.classList.remove('no-display');
+    });
+    Cookies.set('EngOn','on');
+  }else{
+    JpnText.forEach(function(jaText){
+      jaText.classList.remove('no-display');
+    });
+    EngText.forEach(function(enText){
+      enText.classList.add('no-display');
+    });
+    Cookies.remove('EngOn');
   }
 })
 
