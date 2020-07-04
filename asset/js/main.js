@@ -1,5 +1,7 @@
 'use strict';
 
+const mobileWidth = 600; //スマホのメディアクエリ横幅指定
+
 $(function(){
   // ページ表示時のエフェクト用
   setTimeout(() => {
@@ -20,56 +22,58 @@ $(function(){
   // スクロール時にナビメニュー固定
   const headerPos = $('header').outerHeight();
   $(window).scroll(function(){
-    if($('body, html').scrollTop() > headerPos){
-      $('.global-nav').css({
-        'position' : 'fixed',
-        'z-index' : '10',
-        'top' : '0',
-        'left' : '50%',
-        'transform' : 'translateX(-50%)',
-        'margin' : '8px 0 10px 0',
-        'background-color' : 'rgba(18,39,74, .7)',
-      });
-      $('.global-nav a').css(
-        'color', '#fff'
+    if($(window).innerWidth() > mobileWidth){   //スマホ環境では動作させない
+      if($('body, html').scrollTop() > headerPos){
+        $('.global-nav').css({
+          'position' : 'fixed',
+          'z-index' : '10',
+          'top' : '0',
+          'left' : '50%',
+          'transform' : 'translateX(-50%)',
+          'margin' : '8px 0 10px 0',
+          'background-color' : 'rgba(18,39,74, .7)',
+        });
+        $('.global-nav a').css(
+          'color', '#fff'
+          );
+        $('.dark-mode .global-nav').css({
+          'background-color' : '#000',
+        });
+        $('.contact-list').css({
+          'position' : 'fixed',
+          'z-index' : '10',
+          'top' : '0',
+          'right' : '0',
+          'background-color' : 'rgba(18,39,74, .7)',
+          'height' : headerPos,
+        });
+        $('.dark-mode .contact-list').css({
+          'background-color' : '#000',
+        });
+      }else{
+        $('.global-nav').css({
+          'display' : '',
+          'position' : '',
+          'z-index' : '',
+          'top' : '',
+          'left' : '',
+          'transform' : '',
+          'margin' : '',
+          'background-color' : '',
+        });
+        $('.global-nav a').css(
+          'color', ''
         );
-      $('.dark-mode .global-nav').css({
-        'background-color' : '#000',
-      });
-      $('.contact-list').css({
-        'position' : 'fixed',
-        'z-index' : '10',
-        'top' : '0',
-        'right' : '0',
-        'background-color' : 'rgba(18,39,74, .7)',
-        'height' : headerPos,
-      });
-      $('.dark-mode .contact-list').css({
-        'background-color' : '#000',
-      });
-    }else{
-      $('.global-nav').css({
-        'display' : '',
-        'position' : '',
-        'z-index' : '',
-        'top' : '',
-        'left' : '',
-        'transform' : '',
-        'margin' : '',
-        'background-color' : '',
-      });
-      $('.global-nav a').css(
-        'color', ''
-      );
-      $('.contact-list').css({
-        'display' : '',
-        'position' : '',
-        'z-index' : '',
-        'top' : '',
-        'right' : '',
-        'background-color' : '',
-        'height' : '',
-      });
+        $('.contact-list').css({
+          'display' : '',
+          'position' : '',
+          'z-index' : '',
+          'top' : '',
+          'right' : '',
+          'background-color' : '',
+          'height' : '',
+        });
+      }
     }
   });
 
@@ -132,7 +136,7 @@ $(function(){
 });
 
 
-// ダークモード切替
+// ダークモード切替(切替状態はCookie保存する)
 const darkModeBtn = document.getElementById('btn-mode');
 const darkModeSelect = Cookies.get('darkModeOn');
 if(darkModeSelect === 'on'){
@@ -143,12 +147,10 @@ if(darkModeSelect === 'on'){
 if(darkModeBtn.checked === true){
   document.body.classList.add('dark-mode');
 }
-
 darkModeBtn.addEventListener('change',function(){
   if(darkModeBtn.checked === true){
     document.body.classList.add('dark-mode');
     Cookies.set('darkModeOn','on',{expires:1/48});
-    console.log(Cookies.get('darkModeOn'));
   }else{
     document.body.classList.remove('dark-mode');
     Cookies.remove('darkModeOn');

@@ -78,6 +78,18 @@ header{
 .title > p{
   margin: 3px 0;
 }
+
+  /*ハンバーガーメニューの設定(通常時は表示しない)*/
+  #nav-menu-switch{
+    position: absolute;
+    left: 9999px;
+  }
+  .nav-menu-open,
+  .nav-menu-close,
+  .close-modal{
+    display: none;
+  }
+
 .global-nav{
   margin: 20px 100px 20px 0;
 }
@@ -822,6 +834,7 @@ footer{
 /* JS用表示設定 */
 .starting{
   position: fixed;
+  z-index: 2000;
   top: 0;
   left: 0;
   width: 100%;
@@ -947,4 +960,212 @@ body.dark-mode{
 }
 .dark-mode .slide5{
   background-image: url('../images/sunrise-1756274.jpg');
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width : 1024px){ /*タブレットなど*/
+  .title{
+    margin-left: 15px;
+  }
+  aside{
+    width: 300px;
+  }
+  .main-contents section{
+    width: 48%;   /*ラップさせることでメインコンテンツのカラムを減らす*/
+  }
+  .main-contents > section:nth-child(2) .section-desc,
+  .main-contents > section:nth-child(5) .section-desc{
+    order: unset;
+  }
+  .main-contents > section:nth-child(4),
+  .main-contents > section:nth-child(5),
+  .main-contents > section:nth-child(6){
+    margin-top: 0;
+  }
+  .main-contents > section:nth-child(odd){
+    margin-right: 2%;
+  }
+}
+@media screen and (max-width : 600px){ /*スマホ対応*/
+  header{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(255,255,255, .9);
+  }
+  .header-wrapper{
+    position: relative;
+    justify-content: center;
+    -ms-flex-pack: center;
+  }
+  .title{
+    margin: 0;
+  }
+  /*ハンバーガーメニューの設定*/
+  .nav-menu-open,
+  .nav-menu-close{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  .nav-menu-close{
+    display: none;
+  }
+  #nav-menu-switch:checked ~ .global-nav{
+    transform: translateX(0);
+  }
+  #nav-menu-switch:checked ~ .close-modal{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 500vh;
+    width: 100vw;
+    z-index: 10;
+    background-color: rgba(0,0,0, .5);
+  }
+  #nav-menu-switch:checked ~ .nav-menu-close{
+    display: inline-block;
+    z-index: 1500;
+  }
+  #nav-menu-switch:checked ~ .nav-menu-open{
+    display: none;
+  }
+  .dark-mode .global-nav a{
+    color: #333;
+  }
+  .dark-mode .nav-menu-close{
+    color: #333;
+  }
+  .global-nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-200%);
+    z-index: 1000;
+    background-color: rgba(255,255,255, .9);
+    margin: 0;
+    height: 100vh;
+    width: 50%;
+    transition: .25s;
+  }
+  .global-nav > ul{
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    -ms-flex-direction:column;
+    justify-content: unset
+  }
+  .global-nav > ul > li{
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 2px 4px #ccc;
+  }
+  .global-nav > ul > li > a{
+    padding: 30px 0;
+  }
+  .global-nav > ul > li > a::after{
+    display: none;
+  }
+  /*ハンバーガーメニューここまで*/
+  
+  .main-visual{
+    margin-top: 74px;
+  }
+  .slide-wrapper{
+    height: 280px;
+  }
+  main{
+    flex-direction: column;
+    -ms-flex-direction:column;
+  }
+  .main-contents{
+    width: 100%;
+    height: unset;
+    padding: 0px;
+  }
+  .main-contents section{
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 12px;
+    height: 200px;
+  }
+  .main-contents h2{
+    margin-bottom: 8px;
+  }
+  .main-contents h2::before,
+  .main-contents h2::after,
+  .main-contents > section::after{
+    width: 0;
+  }
+  .main-contents > section:nth-child(4),
+  .main-contents > section:nth-child(5),
+  .main-contents > section:nth-child(6){
+    margin-top: 0;
+  }
+  .main-contents > section:nth-child(2) .section-desc,
+  .main-contents > section:nth-child(5) .section-desc{
+    order: unset;
+  }
+  .main-contents > section:nth-child(2) .section-desc::after,
+  .main-contents > section:nth-child(5) .section-desc::after,
+  .main-contents > section:nth-child(2) .section-desc.no-blur::after,
+  .main-contents > section:nth-child(5) .section-desc.no-blur::after{
+    width: 0;
+  }
+  .section-img-wrapper{
+    display: none;
+    height: 0;
+  }
+  .section-desc{
+    height: 100%;
+    border: none;
+    background-image: url('../images/paper-fibers.png');
+    background-repeat: repeat;
+  }
+  .dark-mode .section-desc{
+    background-image: none;
+    border: 1px solid #ccc;
+  }
+  aside{
+    width: 100%;
+    height: unset;
+    margin-bottom: 80px;
+  }
+  .news-list-wrapper{
+    height: 400px;
+  }
+  footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    height: 80px;
+    width: 100%;
+  }
+  .upper-footer{
+    display: none;
+  }
+  .lower-footer{
+    position: absolute;
+    bottom: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    white-space: nowrap;
+  }
+  .btn-on-off-wrapper{
+    top: 10px;
+    left: 50%;
+  }
+  .btn-on-off-wrapper{
+    transform: translateX(-105%);
+  }
+  .lang-select-wrapper{
+    transform: translateX(5%);
+  }
 }
