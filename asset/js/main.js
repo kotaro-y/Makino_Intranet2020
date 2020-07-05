@@ -5,10 +5,10 @@ const mobileWidth = 600; //スマホのメディアクエリ横幅指定
 $(function(){
   // ページ表示時のエフェクト用
   setTimeout(() => {
-  $('.starting').fadeOut(1300);
+  $('.starting').fadeOut(1300);   //トップページ
   }, 200);
   setTimeout(() => {
-  $('.starting-page').fadeOut(650);
+  $('.starting-page').fadeOut(650);    //個別ページ
   }, 200);
   // ヘッダのコンタクト項目ホバー時アイコン変化
   $('.contact-list a').hover(function(){
@@ -127,7 +127,7 @@ $(function(){
     const linkTextEng = ['Member', 'Rules', 'HR System', 'Learning', 'Forms', 'Others'];
     $('.section-img > a').each(function(index){
       $(this).hover(function(){
-        if($('#eng-check').hasClass('no-display')){
+        if($('#eng-check').hasClass('no-display')){   //Englishモードになっていない場合の処理
           $(this).append(`<p>${linkTextJpn[index]}</p>`);
           $(this).find('p').addClass('link-text').hide();
           $(this).find('p').fadeIn(800);
@@ -146,6 +146,9 @@ $(function(){
 // ダークモード切替(切替状態はCookie保存する)
 const darkModeBtn = document.getElementById('btn-mode');
 const darkModeSelect = Cookies.get('darkModeOn');
+const initialLayerHome = document.querySelector('.starting');
+const initialLayerPage = document.querySelector('.starting-page');
+
 if(darkModeSelect === 'on'){
   darkModeBtn.checked = true;
 } else{
@@ -157,12 +160,24 @@ if(darkModeBtn.checked === true){
 
 darkModeBtn.addEventListener('change',function(){
   if(darkModeBtn.checked === true){
+    $(function(){
+      $('.starting').css('background-color','rgba(0,0,0)').show();
+      $('.starting-page').css('background-color','rgba(0,0,0)').show();
+    });
     document.body.classList.add('dark-mode');
     Cookies.set('darkModeOn','on',{expires:1/48});
   }else{
+    $(function(){
+      $('.starting').css('background-color','#fff').show();
+      $('.starting-page').css('background-color','#fff').show();
+    });
     document.body.classList.remove('dark-mode');
     Cookies.remove('darkModeOn');
   }
+  $(function(){
+    $('.starting').fadeOut(600);
+    $('.starting-page').fadeOut(600);
+  });
 })
 
 //日⇔英切替(切替状態はCookie保存する)
@@ -170,6 +185,7 @@ const langSwitchBtn = document.getElementById('btn-lang');
 const EngSelect = Cookies.get('EngOn');
 const JpnText = document.querySelectorAll('.ja');
 const EngText = document.querySelectorAll('.en');
+
 
 if(EngSelect === 'on'){
   langSwitchBtn.checked = true;
@@ -187,6 +203,10 @@ if(langSwitchBtn.checked === true){
 }
 
 langSwitchBtn.addEventListener('change',function(){
+  $(function(){
+    $('.starting').show();
+    $('.starting-page').show();
+  });
   if(langSwitchBtn.checked === true){
     JpnText.forEach(function(jaText){
       jaText.classList.add('no-display');
@@ -204,5 +224,11 @@ langSwitchBtn.addEventListener('change',function(){
     });
     Cookies.remove('EngOn');
   }
-})
+  $(function(){
+    $('.starting').fadeOut(600);
+    $('.starting-page').fadeOut(600);
+  });
+});
+
+
 

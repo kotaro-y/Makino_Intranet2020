@@ -1090,7 +1090,7 @@ body.dark-mode{
   /*ハンバーガーメニューここまで*/
 
   .main-visual{
-    margin-top: 74px;
+    margin-top: 74px;   /*ヘッダ固定分をマージンで確保*/
   }
   .slide-wrapper{
     height: 280px;
@@ -1109,6 +1109,9 @@ body.dark-mode{
     margin-right: 0;
     margin-bottom: 12px;
     height: 200px;
+  }
+  .main-contents > section:nth-child(odd){
+    margin-right: 0px;    /*1024px以下のレスポンシブ設定の打ち消し*/
   }
   .main-contents h2{
     margin-bottom: 8px;

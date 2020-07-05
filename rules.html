@@ -13,7 +13,6 @@
   <!-- 自身のCSS -->
   <link rel="stylesheet" href="asset/css/style.css">
   <link rel="stylesheet" href="asset/css/style-page.css">
-
 </head>
 <body>
   <div class="flex-wrapper">
@@ -24,6 +23,12 @@
           <span>HR</span>
           <p>Section<br>Intranet</p>
         </div>
+        <!--ハンバーガーメニュー(レスポンシブ)の設定-->
+        <input type="checkbox" id="nav-menu-switch" autocomplete="off">
+        <label class="nav-menu-open" for="nav-menu-switch"><i class="fas fa-bars"></i></label>
+        <label class="nav-menu-close" for="nav-menu-switch"><i class="fas fa-times"></i></label>
+        <label class="close-modal" for="nav-menu-switch"></label>
+        <!--ハンバーガーここまで-->
         <nav class="global-nav">
           <ul>
             <li><a href="index.html">HOME</a></li>
@@ -139,6 +144,7 @@
       </div>
     </footer>
   </div>
+
   <div class="starting-page"></div>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

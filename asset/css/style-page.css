@@ -354,3 +354,80 @@ _:-ms-lang(x)::-ms-backdrop, .starting-page{
 .tp-contents a:hover{
   background-color: #666;
 }
+
+/*レスポンシブ設定*/
+@media screen and (max-width : 600px){
+  .page-title-wrapper{
+    margin-top: 74px;   /*ヘッダ固定分をマージンで確保*/
+  }
+  .pages-main{
+    margin-bottom: 80px; /*フッタ固定分をマージンで確保*/
+  }
+  .page-wrapper{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .contents-wrapper{
+    flex-direction: column;
+    -ms-flex-direction:column;
+  }
+  
+  .rules-content,
+  .rules-content:nth-child(2){
+    width: 100%;
+  }
+  .system-content{
+    width: 100%;
+    margin-bottom: 45px;
+  }
+  .system-content > h3{
+    margin-left: 5rem;
+    width: 65%;
+  }
+  .contents-wrapper > section{
+    padding: 5px;
+    border-right: 1px solid #ccc;
+  }
+  .rules-content:first-child > .section-title:first-child{
+    text-align: left;
+  }
+  .rules-list{
+    margin-bottom: 30px;
+  }
+  .section-title > a{
+    margin-left: 30px;
+  }
+  .section-title{
+    text-align: center;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .pages-main hr{
+    margin-bottom: 60px;
+  }
+  .rules-list{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .system-list{
+    width: 65%;
+  }
+  .tp-wrapper{
+    padding: 0;
+  }
+  .tp-contents ul{
+    width: 50%;
+  }
+  .btn-on-off-wrapper{
+    top: 10px;
+    left: 50%;
+  }
+  .btn-on-off-wrapper{
+    transform: translateX(-105%);
+  }
+  .lang-select-wrapper{
+    transform: translateX(5%);
+  }
+}
