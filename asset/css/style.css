@@ -832,7 +832,7 @@ footer{
   font-weight: normal;
 }
 
-/* JS用表示設定 */
+/* JS用表示設定(初期表示をふわっとさせる */
 .starting{
   position: fixed;
   z-index: 2000;
@@ -844,7 +844,7 @@ footer{
 }
 
 
-/* HACK: IEのみ適用*/
+/* HACK: IEのみ適用(JSが動かないときに画面が真っ白になるのを防ぐため*/
 _:-ms-lang(x)::-ms-backdrop, .starting{
   display: none;
 }
@@ -963,16 +963,15 @@ body.dark-mode{
   background-image: url('../images/sunrise-1756274.jpg');
 }
 
-/*英語対応*/
+/*英語対応 (英語テキストにはenとno-displayクラスを設定し、JSで制御する*/
 .en{
   font-size: 1.2rem;
 }
 .no-display{
-  display: none !important;
+  display: none !important;   /*最優先で適用させる*/
 }
-.ja{
-  /* display: none !important;   */
-}
+
+
 
 
 /* レスポンシブ対応 */
@@ -1082,7 +1081,7 @@ body.dark-mode{
     box-shadow: 0 2px 4px #ccc;
   }
   .global-nav > ul > li > a{
-    padding: 30px 0;
+    padding: 20px 0;
   }
   .global-nav > ul > li > a::after{
     display: none;

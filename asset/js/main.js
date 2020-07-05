@@ -143,70 +143,54 @@ $(function(){
 });
 
 
-// ダークモード切替(切替状態はCookie保存する)
-const darkModeBtn = document.getElementById('btn-mode');
-const darkModeSelect = Cookies.get('darkModeOn');
-const initialLayerHome = document.querySelector('.starting');
-const initialLayerPage = document.querySelector('.starting-page');
 
-if(darkModeSelect === 'on'){
-  darkModeBtn.checked = true;
-} else{
-  darkModeBtn.checked = false;
-}
-if(darkModeBtn.checked === true){
-  document.body.classList.add('dark-mode');
-}
+document.addEventListener('DOMContentLoaded',function(){
+  // ダークモード切替(bodyにdark-modeクラスを付け外しし制御。切替状態はCookie保存する)
+  const darkModeBtn = document.getElementById('btn-mode');
+  const darkModeSelect = Cookies.get('darkModeOn');
 
-darkModeBtn.addEventListener('change',function(){
-  if(darkModeBtn.checked === true){
-    $(function(){
-      $('.starting').css('background-color','rgba(0,0,0)').show();
-      $('.starting-page').css('background-color','rgba(0,0,0)').show();
-    });
-    document.body.classList.add('dark-mode');
-    Cookies.set('darkModeOn','on',{expires:1/48});
-  }else{
-    $(function(){
-      $('.starting').css('background-color','#fff').show();
-      $('.starting-page').css('background-color','#fff').show();
-    });
-    document.body.classList.remove('dark-mode');
-    Cookies.remove('darkModeOn');
+  if(darkModeSelect === 'on'){                /*Cookieで取得した値がonの場合ダークモードにする*/
+    darkModeBtn.checked = true;
+  } else{
+    darkModeBtn.checked = false;
   }
-  $(function(){
-    $('.starting').fadeOut(600);
-    $('.starting-page').fadeOut(600);
-  });
-})
-
-//日⇔英切替(切替状態はCookie保存する)
-const langSwitchBtn = document.getElementById('btn-lang');
-const EngSelect = Cookies.get('EngOn');
-const JpnText = document.querySelectorAll('.ja');
-const EngText = document.querySelectorAll('.en');
-
-
-if(EngSelect === 'on'){
-  langSwitchBtn.checked = true;
-}else{
-  langSwitchBtn.checked = false;
-}
-
-if(langSwitchBtn.checked === true){
-  JpnText.forEach(function(jaText){
-    jaText.classList.add('no-display');
-  });
-  EngText.forEach(function(enText){
-    enText.classList.remove('no-display');
-  });
-}
-
-langSwitchBtn.addEventListener('change',function(){
-  $(function(){
-    $('.starting').show();
-    $('.starting-page').show();
-  });
+  if(darkModeBtn.checked === true){
+    document.body.classList.add('dark-mode');
+  }
+  
+  darkModeBtn.addEventListener('change',function(){
+    if(darkModeBtn.checked === true){
+      $(function(){                           /*ページ遷移時と同じエフェクトを、色を変えて使用(jQuery)*/
+        $('.starting').css('background-color','rgba(0,0,0)').show();
+        $('.starting-page').css('background-color','rgba(0,0,0)').show();
+      });
+      document.body.classList.add('dark-mode');
+      Cookies.set('darkModeOn','on',{expires:1/48});
+    }else{
+      $(function(){
+        $('.starting').css('background-color','#fff').show();
+        $('.starting-page').css('background-color','#fff').show();
+      });
+      document.body.classList.remove('dark-mode');
+      Cookies.remove('darkModeOn');
+    }
+    $(function(){
+      $('.starting').fadeOut(600);
+      $('.starting-page').fadeOut(600);
+    });
+  })
+  
+  //日⇔英切替(no-display クラスで表示を制御する。切替状態はCookie保存する)
+  const langSwitchBtn = document.getElementById('btn-lang');
+  const EngSelect = Cookies.get('EngOn');
+  const JpnText = document.querySelectorAll('.ja');
+  const EngText = document.querySelectorAll('.en');
+  
+  if(EngSelect === 'on'){             /*Cookieで取得した値がonの場合英字表記にする*/
+    langSwitchBtn.checked = true;
+  }else{
+    langSwitchBtn.checked = false;
+  }
   if(langSwitchBtn.checked === true){
     JpnText.forEach(function(jaText){
       jaText.classList.add('no-display');
@@ -214,19 +198,34 @@ langSwitchBtn.addEventListener('change',function(){
     EngText.forEach(function(enText){
       enText.classList.remove('no-display');
     });
-    Cookies.set('EngOn','on');
-  }else{
-    JpnText.forEach(function(jaText){
-      jaText.classList.remove('no-display');
-    });
-    EngText.forEach(function(enText){
-      enText.classList.add('no-display');
-    });
-    Cookies.remove('EngOn');
   }
-  $(function(){
-    $('.starting').fadeOut(600);
-    $('.starting-page').fadeOut(600);
+  
+  langSwitchBtn.addEventListener('change',function(){
+    $(function(){                 /*ページ遷移時と同じエフェクトを使用(jQuery)*/
+      $('.starting').show();
+      $('.starting-page').show();
+    });
+    if(langSwitchBtn.checked === true){
+      JpnText.forEach(function(jaText){
+        jaText.classList.add('no-display');
+      });
+      EngText.forEach(function(enText){
+        enText.classList.remove('no-display');
+      });
+      Cookies.set('EngOn','on');
+    }else{
+      JpnText.forEach(function(jaText){
+        jaText.classList.remove('no-display');
+      });
+      EngText.forEach(function(enText){
+        enText.classList.add('no-display');
+      });
+      Cookies.remove('EngOn');
+    }
+    $(function(){
+      $('.starting').fadeOut(600);
+      $('.starting-page').fadeOut(600);
+    });
   });
 });
 
