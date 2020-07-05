@@ -745,9 +745,6 @@ footer{
   border: 1px solid #eee;
   border-radius: 12px;
 }
-.btn-on-off input[type="checkbox"]:checked ~ label {
-  /* border-color: #333333; */
-}
 .btn-on-off label span::after{
   content: "ON";
   letter-spacing: 1px;
@@ -978,6 +975,11 @@ body.dark-mode{
 @media screen and (max-width : 1024px){ /*タブレットなど*/
   .title{
     margin-left: 15px;
+  }
+  .global-nav > ul > li{
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    margin: 0 9px;
   }
   aside{
     width: 300px;

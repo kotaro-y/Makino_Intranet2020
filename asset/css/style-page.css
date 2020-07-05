@@ -85,17 +85,13 @@
 .contents-wrapper > section > ul > li{
   font-size: 1.4rem;
   margin-left: 30px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 .contents-wrapper > section > ul > li:last-child{
   margin-bottom: 20px;
 }
 .contents-wrapper > section > ul > li > a{
   display: inline-block;
-  width: 70%;
-  padding: 0.75rem 0;
+  padding: 0.75rem 0.5rem;
   border-bottom: 1px dotted #ccc;
   transition: .3s;
 }
@@ -128,6 +124,11 @@
 .rules-content:not(:first-child) .section-title{
   padding-top: 5px;
 }
+.rules-list{
+  overflow-x: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
   /*人事制度ページ*/
 .page-title-system{
   background-image: url('../images/sunrise-1756274.jpg');
@@ -150,7 +151,7 @@
   margin-bottom: 10px;
 }
 .system-list{
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
 }
 .system-wrapper .system-content .system-list > li{
@@ -233,9 +234,6 @@
   width: 100%;
   border: 1px solid #eee;
   border-radius: 12px;
-}
-.btn-on-off input[type="checkbox"]:checked ~ label {
-  /* border-color: #333; */
 }
 .btn-on-off label span::after{
   content: "ON";
@@ -351,11 +349,20 @@ _:-ms-lang(x)::-ms-backdrop, .starting-page{
 }
 .dark-mode .section-title > a:hover,
 .dark-mode .contents-wrapper > section > ul > li > a:hover,
-.tp-contents a:hover{
+.dark-mode .tp-contents a:hover{
   background-color: #666;
 }
 
 /*レスポンシブ設定*/
+@media screen and (max-width : 1024px){
+  .page-wrapper{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .contents-wrapper > section > ul > li{
+    margin-left: 15px;
+  }
+}
 @media screen and (max-width : 600px){
   .page-title-wrapper{
     margin-top: 74px;   /*ヘッダ固定分をマージンで確保*/
