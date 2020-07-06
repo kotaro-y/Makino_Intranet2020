@@ -2,14 +2,16 @@
 
 const mobileWidth = 600; //スマホのメディアクエリ横幅指定
 
+// jQuery
 $(function(){
-  // ページ表示時のエフェクト用
+  // ページ表示時のエフェクト用(ふわっと表示する)
   setTimeout(() => {
   $('.starting').fadeOut(1300);   //トップページ
   }, 200);
   setTimeout(() => {
   $('.starting-page').fadeOut(650);    //個別ページ
   }, 200);
+
   // ヘッダのコンタクト項目ホバー時アイコン変化
   $('.contact-list a').hover(function(){
     $(this).find('.mail').removeClass('fa-envelope').addClass('fa-envelope-open');
@@ -52,26 +54,13 @@ $(function(){
         });
       }else{
         $('.global-nav').css({
-          'display' : '',
-          'position' : '',
-          'z-index' : '',
-          'top' : '',
-          'left' : '',
-          'transform' : '',
-          'margin' : '',
-          'background-color' : '',
+          'display' : '', 'position' : '', 'z-index' : '', 'top' : '', 'left' : '', 'transform' : '', 'margin' : '', 'background-color' : '',
         });
         $('.global-nav a').css(
           'color', ''
         );
         $('.contact-list').css({
-          'display' : '',
-          'position' : '',
-          'z-index' : '',
-          'top' : '',
-          'right' : '',
-          'background-color' : '',
-          'height' : '',
+          'display' : '',' position' : '', 'z-index' : '', 'top' : '', 'right' : '', 'background-color' : '', 'height' : '',
         });
       }
     }
@@ -84,6 +73,7 @@ $(function(){
     const interval = 3800;
     const duration = 700;
     let timer;
+
     $('.slides li:not(:first-child)').hide();
     function slideTimer(){
       $('.slides li:nth-child('+currentSlide+')').fadeOut(duration);
@@ -98,13 +88,14 @@ $(function(){
     }
     timer = setInterval(slideTimer,interval);
   
-    $(window).blur(function(){
+    $(window).blur(function(){            //ウィンドウがアクティブでないときスライドショー停止する
       clearInterval(timer);
     });
     $(window).focus(function(){
       clearInterval(timer);
       timer = setInterval(slideTimer,interval);
     });
+
     $('.visual-select ul li').click(function(){
       nextSlide = $(this).html();
       clearInterval(timer);
@@ -123,16 +114,16 @@ $(function(){
     });
 
     // コンテンツホバー時に日本語表示
-    const linkTextJpn = ['メンバー紹介', '規則･規定', '人事制度', '研修', '各種フォーム', 'その他情報'];
-    const linkTextEng = ['Member', 'Rules', 'HR System', 'Learning', 'Forms', 'Others'];
+    const linkTextsJpn = ['メンバー紹介', '規則･規定', '人事制度', '研修', '各種フォーム', 'その他情報'];
+    const linkTextsEng = ['Member', 'Rules', 'HR System', 'Learning', 'Forms', 'Others'];
     $('.section-img > a').each(function(index){
       $(this).hover(function(){
         if($('#eng-check').hasClass('no-display')){   //Englishモードになっていない場合の処理
-          $(this).append(`<p>${linkTextJpn[index]}</p>`);
+          $(this).append(`<p>${linkTextsJpn[index]}</p>`);
           $(this).find('p').addClass('link-text').hide();
           $(this).find('p').fadeIn(800);
         }else{
-          $(this).append(`<p>${linkTextEng[index]}</p>`);
+          $(this).append(`<p>${linkTextsEng[index]}</p>`);
           $(this).find('p').addClass('link-text').hide();
           $(this).find('p').fadeIn(800);
         }
@@ -149,7 +140,7 @@ document.addEventListener('DOMContentLoaded',function(){
   const darkModeBtn = document.getElementById('btn-mode');
   const darkModeSelect = Cookies.get('darkModeOn');
 
-  if(darkModeSelect === 'on'){                /*Cookieで取得した値がonの場合ダークモードにする*/
+  if(darkModeSelect === 'on'){                // Cookieで取得した値がonの場合ダークモードにする
     darkModeBtn.checked = true;
   } else{
     darkModeBtn.checked = false;
@@ -160,7 +151,7 @@ document.addEventListener('DOMContentLoaded',function(){
   
   darkModeBtn.addEventListener('change',function(){
     if(darkModeBtn.checked === true){
-      $(function(){                           /*ページ遷移時と同じエフェクトを、色を変えて使用(jQuery)*/
+      $(function(){                           // ページ遷移時と同じエフェクトを、色を変えて使用(jQuery)
         $('.starting').css('background-color','rgba(0,0,0)').show();
         $('.starting-page').css('background-color','rgba(0,0,0)').show();
       });
@@ -180,13 +171,13 @@ document.addEventListener('DOMContentLoaded',function(){
     });
   })
   
-  //日⇔英切替(no-display クラスで表示を制御する。切替状態はCookie保存する)
+  //日⇔英切替 (no-display クラスで表示を制御する。切替状態はCookie保存する)
   const langSwitchBtn = document.getElementById('btn-lang');
   const EngSelect = Cookies.get('EngOn');
   const JpnText = document.querySelectorAll('.ja');
   const EngText = document.querySelectorAll('.en');
   
-  if(EngSelect === 'on'){             /*Cookieで取得した値がonの場合英字表記にする*/
+  if(EngSelect === 'on'){             // Cookieで取得した値がonの場合英字表記にする
     langSwitchBtn.checked = true;
   }else{
     langSwitchBtn.checked = false;
@@ -201,7 +192,7 @@ document.addEventListener('DOMContentLoaded',function(){
   }
   
   langSwitchBtn.addEventListener('change',function(){
-    $(function(){                 /*ページ遷移時と同じエフェクトを使用(jQuery)*/
+    $(function(){                 // ページ遷移時と同じエフェクトを使用(jQuery)
       $('.starting').show();
       $('.starting-page').show();
     });

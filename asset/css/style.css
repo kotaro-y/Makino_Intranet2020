@@ -355,7 +355,7 @@ header{
 }
 .rules-img{
   background-image: url('../images/watch-4638673_1920.jpg');
-  /* background-position: center center; */
+  background-position: center center;
 }
 .system-img{
   background-image: url('../images/light-5083606_1920.jpg');
@@ -367,11 +367,11 @@ header{
 }
 .form-img{
   background-image: url('../images/writing.jpg');
-  /* background-position: center center; */
+  background-position: center center;
 }
 .tips-img{
   background-image: url('../images/light-bulb-1246043_1920.jpg');
-  background-position: center center;
+  background-position: 65% center;
 }
 
 
