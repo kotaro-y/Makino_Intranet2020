@@ -47,7 +47,7 @@ $(function(){
           'top' : '0',
           'right' : '0',
           'background-color' : 'rgba(18,39,74, .7)',
-          'height' : headerPos,
+          'height' : headerPos - 1,
         });
         $('.dark-mode .contact-list').css({
           'background-color' : '#000',
@@ -60,7 +60,7 @@ $(function(){
           'color', ''
         );
         $('.contact-list').css({
-          'display' : '',' position' : '', 'z-index' : '', 'top' : '', 'right' : '', 'background-color' : '', 'height' : '',
+          'display' : '',' position' : '', 'z-index' : '', 'top' : '', 'right' : '', 'background-color' : '', 'height' : ''
         });
       }
     }
