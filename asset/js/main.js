@@ -22,9 +22,9 @@ $(function(){
   });
 
   // スクロール時にナビメニュー固定
-  const headerPos = $('header').outerHeight();
   $(window).scroll(function(){
     if($(window).innerWidth() > mobileWidth){   //スマホ環境では動作させない
+      const headerPos = $('header').outerHeight();
       if($('body, html').scrollTop() > headerPos){
         $('.global-nav').css({
           'position' : 'fixed',
@@ -60,7 +60,7 @@ $(function(){
           'color', ''
         );
         $('.contact-list').css({
-          'display' : '',' position' : '', 'z-index' : '', 'top' : '', 'right' : '', 'background-color' : '', 'height' : ''
+          'display' : '',' position' : '', 'z-index' : '', 'top' : '', 'right' : '', 'background-color' : '',
         });
       }
     }

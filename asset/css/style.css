@@ -130,7 +130,7 @@ header{
   position: absolute;
   top: 0;
   right: 0;
-  height: 94px;
+  height: 100% ;
   width: 69.14px;
   background-color: rgba(18,39,74,.8);
   z-index: 1;
@@ -743,6 +743,7 @@ footer{
   width: 100%;
   border: 1px solid #eee;
   border-radius: 12px;
+  cursor: pointer;
 }
 .btn-on-off label span::after{
   content: "ON";
