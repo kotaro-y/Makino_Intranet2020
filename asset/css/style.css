@@ -318,7 +318,7 @@ header{
   position: relative;
   height: 45%;
   margin: 0 -10px;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   overflow: hidden;
   overflow-y: auto;
   border: 0.5px solid #ddd;
@@ -438,7 +438,7 @@ header{
   font-size: 0.5rem;
   margin-right: 2px;
 }
-.common-desc > ul > li:not(:last-child) a{
+.common-desc > ul > li a{
   border-bottom: 1px dotted rgba(18,39,74,.8);
 }
 .common-desc > a{
@@ -536,7 +536,7 @@ header{
   margin: 0 8px;
 }
 .indent{
-  margin-left: 12.5rem;
+  margin-left: 12.7rem;
 }
 .system-desc .more{
   margin-bottom: 25px;
@@ -545,9 +545,7 @@ header{
 .learning-desc h3{
   font-size: 1.6rem;  /* 英語文字は小さく見えるのでここだけ修正 */
 }
-.section-desc span{
-  margin-left: 1rem;
-}
+
 
   /* 各種フォーム */
 
@@ -615,6 +613,7 @@ aside > h2{
   height: 100%;
   padding: 12px 0;
   transition: .3s;
+  line-height: 1.5;
 }
 .news-item > a:hover{
   opacity: .6;
@@ -889,7 +888,7 @@ body.dark-mode{
 .dark-mode .main-contents > section::after{
   border-color: #e8e8e8;
 }
-.dark-mode .member-list ul li:not(:last-child){
+.dark-mode .member-list ul li{
   border-color: #666;
 }
 .dark-mode .section-desc{
@@ -900,7 +899,7 @@ body.dark-mode{
 .dark-mode .common-desc > h3{
   color: #e8e8e8;
 }
-.dark-mode .common-desc > ul > li:not(:last-child) a{
+.dark-mode .common-desc > ul > li a{
   border-color: #666;
 }
 .dark-mode .contact-list a:hover,
@@ -963,11 +962,14 @@ body.dark-mode{
 /*英語対応 (英語テキストにはenとno-displayクラスを設定し、JSで制御する*/
 .en{
   font-size: 1.2rem;
+  letter-spacing: 0.5px;
 }
 .no-display{
   display: none !important;   /*最優先で適用させる*/
 }
-
+.system-desc li.en{
+  white-space: normal;
+}
 
 
 

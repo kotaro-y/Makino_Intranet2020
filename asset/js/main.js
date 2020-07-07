@@ -115,7 +115,7 @@ $(function(){
 
     // コンテンツホバー時に日本語表示
     const linkTextsJpn = ['メンバー紹介', '規則･規定', '人事制度', '研修', '各種フォーム', 'その他情報'];
-    const linkTextsEng = ['Member', 'Rules', 'HR System', 'Learning', 'Forms', 'Others'];
+    const linkTextsEng = ['Members', 'Rules', 'System', 'Learning', 'Forms', 'Others'];
     $('.section-img > a').each(function(index){
       $(this).hover(function(){
         if($('#eng-check').hasClass('no-display')){   //Englishモードになっていない場合の処理
