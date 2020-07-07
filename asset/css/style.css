@@ -614,8 +614,6 @@ aside > h2{
   width: 100%;
   height: 100%;
   padding: 12px 0;
-  overflow: auto;
-  white-space: nowrap;
   transition: .3s;
 }
 .news-item > a:hover{
