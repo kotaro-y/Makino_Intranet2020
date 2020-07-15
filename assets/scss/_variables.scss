@@ -1,9 +1,36 @@
 // Variables
 
+//フォント
 $base-font : 'Didact Gothic', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN',
               'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+
+//ブレイクポイント
 $breakpoint-sp : 600px;
 $breakpoint-tb : 1024px;
+
+//メインイメージ(スライドショー)
+$main-slide1 : '../images/books-2596809_1920.jpg';
+$main-slide2 : '../images/steinhuder-sea-4909703.jpg';
+$main-slide3 : '../images/water-5318700_1920.jpg';
+$main-slide4 : '../images/landscapes-5323529_1920.jpg';
+$main-slide5 : '../images/autumn-4501856_1920.jpg';
+
+//メインイメージ(スライドショー) - ダークモード
+$main-slide1_d : '../images/sunset-1373171_1920.jpg';
+$main-slide2_d : '../images/sunset.jpg';
+$main-slide3_d : '../images/night.jpg';
+$main-slide4_d : '../images/nature-3656121_1920.jpg';
+$main-slide5_d : '../images/sunrise-1756274.jpg';
+
+//各セクションのイメージ(トップページ)
+$member-img : '../images/majid-rangraz-xZMghzq01UQ-unsplash.jpg';
+$rules-img : '../images/watch-4638673_1920.jpg';
+$system-img : '../images/light-5083606_1920.jpg';
+$learning-img : '../images/knowledge-1052010_1920.jpg';
+$form-img : '../images/writing.jpg';
+$tips-img : '../images/light-bulb-1246043_1920.jpg';
+
+
 
 // MIXIN
 

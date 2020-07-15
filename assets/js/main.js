@@ -13,7 +13,7 @@ $(function(){
   }, 200);
 
   // ヘッダのコンタクト項目ホバー時アイコン変化
-  $('.contact-list a').hover(function(){
+  $('.contact-btn a').hover(function(){
     $(this).find('.mail').removeClass('fa-envelope').addClass('fa-envelope-open');
     $(this).find('.teams').css('margin-right','5px').removeClass('fa-user-friends').addClass('fa-comment-dots');
   },function(){
@@ -24,9 +24,9 @@ $(function(){
   // スクロール時にナビメニュー固定
   $(window).scroll(function(){
     if($(window).innerWidth() > mobileWidth){   //スマホ環境では動作させない
-      const headerPos = $('header').outerHeight();
+      const headerPos = $('.header').outerHeight();
       if($('body, html').scrollTop() > headerPos){
-        $('.global-nav').css({
+        $('.globalnav').css({
           'position' : 'fixed',
           'z-index' : '10',
           'top' : '0',
@@ -35,13 +35,13 @@ $(function(){
           'margin' : '8px 0 10px 0',
           'background-color' : 'rgba(18,39,74, .7)',
         });
-        $('.global-nav a').css(
+        $('.globalnav a').css(
           'color', '#fff'
           );
-        $('.dark-mode .global-nav').css({
+        $('.dark-mode .globalnav').css({
           'background-color' : '#000',
         });
-        $('.contact-list').css({
+        $('.contact-btn').css({
           'position' : 'fixed',
           'z-index' : '10',
           'top' : '0',
@@ -49,17 +49,17 @@ $(function(){
           'background-color' : 'rgba(18,39,74, .7)',
           'height' : headerPos - 1,
         });
-        $('.dark-mode .contact-list').css({
+        $('.dark-mode .contact-btn').css({
           'background-color' : '#000',
         });
       }else{
-        $('.global-nav').css({
+        $('.globalnav').css({
           'display' : '', 'position' : '', 'z-index' : '', 'top' : '', 'left' : '', 'transform' : '', 'margin' : '', 'background-color' : '',
         });
-        $('.global-nav a').css(
+        $('.globalnav a').css(
           'color', ''
         );
-        $('.contact-list').css({
+        $('.contact-btn').css({
           'display' : '',' position' : '', 'z-index' : '', 'top' : '', 'right' : '', 'background-color' : '',
         });
       }
@@ -67,24 +67,24 @@ $(function(){
   });
 
     // メインビジュアルのスライドショー
-    const slideCount = $('.slides li').length;
+    const slideCount = $('.slide-item').length;
     let currentSlide = 1;
     let nextSlide = 2;
     const interval = 3800;
     const duration = 700;
     let timer;
 
-    $('.slides li:not(:first-child)').hide();
+    $('.slide-item:not(:first-child)').hide();
     function slideTimer(){
-      $('.slides li:nth-child('+currentSlide+')').fadeOut(duration);
-      $('.slides li:nth-child('+nextSlide+')').fadeIn(duration);
+      $('.slide-item:nth-child('+currentSlide+')').fadeOut(duration);
+      $('.slide-item:nth-child('+nextSlide+')').fadeIn(duration);
       currentSlide = nextSlide;
       nextSlide = ++nextSlide;
       if(nextSlide > slideCount){
         nextSlide = 1;
       }
-      $('.visual-select ul li').removeClass('selected');
-      $('.visual-select ul li:nth-child('+currentSlide+')').addClass('selected');
+      $('.slide-select ul li').removeClass('selected');
+      $('.slide-select ul li:nth-child('+currentSlide+')').addClass('selected');
     }
     timer = setInterval(slideTimer,interval);
   
@@ -96,7 +96,7 @@ $(function(){
       timer = setInterval(slideTimer,interval);
     });
 
-    $('.visual-select ul li').click(function(){
+    $('.slide-select ul li').click(function(){
       nextSlide = $(this).html();
       clearInterval(timer);
       timer = setInterval(slideTimer,interval);
