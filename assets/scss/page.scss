@@ -13,16 +13,26 @@ $base-color: rgb(18,39,74);
     opacity: .5;
   }
   // 各ページのタイトル背景画像の設定
+  &._members{
+    @include bg-img('../images/old-1130731_1920.jpg',50%,80%);
+  }
   &._rules{
     @include bg-img('../images/banner_sunlight.jpg',50%,27%);
   }
   &._system{
     @include bg-img('../images/sunrise-1756274.jpg',0%,37%);
   }
+  &._learning{
+    @include bg-img('../images/abstract-art-blur-bokeh-544917.jpg');
+  }
   &._form{
     @include bg-img('../images/working.jpg',0%,100%);
     background-attachment: fixed;
   }
+  &._tips{
+    @include bg-img('../images/network-3537401_1920.jpg');
+  }
+
 }
 
 .page-title{
@@ -99,6 +109,9 @@ $base-color: rgb(18,39,74);
       margin-left: 30px;
       > a{
         display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
         padding: 0.75rem 0.5rem;
         border-bottom: 1px dotted #ccc;
         transition: .3s;
@@ -135,9 +148,9 @@ $base-color: rgb(18,39,74);
   }
 }
 .rules-list{
-  overflow-x: auto;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  .page-content-item > a{
+    width: 92%;
+  }
 }
 
 

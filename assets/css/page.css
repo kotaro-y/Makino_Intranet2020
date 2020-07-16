@@ -18,6 +18,13 @@
   opacity: .5;
 }
 
+.page-title-wrapper._members {
+  background-image: url("../images/old-1130731_1920.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 80%;
+}
+
 .page-title-wrapper._rules {
   background-image: url("../images/banner_sunlight.jpg");
   background-size: cover;
@@ -32,12 +39,26 @@
   background-position: 0% 37%;
 }
 
+.page-title-wrapper._learning {
+  background-image: url("../images/abstract-art-blur-bokeh-544917.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
 .page-title-wrapper._form {
   background-image: url("../images/working.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0% 100%;
   background-attachment: fixed;
+}
+
+.page-title-wrapper._tips {
+  background-image: url("../images/network-3537401_1920.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .page-title {
@@ -133,6 +154,9 @@
 
 .page-content-item > a {
   display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   padding: 0.75rem 0.5rem;
   border-bottom: 1px dotted #ccc;
   -webkit-transition: .3s;
@@ -171,10 +195,8 @@
   padding-top: 5px;
 }
 
-.rules-list {
-  overflow-x: auto;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.rules-list .page-content-item > a {
+  width: 92%;
 }
 
 /*人事制度ページ*/
