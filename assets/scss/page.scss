@@ -14,10 +14,10 @@ $base-color: rgb(18,39,74);
   }
   // 各ページのタイトル背景画像の設定
   &._rules{
-    @include bg-img('../images/banner_sunlight.jpg');
+    @include bg-img('../images/banner_sunlight.jpg',50%,27%);
   }
   &._system{
-    @include bg-img('../images/sunrise-1756274.jpg',0%,31%);
+    @include bg-img('../images/sunrise-1756274.jpg',0%,37%);
   }
   &._form{
     @include bg-img('../images/working.jpg',0%,100%);
