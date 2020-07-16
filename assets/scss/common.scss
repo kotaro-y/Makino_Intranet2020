@@ -1,0 +1,486 @@
+@charset "UTF-8";
+@import "variables";
+$base-color: rgb(18,39,74);
+
+/* 共通ベーススタイル */
+html{
+  font-size: 62.5%;
+}
+body{
+  color: #333;
+  font-family: $base-font;
+}
+a, a:link, a:visited, a:hover, a:active{
+  text-decoration: none;
+  color: #333;
+}
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+/* 全体レイアウト */
+.body{
+  display: flex;            /* HACK: IE対応のための、親要素flex設定(flex-wrapperのmin-height適用のため)*/
+}
+.flex-wrapper{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+}
+.main{
+  display: flex;
+  width: 100vw;
+  max-width: 1368px;
+  flex: 1 1 auto;
+  padding: 0 15px;
+  margin: 0 auto 30px;
+  &-contents{
+    flex: 1 1 auto;
+    height: 100%;
+  }
+}
+.aside{
+  width: 350px;
+  height: 100%;
+}
+.footer{
+  height: 80px;
+}
+
+/* ヘッダ */
+.header{
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  &-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.site-title{
+  margin: 10px 0 10px 50px;
+  text-align: center;
+  > span{
+    font-size: 4.8rem;
+    letter-spacing: 2px;
+  }
+  > p{
+    margin: 3px 0;
+  }
+}
+.contact-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100% ;
+  width: 69.14px;
+  background-color: rgba($base-color,0.8);
+  z-index: 1;
+  > a{
+    display: block;
+    width: 100%;
+    height: 50%;
+    line-height: 47px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    padding: 0  10px;
+    color: #fff;
+    transition: .3s;
+    &:hover{
+      background-color:#fff;
+      color: $base-color;
+      box-shadow: 0 0 4px inset;
+    }
+  }
+  &-email{
+    border-bottom: 1px solid;
+    > span{
+      margin-right: 5px;
+    }
+  }
+  &-chat{
+    > span{
+      margin-right: 3px;
+    }
+  }
+}
+
+// グローバルナビゲーション
+.globalnav{
+  margin: 20px 100px 20px 0;
+  &-list{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+  &-item{
+    margin: 0 16px;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    > a{
+      position: relative;
+      display: block;
+      padding: 5px;
+      &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: inline-block;
+        border-bottom: 2px solid currentColor;
+        width: 100%;
+        transform: scale(0);
+        transition: .4s;
+      }
+      &:hover::after{
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+/*ハンバーガーメニューの設定(通常時は表示しない)*/
+.nav-menu-switch{
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.nav-menu-open,
+.nav-menu-close,
+.close-modal{
+  display: none;
+}
+
+/* フッタ */
+.footer{
+  background-color: rgba($base-color, .7);
+  color: #eee;
+  letter-spacing: 1.5px;
+  &-wrapper{
+    position: relative;
+    margin: 0 auto;
+  }
+  &-nav{
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    margin: 8px 30px 0 0;
+    opacity: 0.7;
+    &-item{
+      padding-right: 8px;
+      &:not(:first-of-type)::before{
+        content: '/';
+        display: inline-block;
+        margin-right: 8px;
+      }
+      > a{
+        position: relative;
+        display: inline-block;
+        color: #eee;
+        &::after{
+          content: '';
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          display: inline-block;
+          border-bottom: 2px solid #ccc;
+          width: 100%;
+          transform: scale(0);
+          transition:  .3s;
+        }
+        &:hover::after{
+          transform: scale(1);
+        }
+      }
+    }
+  }
+  &-lower{
+    margin-top: 32px;
+    text-align: center;
+  }
+}
+
+
+/* ダークモードon/offスイッチ */
+.btn-on-off{
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 12px;
+  height: 24px;
+  width: 53px;
+  opacity: .7;
+  &-wrapper{
+    position: relative;
+    line-height: 24px;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 0;
+    width: 100%;
+  }
+  &-checkbox{
+    display: none;
+    &:checked{
+      &~ label span::after{
+        content: "OFF";
+        padding: 0 18px 0 0;
+      }
+      &~ .btn-on-off-img{
+        transform: translateX(29px);
+      }
+      &~ p{
+        font-weight: bold;
+      }
+    } 
+  }
+  &-label{
+    display: inline-block;
+    height: 24px;
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    cursor: pointer;
+    span::after{
+      content: "ON";
+      letter-spacing: 1px;
+      padding-left: 18px;
+      color: #eee;
+    }
+  }
+  &-img{
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 16px;
+    height: 16px;
+    background: #eee;
+    border-radius: 50%;
+    transition: .2s;
+  }
+}
+
+/* 言語選択スイッチ */
+.lang-select{
+  top: 0;
+  left: 76px;
+  &-label{
+    border-radius: 0%;
+    span::before{
+      content: "JPN";
+      color: #333;
+      padding-right: 3px;
+      font-weight: bold;
+    }
+    span:after{
+      content: "ENG";
+      padding-left: 6px;
+      color: #eee;
+      font-weight: normal;
+      letter-spacing: 0px;
+    }
+  }
+  &-checkbox{
+    &:checked{
+      &~ label{
+        border-color: #eee;
+      }
+      &~ label span{
+        &::before{
+          color: #eee;
+          font-weight: normal;
+        }
+        &::after{
+          content: "ENG";
+          padding: 0 0 0 6px;
+          color: #333;
+          font-weight: bold;
+        }
+      }
+      &~ .lang-select-img{
+        transform: translateX(26.5px);
+        background: #eee;
+      }
+      &~ p{
+        color: #eee;
+        font-weight: normal;
+      }
+    }
+  }
+  &-img{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 25.5px;
+    height: 24px;
+    background: #eee;
+    border-radius: 0%;
+    transition: .2s;
+  }
+}
+
+    /* JS用表示設定(初期表示をふわっとさせる */
+    .starting{
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+    }
+
+
+/* HACK: IEのみ適用(JSが動かないときに画面が真っ白になるのを防ぐため*/
+_:-ms-lang(x)::-ms-backdrop, .starting{
+  display: none;
+}
+@media all and (-ms-high-contrast: none){
+  .starting{
+    display: none;
+  }
+}
+
+/*英語対応 (英語テキストにはhtmlでenとno-displayクラスをデフォルトで設定し、JSで制御する*/
+.en{
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+.no-display{
+  display: none !important;   /*他のdisplayプロパティと競合するため*/
+}
+.system-item.en{
+  white-space: normal;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width : $breakpoint-tb){ /*タブレットなど*/
+  .site-title{
+    margin-left: 15px;
+  }
+  .globalnav-item{
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    margin: 0 9px;
+  }
+}
+@media screen and (max-width : $breakpoint-sp){ /*スマホ対応*/
+  .header{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(255,255,255, .9);
+    &-wrapper{
+      position: relative;
+      justify-content: center;
+    }
+  }
+  .site-title{
+    margin: 0;
+  }
+  .contact-btn a{
+    line-height: 36.5px;
+  }
+  /*ハンバーガーメニューの設定*/
+  .nav-menu{
+    &-open,&-close{
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      cursor: pointer;
+    }
+    &-close{
+      display: none;
+    }
+    &-switch{
+      &:checked{
+        &~ .globalnav{
+          transform: translateX(0);
+        }
+        &~ .close-modal{
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 500vh;
+          width: 100vw;
+          z-index: 10;
+          background-color: rgba(0,0,0, .5);
+        }
+        &~ .nav-menu-close{
+          display: inline-block;
+          z-index: 1500;
+        }
+        &~ .nav-menu-open{
+          display: none;
+        }
+      }
+    }
+  }
+  
+  .globalnav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-200%);
+    z-index: 1000;
+    background-color: rgba(255,255,255, .9);
+    margin: 0;
+    height: 100vh;
+    width: 50%;
+    transition: .25s;
+    &-list{
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      -ms-flex-direction:column;
+      justify-content: unset
+    }
+    &-item{
+      margin: 0;
+      border-bottom: 1px solid #ccc;
+      box-shadow: 0 2px 4px #ccc;
+      > a{
+        padding: 20px 0;
+        &::after{
+          display: none;
+        }
+      }
+    }
+  }
+  /*ハンバーガーメニューここまで*/
+
+  .footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    height: 80px;
+    width: 100%;
+    &-upper{
+      display: none;
+    }
+    &-lower{
+      position: absolute;
+      bottom: -75px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      white-space: nowrap;
+    }
+  }
+  .btn-on-off{
+    top: 10px;
+    left: 50%;
+    transform: translateX(-105%);
+  }
+  .lang-select{
+    transform: translateX(5%);
+  }
+}

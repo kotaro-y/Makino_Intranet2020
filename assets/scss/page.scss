@@ -1,0 +1,246 @@
+@charset "UTF-8";
+@import "variables";
+$base-color: rgb(18,39,74);
+
+/* 各種固定ページの設定 */
+.page-title-wrapper{
+  position: relative;
+  height: 180px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  &::after{
+    @include mask-img;
+    opacity: .5;
+  }
+  // 各ページのタイトル背景画像の設定
+  &._rules{
+    @include bg-img('../images/banner_sunlight.jpg');
+  }
+  &._system{
+    @include bg-img('../images/sunrise-1756274.jpg',0%,31%);
+  }
+  &._form{
+    @include bg-img('../images/working.jpg',0%,100%);
+    background-attachment: fixed;
+  }
+}
+
+.page-title{
+  position: relative;
+  top: 44%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  font-size: 3rem;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #eee;
+  &::before,&::after{
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4rem;
+    border-bottom: 3px solid currentColor;
+    opacity: .7;
+  }
+  &::after{
+    bottom: -25px;
+    width: 5rem;
+  }
+}
+.pages-main{
+  display: block;                   /* common.cssのmainタグ flex設定を解除する */
+}
+
+.page{
+  &-container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 84px;
+  }
+  &-wrapper{
+    width: 100%;
+    display: flex;
+  }
+  &-content{
+    padding: 15px;
+    border-left: 1px solid #ccc;
+    &:last-child{
+      border-right: 1px solid #ccc;
+    }
+    &-title{
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-align: center;
+      margin-bottom: 32px;
+      > a{
+        display: inline-block;
+        width: 75%;
+        padding: 0.5rem 0;
+        transition: .3s;
+      }
+    }
+    &-subtitle{
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    &-list{
+      margin-bottom: 32px;
+    }
+    &-item{
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      margin-left: 30px;
+      > a{
+        display: inline-block;
+        padding: 0.75rem 0.5rem;
+        border-bottom: 1px dotted #ccc;
+        transition: .3s;
+        > span{
+          margin-left: 10px;;
+        }
+      }
+    }
+    &-title > a::before, &-item > a::before{
+      content: '\f0da';
+      font-family: "Font Awesome 5 Free";
+      display: inline-block;
+      font-weight: 900;
+      font-size: 1.5rem;
+      padding-left: 3px;
+      margin-right: 6px;
+    }
+    &-title > a:hover, &-item > a:hover{
+      background-color: rgba(18,39,74, .7);
+      color: #fff;
+    }
+  }
+}
+
+
+  /*規則規定ページ*/
+.rules-content{
+  width: 31.5%;
+  &:nth-child(2){
+    width: 37%;
+  }
+  &:not(:first-child) .page-content-title{
+    padding-top: 5px;
+  }
+}
+.rules-list{
+  overflow-x: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+  /*人事制度ページ*/
+.system-wrapper{
+  flex-wrap: wrap;
+}
+.system-content{
+  width: 50%;
+  .system-list{
+    margin-left: 20%;
+  }
+  &:not(:last-child){
+    margin-bottom: 45px;
+  }
+  &:nth-child(2){
+    border-right: 1px solid #ccc;
+  }
+  &:last-child{
+    width: 100%;
+    .system-list{
+      margin-left: 34%;
+    }
+  }
+}
+
+// 各種フォームのページ
+.form-content{
+  width: 50%;
+  .form-list{
+    margin-left: 16%;
+    margin-bottom: 54px;
+  }
+}
+
+
+
+/*レスポンシブ設定*/
+@media screen and (max-width : $breakpoint-tb){
+  .page-container{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .page-content-item{
+    margin-left: 15px;
+    font-size: 1.3rem;
+  }
+  .system-content{
+    .system-list,
+    &:last-child .system-list{
+      margin-left: 3%;
+    }
+  }
+}
+@media screen and (max-width : $breakpoint-sp){
+  .page-title-wrapper{
+    margin-top: 74px;   /*ヘッダ固定分をマージンで確保*/
+  }
+  .pages-main{
+    margin-bottom: 80px; /*フッタ固定分をマージンで確保*/
+  }
+  .page{
+    &-container{
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &-wrapper{
+      flex-direction: column;
+    }
+    &-content{
+      width: 100%;
+      &:nth-child(2){
+        width: 100%;
+      }
+      padding: 5px;
+      border-right: 1px solid #ccc;
+      &-title{
+        text-align: center;
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      &-item{
+        font-size: 1.2rem;
+        letter-spacing: 0;
+      }
+    }
+  }
+  .system-content{
+    width: 100%;
+    margin-bottom: 45px;
+    .system-list,
+    &:last-child .system-list{
+      margin-left: 13%;
+    }
+  }
+  .system-list{
+    width: 80%;
+  }
+  .rules-list{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+}

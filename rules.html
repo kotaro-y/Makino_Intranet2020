@@ -19,147 +19,157 @@
   <!-- リセットCSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <!-- 自身のCSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/style-page.css">
+  <link rel="stylesheet" href="assets/css/common.css">
+  <link rel="stylesheet" href="assets/css/page.css">
+  <link rel="stylesheet" href="assets/css/darkmode.css">
 </head>
-<body>
+
+<body class="body">
   <div class="flex-wrapper">
-    <!-- ヘッダー -->
-    <header>
+    <!-- ヘッダー (トップページと共用)-->
+    <header class="header">
       <div class="header-wrapper">
-        <div class="title">
+        <div class="site-title">
           <span>HR</span>
           <p>Section<br>Intranet</p>
         </div>
+
         <!--ハンバーガーメニュー(レスポンシブ)の設定-->
-        <input type="checkbox" id="nav-menu-switch" autocomplete="off">
+        <input type="checkbox" class="nav-menu-switch" id="nav-menu-switch" autocomplete="off">
         <label class="nav-menu-open" for="nav-menu-switch"><i class="fas fa-bars"></i></label>
         <label class="nav-menu-close" for="nav-menu-switch"><i class="fas fa-times"></i></label>
         <label class="close-modal" for="nav-menu-switch"></label>
         <!--ハンバーガーここまで-->
-        <nav class="global-nav">
-          <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="members.html">MEMBERS</a></li>
-            <li><a href="rules.html">RULES</a></li>
-            <li><a href="system.html">SYSTEM</a></li>
-            <li><a href="learning.html">LEARNING</a></li>
-            <li><a href="form.html">FORM</a></li>
-            <li><a href="tips.html">TIPS</a></li>
+
+        <nav class="globalnav">
+          <ul class="globalnav-list">
+            <li class="globalnav-item"><a href="index.html">    HOME</a></li>
+            <li class="globalnav-item"><a href="members.html">  MEMBERS</a></li>
+            <li class="globalnav-item"><a href="rules.html">    RULES</a></li>
+            <li class="globalnav-item"><a href="system.html">   SYSTEM</a></li>
+            <li class="globalnav-item"><a href="learning.html"> LEARNING</a></li>
+            <li class="globalnav-item"><a href="form.html">     FORM</a></li>
+            <li class="globalnav-item"><a href="tips.html">     TIPS</a></li>
           </ul>
         </nav>
-      </div>
-      <div class="contact-list">
-        <a href="mailTo:yazawak@makino.co.jp"><span class="fas fa-envelope mail"></span>Email</a>
-        <a href="im:yazawak@makino.co.jp"><span class="fas fa-user-friends teams"></span>Teams</a>
+      </div> <!--header-wrapper-->
+
+      <div class="contact-btn">
+        <a class="contact-btn-email" href="mailTo:yazawak@makino.co.jp"><span class="fas fa-envelope mail"></span>Email</a>
+        <a class="contact-btn-chat" href="im:yazawak@makino.co.jp"><span class="fas fa-user-friends teams"></span>Teams</a>
       </div>
     </header>
 
     <!-- ページタイトル -->
-    <div class="page-title-wrapper page-title-rules">
+    <div class="page-title-wrapper _rules">
       <h1 class="page-title ja">規則･規定</h1>
       <h1 class="page-title en no-display">RULES</h1>
     </div>
     <!-- メインコンテンツ -->
-    <main class="pages-main">
-        <div class="page-wrapper page-rules">
-          <div class="contents-wrapper rules-wrapper">
-            <section class="rules-content">
-              <h2 class="section-title ja"><a href="#">就業規則</a></h2>
-              <h2 class="section-title en no-display"><a href="#">Work Regulation</a></h2>
-              <h2 class="section-title ja">給与</h2>
-              <h2 class="section-title en no-display">Salary Regulations</h2>
-              <ul class="rules-list">
-                <li><a href="#" class="ja">給与規定</a>             <a href="#" class="en no-display">Salary</a></li>
-                <li><a href="#" class="ja">退職金規定</a>           <a href="#" class="en no-display">Retirement Allowance</a></li>
-                <li><a href="#" class="ja">旅費規定</a>             <a href="#" class="en no-display">Travel Expense</a></li>
-                <li><a href="#" class="ja">海外旅費規定</a>         <a href="#" class="en no-display">Overseas Travel Expense</a></li>
-                <li><a href="#" class="ja">通勤手当支給規定</a>     <a href="#" class="en no-display">Commuting Allowance</a></li>
-                <li><a href="#" class="ja">マイカー通勤取扱規定</a> <a href="#" class="en no-display">Car Commuting</a></li>
-              </ul>
-            </section>
-            <section class="rules-content">
-              <h2 class="section-title ja">就業･休暇</h2>
-              <h2 class="section-title en no-display" style="line-height: 1.5;">WorkStyle / Time Off Regulations</h2>
-              <ul class="rules-list">
-                <li><a href="#" class="ja">在宅勤務規定</a>                                 <a href="#" class="en no-display">Telecommuting</a></li>
-                <li><a href="#" class="ja">フレックスタイム制度運用規定</a>                 <a href="#" class="en no-display">Flextime</a></li>
-                <li><a href="#" class="ja">育児･介護支援規定</a>                            <a href="#" class="en no-display">Child / Family Care Support</a></li>
-                <li><a href="#" class="ja">育児･介護に伴うフレックスタイム制度運用規定</a>  <a href="#" class="en no-display">Operational Rules for Flextime (Child/Family Care)</a></li>
-                <li><a href="#" class="ja">リファイン休暇規定</a>                           <a href="#" class="en no-display">Refinement Vacation</a></li>
-                <li><a href="#" class="ja">再雇用規定</a>                                   <a href="#" class="en no-display">Re-Employment</a></li>
-              </ul>
-              <h2 class="section-title ja">転勤･処遇</h2>
-              <h2 class="section-title en no-display">Transfer / Treatment</h2>
-              <ul class="rules-list">
-                <li><a href="#" class="ja">長期出張規定</a>                     <a href="#" class="en no-display">Long-term Business Trip</a></li>
-                <li><a href="#" class="ja">国内転勤規定</a>                     <a href="#" class="en no-display">Domestic Transfer</a></li>
-                <li><a href="#" class="ja">本社･厚木間転勤者取扱規定</a>        <a href="#" class="en no-display">Transfer between Head office and Atsugi</a></li>
-                <li><a href="#" class="ja">厚木･富士勝山間転勤者取扱規定</a>    <a href="#" class="en no-display">Transfer between Atsugi and Katsuyama</a></li>
-                <li><a href="#" class="ja">単身赴任の要件</a>                   <a href="#" class="en no-display">Requirements for Solo Transfer</a></li>
-                <li><a href="#" class="ja">単身赴任者の一時帰宅等取扱規定</a>   <a href="#" class="en no-display">Temporally Returning Home for Solo Transferee</a></li>
-                <li><a href="#" class="ja">早期退職優遇制度運用規定</a>         <a href="#" class="en no-display">Early Retirement Incentive Plan</a></li>
-              </ul>
-            </section>
-            <section class="rules-content">
-              <h2 class="section-title ja">その他</h2>
-              <h2 class="section-title en no-display">Other Regulations</h2>
-              <ul class="rules-list">
-                <li><a href="#" class="ja">稟議規定</a>                         <a href="#" class="en no-display">Internal Memo</a></li>
-                <li><a href="#" class="ja">リスク管理規定</a>                   <a href="#" class="en no-display">Risk Management</a></li>
-                <li><a href="#" class="ja">個人情報取扱規定</a>                 <a href="#" class="en no-display">Handling of Personal Information</a></li>
-                <li><a href="#" class="ja">特定個人情報取扱規定</a>             <a href="#" class="en no-display">Handling of Specific Personal Information</a></li>
-                <li><a href="#" class="ja">公益通報制度運用規定</a>             <a href="#" class="en no-display">Whistle-Blowing System</a></li>
-                <li><a href="#" class="ja">慶弔見舞金規定</a>                   <a href="#" class="en no-display">Congratulatory or Condolence Money</a></li>
-                <li><a href="#" class="ja">牧野フライス共済会規約</a>           <a href="#" class="en no-display">Mutual Benefit Association</a></li>
-                <li><a href="#" class="ja">KAIZEN規定</a>                       <a href="#" class="en no-display">KAIZEN</a></li>
-                <li><a href="#" class="ja">安全衛生委員会規定</a>               <a href="#" class="en no-display">Health & Safety Committee</a></li>
-                <li><a href="#" class="ja">印章管理規定</a>                     <a href="#" class="en no-display">Seal Management</a></li>
-                <li><a href="#" class="ja">インサイダー取引防止規定</a>         <a href="#" class="en no-display">Insider Trading Prevention</a></li>
-              </ul>
-            </section>
-          </div>
-        </div>
+    <main class="main pages-main">
+      <div class="page-container rules-container">
+        <div class="page-wrapper rules-wrapper">
+          <section class="page-content rules-content">
+            <h2 class="page-content-title ja"><a href="#">就業規則</a></h2>
+            <h2 class="page-content-title en no-display"><a href="#">Work Regulation</a></h2>
+            <h2 class="page-content-title ja">給与</h2>
+            <h2 class="page-content-title en no-display">Salary Regulations</h2>
+            <ul class="page-content-list rules-list">
+              <li class="page-content-item"><a href="#" class="ja">給与規定</a>             <a href="#" class="en no-display">Salary</a></li>
+              <li class="page-content-item"><a href="#" class="ja">退職金規定</a>           <a href="#" class="en no-display">Retirement Allowance</a></li>
+              <li class="page-content-item"><a href="#" class="ja">旅費規定</a>             <a href="#" class="en no-display">Travel Expense</a></li>
+              <li class="page-content-item"><a href="#" class="ja">海外旅費規定</a>         <a href="#" class="en no-display">Overseas Travel Expense</a></li>
+              <li class="page-content-item"><a href="#" class="ja">通勤手当支給規定</a>     <a href="#" class="en no-display">Commuting Allowance</a></li>
+              <li class="page-content-item"><a href="#" class="ja">マイカー通勤取扱規定</a> <a href="#" class="en no-display">Car Commuting</a></li>
+            </ul>
+          </section>
+
+          <section class="page-content rules-content">
+            <h2 class="page-content-title ja">就業･休暇</h2>
+            <h2 class="page-content-title en no-display" style="line-height: 1.5;">WorkStyle / Time Off Regulations</h2>
+            <ul class="page-content-list rules-list">
+              <li class="page-content-item"><a href="#" class="ja">在宅勤務規定</a>                                 <a href="#" class="en no-display">Telecommuting</a></li>
+              <li class="page-content-item"><a href="#" class="ja">フレックスタイム制度運用規定</a>                 <a href="#" class="en no-display">Flextime</a></li>
+              <li class="page-content-item"><a href="#" class="ja">育児･介護支援規定</a>                            <a href="#" class="en no-display">Child / Family Care Support</a></li>
+              <li class="page-content-item"><a href="#" class="ja">育児･介護に伴うフレックスタイム制度運用規定</a>  <a href="#" class="en no-display">Operational Rules for Flextime (Child/Family Care)</a></li>
+              <li class="page-content-item"><a href="#" class="ja">リファイン休暇規定</a>                           <a href="#" class="en no-display">Refinement Vacation</a></li>
+              <li class="page-content-item"><a href="#" class="ja">再雇用規定</a>                                   <a href="#" class="en no-display">Re-Employment</a></li>
+            </ul>
+            <h2 class="page-content-title ja">転勤･処遇</h2>
+            <h2 class="page-content-title en no-display">Transfer / Treatment</h2>
+            <ul class="page-content-list rules-list">
+              <li class="page-content-item"><a href="#" class="ja">長期出張規定</a>                     <a href="#" class="en no-display">Long-term Business Trip</a></li>
+              <li class="page-content-item"><a href="#" class="ja">国内転勤規定</a>                     <a href="#" class="en no-display">Domestic Transfer</a></li>
+              <li class="page-content-item"><a href="#" class="ja">本社･厚木間転勤者取扱規定</a>        <a href="#" class="en no-display">Transfer between Head office and Atsugi</a></li>
+              <li class="page-content-item"><a href="#" class="ja">厚木･富士勝山間転勤者取扱規定</a>    <a href="#" class="en no-display">Transfer between Atsugi and Katsuyama</a></li>
+              <li class="page-content-item"><a href="#" class="ja">単身赴任の要件</a>                   <a href="#" class="en no-display">Requirements for Solo Transfer</a></li>
+              <li class="page-content-item"><a href="#" class="ja">単身赴任者の一時帰宅等取扱規定</a>   <a href="#" class="en no-display">Temporally Returning Home for Solo Transferee</a></li>
+              <li class="page-content-item"><a href="#" class="ja">早期退職優遇制度運用規定</a>         <a href="#" class="en no-display">Early Retirement Incentive Plan</a></li>
+            </ul>
+          </section>
+
+          <section class="page-content rules-content">
+            <h2 class="page-content-title ja">その他</h2>
+            <h2 class="page-content-title en no-display">Other Regulations</h2>
+            <ul class="page-content-list rules-list">
+              <li class="page-content-item"><a href="#" class="ja">稟議規定</a>                         <a href="#" class="en no-display">Internal Memo</a></li>
+              <li class="page-content-item"><a href="#" class="ja">リスク管理規定</a>                   <a href="#" class="en no-display">Risk Management</a></li>
+              <li class="page-content-item"><a href="#" class="ja">個人情報取扱規定</a>                 <a href="#" class="en no-display">Handling of Personal Information</a></li>
+              <li class="page-content-item"><a href="#" class="ja">特定個人情報取扱規定</a>             <a href="#" class="en no-display">Handling of Specific Personal Information</a></li>
+              <li class="page-content-item"><a href="#" class="ja">公益通報制度運用規定</a>             <a href="#" class="en no-display">Whistle-Blowing System</a></li>
+              <li class="page-content-item"><a href="#" class="ja">慶弔見舞金規定</a>                   <a href="#" class="en no-display">Congratulatory or Condolence Money</a></li>
+              <li class="page-content-item"><a href="#" class="ja">牧野フライス共済会規約</a>           <a href="#" class="en no-display">Mutual Benefit Association</a></li>
+              <li class="page-content-item"><a href="#" class="ja">KAIZEN規定</a>                       <a href="#" class="en no-display">KAIZEN</a></li>
+              <li class="page-content-item"><a href="#" class="ja">安全衛生委員会規定</a>               <a href="#" class="en no-display">Health & Safety Committee</a></li>
+              <li class="page-content-item"><a href="#" class="ja">印章管理規定</a>                     <a href="#" class="en no-display">Seal Management</a></li>
+              <li class="page-content-item"><a href="#" class="ja">インサイダー取引防止規定</a>         <a href="#" class="en no-display">Insider Trading Prevention</a></li>
+            </ul>
+          </section>
+        </div>  <!--page-wrapper-->
+      </div>  <!--page-container-->
     </main>
     
-    <!-- フッター -->
-    <footer class="page-footer">
+    <!-- フッター (トップページと共用)-->
+    <footer class="footer">
       <div class="footer-wrapper">
-        <div class="btn-on-off-wrapper">
-          <div class="btn-on-off">
-            <input type="checkbox" id="btn-mode">
-            <label for="btn-mode"><span></span></label>
-            <div class="switch-img"></div>
+        
+        <!--切り替えボタン(ダークモード、表示言語)-->
+        <div class="btn-on-off">
+          <div class="btn-on-off-wrapper">
+            <input class="btn-on-off-checkbox" type="checkbox" id="btn-mode" autocomplete="off">
+            <label class="btn-on-off-label" for="btn-mode"><span></span></label>
+            <div class="btn-on-off-img"></div>
             <p>Dark Mode</p>
           </div>
         </div>
-        <div class="btn-on-off-wrapper lang-select-wrapper">
-          <div class="btn-on-off lang-select">
-            <input type="checkbox" id="btn-lang">
-            <label for="btn-lang"><span></span></label>
-            <div class="switch-img"></div>
+        <div class="btn-on-off lang-select">
+          <div class="btn-on-off-wrapper lang-select-wrapper">
+            <input class="btn-on-off-checkbox lang-select-checkbox" type="checkbox" id="btn-lang" autocomplete="off">
+            <label class="btn-on-off-label lang-select-label" for="btn-lang"><span></span></label>
+            <div class="btn-on-off-img lang-select-img"></div>
             <p>Language</p>
           </div>
         </div>
-        <div class="upper-footer">
-          <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="members.html">MEMBERS</a></li>
-            <li><a href="rules.html">RULES</a></li>
-            <li><a href="system.html">SYSTEM</a></li>
-            <li><a href="learning.html">LEARNING</a></li>
-            <li><a href="form.html">FORM</a></li>
-            <li><a href="tips.html">TIPS</a></li>
+
+        <div class="footer-upper">
+          <ul class="footer-nav">
+            <li class="footer-nav-item"><a href="index.html">HOME</a></li>
+            <li class="footer-nav-item"><a href="members.html">MEMBERS</a></li>
+            <li class="footer-nav-item"><a href="rules.html">RULES</a></li>
+            <li class="footer-nav-item"><a href="system.html">SYSTEM</a></li>
+            <li class="footer-nav-item"><a href="learning.html">LEARNING</a></li>
+            <li class="footer-nav-item"><a href="form.html">FORM</a></li>
+            <li class="footer-nav-item"><a href="tips.html">TIPS</a></li>
           </ul>
         </div>
-        <div class="lower-footer">
+        <div class="footer-lower">
           <small>Copyright© Yazawa Kotaro All Rights Reserved 2020</small>
         </div>
       </div>
     </footer>
   </div>
 
-  <div class="starting-page"></div>
+  <div class="starting"></div>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="assets/js/main.js"></script>

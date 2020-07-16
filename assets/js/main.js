@@ -6,10 +6,7 @@ const mobileWidth = 600; //スマホのメディアクエリ横幅指定
 $(function(){
   // ページ表示時のエフェクト用(ふわっと表示する)
   setTimeout(() => {
-  $('.starting').fadeOut(1300);   //トップページ
-  }, 200);
-  setTimeout(() => {
-  $('.starting-page').fadeOut(650);    //個別ページ
+  $('.starting').fadeOut(1000);
   }, 200);
 
   // ヘッダのコンタクト項目ホバー時アイコン変化
@@ -153,17 +150,14 @@ document.addEventListener('DOMContentLoaded',function(){
     if(darkModeBtn.checked === true){
       // ページ遷移時と同じエフェクトを、色を変えて使用(jQuery)
       $('.starting').css('background-color','rgba(0,0,0)').show();
-      $('.starting-page').css('background-color','rgba(0,0,0)').show();
       document.body.classList.add('dark-mode');
       Cookies.set('darkModeOn','on',{expires:1/48});
     }else{
       $('.starting').css('background-color','#fff').show();
-      $('.starting-page').css('background-color','#fff').show();
       document.body.classList.remove('dark-mode');
       Cookies.remove('darkModeOn');
     }
       $('.starting').fadeOut(600);
-      $('.starting-page').fadeOut(600);
   })
   
   //日⇔英切替 (no-display クラスで表示を制御する。切替状態はCookie保存する)
@@ -188,7 +182,6 @@ document.addEventListener('DOMContentLoaded',function(){
   
   langSwitchBtn.addEventListener('change',function(){
     $('.starting').show();
-    $('.starting-page').show();
     if(langSwitchBtn.checked === true){
       JpnText.forEach(function(jaText){
         jaText.classList.add('no-display');
@@ -207,7 +200,6 @@ document.addEventListener('DOMContentLoaded',function(){
       Cookies.remove('EngOn');
     }
     $('.starting').fadeOut(600);
-    $('.starting-page').fadeOut(600);
   });
 });
 

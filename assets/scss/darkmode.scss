@@ -1,0 +1,132 @@
+@charset "UTF-8";
+@import "variables";
+$base-color: rgb(18,39,74);
+
+/* ダークモードの設定 */
+.dark-mode{
+  &.body{
+    color: #e8e8e8;
+    background-color: #414039;
+    border-bottom: 1px solid #eee;
+  }
+  .header{
+    background-color: #000;
+    border-color: #414039;
+  }
+  a, a:link, a:visited, a:hover, a:active{
+    color: #e8e8e8;
+  }
+  .contact-btn{
+    background-color:#000;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    a:hover{
+      color: #fff;
+    }
+  }
+  .slide-select{
+    ul li{
+      background-color:rgba($base-color, .4);
+    }
+    .selected{
+      background-color:#e8e8e8;
+    }
+  }
+  .section-title::before, .section-title::after, .section::after{
+    border-color: #e8e8e8;
+  }
+  .member-item{
+    border-color: #666;
+  }
+  .section-desc{
+    background-color: #3c3d34;
+    border-color: #666;
+  }
+  .common-subtitle, .common-subtitle_link{
+    color: #e8e8e8;
+  }
+  .common-item a{
+    border-color: #666;
+  }
+  .contact-btn a:hover,
+  .member-item a:hover,
+  .common-subtitle_link:hover,
+  .common-item a:hover,
+  .tips-desc > a:hover{
+    background-color: #666;
+  }
+  .more a{
+    background-color: #3c3d34;
+    border: 1px solid #ddd;
+  }
+  .aside-title{
+    background-color: #3c3d34;
+    border-color: #666;
+  }
+  .news{
+    background-image: unset;
+    background-color: #3c3d34; 
+    border-left: 1px solid #666;
+    border-right: 1px solid #666;
+    border-bottom: 1px solid #666;
+  }
+  .news-item-cat{
+    background-color: rgb(199,157,58);
+    color: #000;
+  }
+  .news-item-desc{
+    color: #ddd;
+  }
+  .news-item:not(:last-child) > a{
+    border-color: #666;
+  }
+  .news-item > a:hover{
+    box-shadow: 0px 3px #ddd;
+  }
+  .footer{
+    color: #ddd;
+    background-color: #000;
+  }
+  .slide-item{
+    &:nth-child(1){
+      background-image: url($main-slide1_d);
+    }
+    &:nth-child(2){
+      background-image: url($main-slide2_d);
+      background-position: left 60%;
+    }
+    &:nth-child(3){
+      background-image: url($main-slide3_d);
+      background-position: left 90%;
+    }
+    &:nth-child(4){
+      background-image: url($main-slide4_d);
+    }
+    &:nth-child(5){
+      background-image: url($main-slide5_d);
+    }
+  }
+}
+
+/* 個別ページの設定 */
+.dark-mode{
+  .page-title-wrapper{
+    border: unset;
+  }
+  .page-content-title > a:hover,
+  .page-content-item > a:hover{
+    background-color: #666;
+  }
+} 
+
+// ハンバーガーメニューの文字色変更
+@media screen and (max-width : $breakpoint-sp){
+  .dark-mode{
+    .globalnav a{
+      color: #333;
+    }
+    .nav-menu-close{
+      color: #333;
+    }
+  } 
+}
