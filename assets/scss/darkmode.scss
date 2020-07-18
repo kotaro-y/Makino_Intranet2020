@@ -70,18 +70,20 @@ $base-color: rgb(18,39,74);
     border-right: 1px solid #666;
     border-bottom: 1px solid #666;
   }
-  .news-item-cat{
-    background-color: rgb(199,157,58);
-    color: #000;
-  }
-  .news-item-desc{
-    color: #ddd;
-  }
-  .news-item:not(:last-child) > a{
-    border-color: #666;
-  }
-  .news-item > a:hover{
-    box-shadow: 0px 3px #ddd;
+  .news-item{
+    &-cat{
+      background-color: rgb(199,157,58);
+      color: #000;
+    }
+    &-desc{
+      color: #ddd;
+    }
+    &:not(:last-child) > a{
+      border-color: #666;
+    }
+    > a:hover{
+      box-shadow: 0px 3px #ddd;
+    }
   }
   .consultation-btn-desc{
     background-color: #414039;

@@ -488,44 +488,6 @@
   color: #fff;
 }
 
-.before-icon::before {
-  font-family: "Font Awesome 5 Free";
-  display: inline-block;
-  font-weight: 900;
-  font-size: 1.2rem;
-  margin-right: 0.5em;
-}
-
-.icon-manual::before {
-  content: '\f02d';
-  /*Book*/
-  font-size: 1rem;
-  color: #666;
-}
-
-.icon-document::before {
-  content: '\f15c';
-  /*file*/
-  color: #666;
-}
-
-.icon-calendar::before {
-  content: '\f073';
-  /*カレンダー*/
-  padding-left: 2px;
-}
-
-.icon-seminar::before {
-  content: '\f51c';
-  /*講義*/
-  font-size: 1rem;
-}
-
-.icon-box::before {
-  content: '\f468';
-  /*BOX*/
-}
-
 /* サイド */
 .aside {
   margin-top: 10px;

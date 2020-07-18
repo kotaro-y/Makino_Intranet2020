@@ -203,6 +203,41 @@ a, a:link, a:visited, a:hover, a:active{
   }
 }
 
+// アイコン表示用
+.before-icon::before{
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin-right: 0.5em;
+}
+.icon{
+  &-manual::before{
+    content: '\f02d'; /*Book*/
+    font-size: 1rem;
+    color: #666;
+  }
+  &-document::before{
+    content: '\f15c'; /*file*/
+    color: #666;
+  }
+  &-calendar::before{
+    content: '\f073';   /*カレンダー*/
+    padding-left: 2px;
+  }
+  &-seminar::before{
+    content: '\f51c';  /*講義*/
+    font-size: 1rem;
+  }
+  &-box::before{
+    content: '\f468'; /*BOX*/
+  }
+  &-tags::before{
+    content: '\f02c';
+    margin-right: 0;
+  }
+}
+
 
 /* ダークモードon/offスイッチ */
 .btn-on-off{

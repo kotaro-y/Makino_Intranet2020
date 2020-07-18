@@ -182,6 +182,129 @@
   color: #fff;
 }
 
+/*メンバー紹介ページ*/
+.member-wrapper {
+  display: block;
+}
+
+.member-content {
+  width: 100%;
+  height: 280px;
+  padding: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: 1px solid #ccc;
+  /*偶数順のコンテンツの配置*/
+}
+
+.member-content-img {
+  width: 170px;
+  height: 170px;
+  border-radius: 10%;
+  background-color: #eee;
+  margin-left: 5%;
+}
+
+.member-content-desc {
+  position: relative;
+  width: 66%;
+  height: 100%;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-left: 6%;
+}
+
+.member-content-name {
+  font-size: 1.8rem;
+  letter-spacing: 7px;
+  padding-bottom: 12px;
+}
+
+.member-content-name.en {
+  font-size: 2.4rem;
+  letter-spacing: 3px;
+}
+
+.member-content-post {
+  font-size: 1.4rem;
+  padding-bottom: 18px;
+}
+
+.member-content-work {
+  font-size: 1.2rem;
+  padding-bottom: 8px;
+  padding-left: 5px;
+}
+
+.member-content-work-text {
+  font-size: 1.2rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  padding-bottom: 25px;
+  padding-left: 2em;
+}
+
+.member-content-contact {
+  letter-spacing: 1px;
+  padding-bottom: 8px;
+}
+
+.member-content-contact-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.member-content-contact > a {
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+  text-align: center;
+  color: #fff;
+  line-height: 23px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.member-content-contact > a:hover {
+  background-color: #fff;
+  color: #12274a;
+  border-color: #12274a;
+  opacity: .8;
+}
+
+.member-content-contact-mail {
+  margin-right: 3px;
+  background-color: #12274a;
+}
+
+.member-content-contact-teams {
+  background-color: #5558AF;
+}
+
+.member-content-tel {
+  letter-spacing: 1px;
+}
+
+.member-content:nth-child(even) .member-content-img {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  margin-left: 6.5%;
+}
+
+.member-content:nth-child(even) .member-content-desc {
+  margin-left: 5%;
+}
+
+.member-content:nth-child(even) .member-content-contact-wrapper {
+  left: 0;
+}
+
 /*規則規定ページ*/
 .rules-content {
   width: 31.5%;
