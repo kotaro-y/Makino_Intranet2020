@@ -201,7 +201,62 @@ document.addEventListener('DOMContentLoaded',function(){
     }
     $('.starting').fadeOut(600);
   });
+
+  //文字表示のアニメーションの制御
+  function textAnimation(selectClass, delayTime){
+    const animationTargetElements = document.querySelectorAll(selectClass);
+    for (let i = 0; i < animationTargetElements.length; i++) {
+
+      //対象のクラスそれぞれについて、文字列を取得後、分割して配列に代入、
+      //その後、一文字ずつspanタグとアニメーションディレイをつけて新規配列に代入、
+      //新規配列の内容を一文字ずつ、対象のクラスのテキストに代入する。
+
+      const targetElement = animationTargetElements[i],
+            texts = targetElement.textContent,
+            textChars = texts.split(""),
+            textsArray = [];
+      targetElement.textContent=" ";
+      for (let j = 0; j < textChars.length; j++) {
+        if(textChars[j]===" "){
+          textsArray.push(" "); //空白文字の場合はspanタグに入れない
+        }else{
+          textsArray.push('<span style="animation-delay:' + (j*delayTime) + 's;">' + textChars[j] + '</span>');
+        }
+      }
+      for (let k = 0; k < textsArray.length; k++) {
+        targetElement.innerHTML += textsArray[k]; 
+      }
+    }
+  }
+
+  //spanを入れ子にして文字を隠してから表示するパターン
+  function textAnimation2(selectClass, delayTime){
+    const animationTargetElements = document.querySelectorAll(selectClass);
+    for (let i = 0; i < animationTargetElements.length; i++) {
+      const targetElement = animationTargetElements[i],
+            texts = targetElement.textContent,
+            textChars = texts.split(""),
+            textsArray = [];
+      targetElement.textContent=" ";
+      for (let j = 0; j < textChars.length; j++) {
+        if(textChars[j]===" "){
+          textsArray.push(" ");
+        }else{
+          //spanの下のspanにアニメーションを設定する。
+          textsArray.push('<span><span style="animation-delay:' + (j*delayTime) + 's;">' + textChars[j] + '</span></span>');
+        }
+      }
+      for (let k = 0; k < textsArray.length; k++) {
+        targetElement.innerHTML += textsArray[k]; 
+      }
+    }
+  }
+
+  //トップページのヘッダタイトルのアニメーション(ページ表示時に実行)
+  setTimeout(textAnimation('.show-text-top',0.5),600);
+  //メンバー紹介ページの氏名のアニメーション
+  setTimeout(textAnimation2('.show-text-member',0.1),600);
+
+
+
 });
-
-
-

@@ -1,8 +1,11 @@
 @charset "UTF-8";
 @import "variables";
+@import "common";
 $base-color: rgb(18,39,74);
 
 /* 各種固定ページの設定 */
+
+/* 共通設定 */
 .page-title-wrapper{
   position: relative;
   height: 180px;
@@ -32,7 +35,6 @@ $base-color: rgb(18,39,74);
   &._tips{
     @include bg-img('../images/network-3537401_1920.jpg');
   }
-
 }
 
 .page-title{
@@ -62,7 +64,7 @@ $base-color: rgb(18,39,74);
   }
 }
 .pages-main{
-  display: block;                   /* common.cssのmainタグ flex設定を解除する */
+  display: block;                   // common.cssのmainタグ flex設定を解除する
 }
 
 .page{
@@ -135,6 +137,7 @@ $base-color: rgb(18,39,74);
     }
   }
 }
+
 
   /*メンバー紹介ページ*/
 .member-wrapper{
@@ -225,18 +228,18 @@ $base-color: rgb(18,39,74);
   }
 
   /*偶数順のコンテンツの配置*/
-  &:nth-child(even){
-    .member-content-img{
-      order: 1;
-      margin-left: 6.5%;
-    }
-    .member-content-desc{
-      margin-left: 5%;
-    }
-    .member-content-contact-wrapper{
-      left: 0;
-    }
-  }
+  // &:nth-child(even){
+  //   .member-content-img{
+  //     order: 1;
+  //     margin-left: 6.5%;
+  //   }
+  //   .member-content-desc{
+  //     margin-left: 5%;
+  //   }
+  //   .member-content-contact-wrapper{
+  //     left: 0;
+  //   }
+  // }
 }
 
 
@@ -288,6 +291,7 @@ $base-color: rgb(18,39,74);
     margin-bottom: 54px;
   }
 }
+
 
 
 

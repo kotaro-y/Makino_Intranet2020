@@ -1,20 +1,23 @@
 @charset "UTF-8";
 @import "variables";
 $base-color: rgb(18,39,74);
+$dark-textcolor: #e8e8e8;
+$dark-bgcolor: #414039;
+$dark-bgcolor-sub: #3c3d34;
 
 /* ダークモードの設定 */
 .dark-mode{
   &.body{
-    color: #e8e8e8;
-    background-color: #414039;
+    color: $dark-textcolor;
+    background-color: $dark-bgcolor;
     border-bottom: 1px solid #eee;
   }
   .header{
     background-color: #000;
-    border-color: #414039;
+    border-color: $dark-bgcolor;
   }
   a, a:link, a:visited, a:hover, a:active{
-    color: #e8e8e8;
+    color: $dark-textcolor;
   }
   .contact-btn{
     background-color:#000;
@@ -29,21 +32,21 @@ $base-color: rgb(18,39,74);
       background-color:rgba($base-color, .4);
     }
     .selected{
-      background-color:#e8e8e8;
+      background-color:$dark-textcolor;
     }
   }
   .section-title::before, .section-title::after, .section::after{
-    border-color: #e8e8e8;
+    border-color: $dark-textcolor;
   }
   .member-item{
     border-color: #666;
   }
   .section-desc{
-    background-color: #3c3d34;
+    background-color: $dark-bgcolor-sub;
     border-color: #666;
   }
   .common-subtitle, .common-subtitle_link{
-    color: #e8e8e8;
+    color: $dark-textcolor;
   }
   .common-item a{
     border-color: #666;
@@ -56,16 +59,16 @@ $base-color: rgb(18,39,74);
     background-color: #666;
   }
   .more a{
-    background-color: #3c3d34;
+    background-color: $dark-bgcolor-sub;
     border: 1px solid #ddd;
   }
   .aside-title{
-    background-color: #3c3d34;
+    background-color: $dark-bgcolor-sub;
     border-color: #666;
   }
   .news{
     background-image: unset;
-    background-color: #3c3d34; 
+    background-color: $dark-bgcolor-sub; 
     border-left: 1px solid #666;
     border-right: 1px solid #666;
     border-bottom: 1px solid #666;
@@ -86,9 +89,9 @@ $base-color: rgb(18,39,74);
     }
   }
   .consultation-btn-desc{
-    background-color: #414039;
+    background-color: $dark-bgcolor;
     border-color: #666;
-    color: #e8e8e8 !important;
+    color: $dark-textcolor !important;
     transition: .3s;
     &:hover{
       background-color: #fff;

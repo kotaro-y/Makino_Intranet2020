@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import "variables";
+@import "common";
 $base-color: rgb(18,39,74);
 
 /* メインビジュアル(スライドショー) */
@@ -481,7 +482,7 @@ $base-color: rgb(18,39,74);
 }
 .consultation-btn{
   width: 65%;
-  height: 60px;
+  height: 48px;
   margin: 60px auto 0;
   &-desc{
     display: inline-block;
@@ -490,7 +491,7 @@ $base-color: rgb(18,39,74);
     text-align: center;
     font-size: 1.3rem;
     letter-spacing: 1.5px;
-    line-height: 60px;
+    line-height: 44px;
     color: #eee !important;
     border: 2px solid transparent;
     border-radius: 8px;
