@@ -93,13 +93,46 @@ $(function(){
       timer = setInterval(slideTimer,interval);
     });
 
-    $('.slide-select ul li').click(function(){
+    $('.slide-select ul li').click(function(){    //画像下部のアイコンクリック時に遷移
       nextSlide = $(this).html();
       clearInterval(timer);
       timer = setInterval(slideTimer,interval);
       slideTimer();
       return false;
     });
+
+
+    // スマホ用 スワイプ時の挙動
+    const dist =30
+    let startX,
+        startY,
+        moveX,
+        moveY;
+    $('.slide-item').on('touchstart', function(e){
+      e.preventDefault();
+      startX = e.touches[0].pageX;
+      startY = e.touches[0].pageY;
+    });
+    $('.slide-item').on('touchmove', function(e){
+      e.preventDefault();
+      moveX = e.changeTouches[0].pageX;
+      moveY = e.changeTouches[0].pageY;
+    });
+    $('.slide-item').on('touchend', function(e){
+      if(startX > moveX && startX > moveX + dist){
+        nextSlide = $(this).attr("data-next");
+        clearInterval(timer);
+        timer = setInterval(slideTimer,interval);
+        slideTimer();
+      }else if(startX < moveX && startX + dist < moveX){
+        nextSlide = $(this).attr("data-prev");
+        clearInterval(timer);
+        timer = setInterval(slideTimer,interval);
+        slideTimer();
+      }
+    });
+
+    
     
     // コンテンツの下部分ぼかしの制御
     $('.section-desc').scroll(function(){
