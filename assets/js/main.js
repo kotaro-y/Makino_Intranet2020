@@ -115,8 +115,8 @@ $(function(){
     });
     $('.slide-item').on('touchmove', function(e){
       e.preventDefault();
-      moveX = e.changeTouches[0].pageX;
-      moveY = e.changeTouches[0].pageY;
+      moveX = e.changedTouches[0].pageX;
+      moveY = e.changedTouches[0].pageY;
     });
     $('.slide-item').on('touchend', function(e){
       if(startX > moveX && startX > moveX + dist){
