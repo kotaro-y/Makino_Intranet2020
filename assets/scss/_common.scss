@@ -412,6 +412,7 @@ a, a:link, a:visited, a:hover, a:active{
     }
     > span{
       overflow: hidden;
+      height: 1.3em;
       > span{
         animation: show-text-member 0.6s linear backwards;
       }
@@ -446,14 +447,16 @@ a, a:link, a:visited, a:hover, a:active{
 
 
 /* HACK: IEのみ適用(JSが動かないときに画面が真っ白になるのを防ぐため*/
-_:-ms-lang(x)::-ms-backdrop, .starting{
-  display: none;
-}
-@media all and (-ms-high-contrast: none){
-  .starting{
-    display: none;
-  }
-}
+// _:-ms-lang(x)::-ms-backdrop, .starting{
+//   display: none;
+// }
+// @media all and (-ms-high-contrast: none){
+//   .starting{
+//     display: none;
+//   }
+// }
+
+
 
 /*英語対応 (英語テキストにはhtmlでenとno-displayクラスをデフォルトで設定し、JSで制御する*/
 .en{

@@ -128,6 +128,8 @@ $(function(){
         $(this).find('p').remove();
       });
     });
+
+
 });
 
 
@@ -256,7 +258,6 @@ document.addEventListener('DOMContentLoaded',function(){
   setTimeout(textAnimation('.show-text-top',0.5),600);
   //メンバー紹介ページの氏名のアニメーション
   setTimeout(textAnimation2('.show-text-member',0.1),600);
-
 
 
 });
