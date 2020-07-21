@@ -197,9 +197,22 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .nav-menu-open,
-.nav-menu-close,
-.close-modal {
+.nav-menu-close {
   display: none;
+}
+
+.close-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: .25s;
+  transition: .25s;
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* フッタ */
@@ -641,14 +654,8 @@ a, a:link, a:visited, a:hover, a:active {
             transform: translateX(0);
   }
   .nav-menu-switch:checked ~ .close-modal {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 500vh;
-    width: 100vw;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    visibility: visible;
   }
   .nav-menu-switch:checked ~ .nav-menu-close {
     display: inline-block;
@@ -917,12 +924,12 @@ a, a:link, a:visited, a:hover, a:active {
 
 .member-content {
   width: 100%;
-  height: 280px;
-  padding: 50px 0;
+  height: 230px;
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   /*偶数順のコンテンツの配置*/
 }
 
@@ -982,7 +989,7 @@ a, a:link, a:visited, a:hover, a:active {
 
 .member-content-contact-wrapper {
   position: absolute;
-  bottom: 0;
+  bottom: 50px;
   right: 0;
 }
 
@@ -1097,6 +1104,9 @@ a, a:link, a:visited, a:hover, a:active {
     /*ヘッダ固定分をマージンで確保*/
   }
   .pages-main {
+    padding-top: 74px;
+    /*ヘッダ固定分の高さズレを回避*/
+    margin-top: -74px;
     margin-bottom: 80px;
     /*フッタ固定分をマージンで確保*/
   }
@@ -1154,7 +1164,7 @@ a, a:link, a:visited, a:hover, a:active {
   }
   .member-content-img {
     position: absolute;
-    top: 30px;
+    top: -20px;
     right: 10px;
     width: 80px;
     height: 80px;
@@ -1170,7 +1180,7 @@ a, a:link, a:visited, a:hover, a:active {
     font-size: 1.1rem;
   }
   .member-content-contact-wrapper {
-    bottom: -30px;
+    bottom: 20px;
   }
   .en.member-content-name {
     font-size: 2rem;

@@ -149,9 +149,20 @@ a, a:link, a:visited, a:hover, a:active{
   z-index: -1;
 }
 .nav-menu-open,
-.nav-menu-close,
-.close-modal{
+.nav-menu-close,{
   display: none;
+}
+.close-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0, .5);
+  transition: .25s;
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* フッタ */
@@ -518,14 +529,8 @@ a, a:link, a:visited, a:hover, a:active{
           transform: translateX(0);
         }
         &~ .close-modal{
-          display: inline-block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 500vh;
-          width: 100vw;
-          z-index: 10;
-          background-color: rgba(0,0,0, .5);
+          opacity: 1;
+          visibility: visible;
         }
         &~ .nav-menu-close{
           display: inline-block;
