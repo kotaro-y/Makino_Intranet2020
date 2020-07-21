@@ -88,6 +88,7 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .site-title {
+  display: block;
   text-align: center;
   margin: 10px 0 10px 50px;
 }
@@ -1329,7 +1330,7 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .consultation-btn {
-  width: 65%;
+  width: 73%;
   height: 48px;
   margin: 60px auto 0;
 }

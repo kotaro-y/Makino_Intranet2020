@@ -60,6 +60,7 @@ a, a:link, a:visited, a:hover, a:active{
   }
 }
 .site-title{
+  display: block;
   text-align: center;
   margin: 10px 0 10px 50px;
   > h1{
@@ -149,7 +150,7 @@ a, a:link, a:visited, a:hover, a:active{
   z-index: -1;
 }
 .nav-menu-open,
-.nav-menu-close,{
+.nav-menu-close{
   display: none;
 }
 .close-modal{
