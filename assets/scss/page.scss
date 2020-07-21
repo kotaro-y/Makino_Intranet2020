@@ -186,7 +186,8 @@ $base-color: rgb(18,39,74);
     font-size: 1.2rem;
     font-weight: normal;
     letter-spacing: 1px;
-    line-height: 1.2;
+    line-height: 1.5;
+    width: 77%;
     padding-bottom: 25px;
     padding-left: 2em;
   }
@@ -339,6 +340,9 @@ $base-color: rgb(18,39,74);
         width: 80%;
         margin-right: auto;
         margin-left: auto;
+        > a{
+          width: 100%;
+        }
       }
       &-item{
         font-size: 1.2rem;
@@ -379,8 +383,26 @@ $base-color: rgb(18,39,74);
       width: 80%;
       margin: 0 auto;
     }
+    &-work-text{
+      width: 100%;
+      font-size: 1.1rem;
+    }
+    &-contact-wrapper{
+      bottom: -30px;
+    }
   }
   .en.member-content-name{
     font-size: 2rem;
+    width: 78%;
+  }
+  .form-list{
+    .page-content-item{
+      > a{
+        width: 80%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
   }
 }

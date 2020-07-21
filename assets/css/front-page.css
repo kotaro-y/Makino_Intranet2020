@@ -1389,6 +1389,21 @@ a, a:link, a:visited, a:hover, a:active {
   .slide-wrapper {
     height: 280px;
   }
+  .slide-item:nth-child(1) {
+    background-position: 50% 30%;
+  }
+  .slide-item:nth-child(2) {
+    background-position: 50% 50%;
+  }
+  .slide-item:nth-child(3) {
+    background-position: 50% 50%;
+  }
+  .slide-item:nth-child(4) {
+    background-position: 50% 50%;
+  }
+  .slide-item:nth-child(5) {
+    background-position: 30% 50%;
+  }
   .main {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1439,6 +1454,9 @@ a, a:link, a:visited, a:hover, a:active {
     border: none;
     background-image: url("../images/paper-fibers.png");
     background-repeat: repeat;
+  }
+  .indent {
+    margin-left: 15.5%;
   }
   .dark-mode .section-desc {
     background-image: none;

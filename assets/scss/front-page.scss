@@ -535,6 +535,23 @@ $base-color: rgb(18,39,74);
     &-wrapper{
       height: 280px;
     }
+    &-item{
+      &:nth-child(1){
+        background-position: 50% 30%;
+      }
+      &:nth-child(2){
+        background-position: 50% 50%;
+      }
+      &:nth-child(3){
+        background-position: 50% 50%;
+      }
+      &:nth-child(4){
+        background-position: 50% 50%;
+      }
+      &:nth-child(5){
+        background-position: 30% 50%;
+      }
+    }
     //横スクロール(スワイプ)の実装 (JSと併存難しいので却下)
     // &-list{
     //   scroll-snap-type: x mandatory;
@@ -598,7 +615,9 @@ $base-color: rgb(18,39,74);
       background-repeat: repeat;
     }
   }
-  
+  .indent{
+    margin-left: 15.5%;
+  }
   .dark-mode .section-desc{
     background-image: none;
     border: 1px solid #ccc;

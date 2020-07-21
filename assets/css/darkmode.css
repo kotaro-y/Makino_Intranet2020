@@ -157,5 +157,20 @@
   .dark-mode .nav-menu-close {
     color: #333;
   }
+  .dark-mode .slide-item:nth-child(1) {
+    background-position: 65% 50%;
+  }
+  .dark-mode .slide-item:nth-child(2) {
+    background-position: 50% 50%;
+  }
+  .dark-mode .slide-item:nth-child(3) {
+    background-position: 50% 70%;
+  }
+  .dark-mode .slide-item:nth-child(4) {
+    background-position: 65% 50%;
+  }
+  .dark-mode .slide-item:nth-child(5) {
+    background-position: 50% 0%;
+  }
 }
 /*# sourceMappingURL=darkmode.css.map */

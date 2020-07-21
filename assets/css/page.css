@@ -969,7 +969,8 @@ a, a:link, a:visited, a:hover, a:active {
   font-size: 1.2rem;
   font-weight: normal;
   letter-spacing: 1px;
-  line-height: 1.2;
+  line-height: 1.5;
+  width: 77%;
   padding-bottom: 25px;
   padding-left: 2em;
 }
@@ -1123,6 +1124,9 @@ a, a:link, a:visited, a:hover, a:active {
     margin-right: auto;
     margin-left: auto;
   }
+  .page-content-title > a {
+    width: 100%;
+  }
   .page-content-item {
     font-size: 1.2rem;
     letter-spacing: 0;
@@ -1161,8 +1165,22 @@ a, a:link, a:visited, a:hover, a:active {
     width: 80%;
     margin: 0 auto;
   }
+  .member-content-work-text {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+  .member-content-contact-wrapper {
+    bottom: -30px;
+  }
   .en.member-content-name {
     font-size: 2rem;
+    width: 78%;
+  }
+  .form-list .page-content-item > a {
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 /*# sourceMappingURL=page.css.map */
