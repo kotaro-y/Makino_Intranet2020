@@ -1323,10 +1323,29 @@ a, a:link, a:visited, a:hover, a:active {
   background-color: #12274a;
 }
 
+.news-item-cat[data="event"] {
+  background-color: #991d1d;
+}
+
 .news-item-desc {
   padding-left: 10px;
   font-size: 1.1rem;
   color: #666;
+}
+
+.due-date, .countdown {
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.countdown::after {
+  content: '';
+  position: absolute;
+  top: 1.4rem;
+  left: 0;
+  width: 100%;
+  border-bottom: 3px solid rgba(153, 29, 29, 0.4);
 }
 
 .consultation-btn {

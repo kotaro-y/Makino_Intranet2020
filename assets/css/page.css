@@ -1083,6 +1083,21 @@ a, a:link, a:visited, a:hover, a:active {
   margin-bottom: 54px;
 }
 
+.google-form {
+  position: relative;
+  width: 640px;
+  height: 1200px;
+  margin: 0 auto;
+}
+
+.google-form > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /*レスポンシブ設定*/
 @media screen and (max-width: 1024px) {
   .page-container {
@@ -1192,6 +1207,12 @@ a, a:link, a:visited, a:hover, a:active {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+  .google-form {
+    width: 380px;
+  }
+  .google-form > iframe {
+    left: -20px;
   }
 }
 /*# sourceMappingURL=page.css.map */

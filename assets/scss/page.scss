@@ -293,6 +293,20 @@ $base-color: rgb(18,39,74);
   }
 }
 
+// 相談窓口ページ
+.google-form{
+  position: relative;;
+  width: 640px;
+  height: 1200px;
+  margin: 0 auto;
+}
+.google-form > iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 
 
@@ -406,5 +420,11 @@ $base-color: rgb(18,39,74);
         white-space: nowrap;
       }
     }
+  }
+  .google-form{
+    width: 380px;
+  }
+  .google-form > iframe{  //Googleフォームの微調整
+    left: -20px;
   }
 }

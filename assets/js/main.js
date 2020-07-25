@@ -293,4 +293,28 @@ document.addEventListener('DOMContentLoaded',function(){
   setTimeout(textAnimation2('.show-text-member',0.1),600);
 
 
+  //指定日までのカウントダウン表示
+  const today = new Date();
+  const year = today.getFullYear(),
+        month = String(today.getMonth() + 1).padStart(2,'0'),
+        date = today.getDate(),
+        days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat'],
+        day = days[today.getDay()];
+  
+  const dueDate = new Date(2020,7,31); //指定の日付 (月はマイナス１で記入する)
+  const dMonth = dueDate.getMonth() + 1,
+        dDate = dueDate.getDate(),
+        dDay = days[dueDate.getDay()];
+
+  const countdownDays = Math.ceil((dueDate - today) / (1000 * 60 * 60 * 24 ));
+
+  function insertTextByClass(selectClass,txt){
+    document.querySelectorAll(selectClass).forEach(function(eachClass){
+      eachClass.textContent = txt;
+    });
+  }
+  insertTextByClass('.today', `${year}/${month}/${date}`);
+  insertTextByClass('.due-date', `${dMonth}/${dDate} (${dDay})`);
+  insertTextByClass('.countdown', countdownDays);
+
 });
