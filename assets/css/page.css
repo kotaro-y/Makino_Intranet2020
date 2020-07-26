@@ -454,140 +454,6 @@ a, a:link, a:visited, a:hover, a:active {
   transition: .2s;
 }
 
-/* JS用表示設定(初期表示をふわっとさせる */
-.starting {
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-}
-
-@-webkit-keyframes show-text-top {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes show-text-top {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.show-text-top span {
-  display: inline-block;
-  -webkit-animation: show-text-top 2s backwards;
-          animation: show-text-top 2s backwards;
-}
-
-@-webkit-keyframes show-text-member {
-  0% {
-    -webkit-transform: translateY(1.5em);
-            transform: translateY(1.5em);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes show-text-member {
-  0% {
-    -webkit-transform: translateY(1.5em);
-            transform: translateY(1.5em);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-.show-text-member span {
-  display: inline-block;
-}
-
-.show-text-member > span {
-  overflow: hidden;
-  height: 1.3em;
-}
-
-.show-text-member > span > span {
-  -webkit-animation: show-text-member 0.6s linear backwards;
-          animation: show-text-member 0.6s linear backwards;
-}
-
-@-webkit-keyframes show-image {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes show-image {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-.member-content-img {
-  -webkit-animation: show-image 1.2s 0.2s backwards;
-          animation: show-image 1.2s 0.2s backwards;
-}
-
-@-webkit-keyframes show-top {
-  0% {
-    -webkit-transform: translateY(65px);
-            transform: translateY(65px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes show-top {
-  0% {
-    -webkit-transform: translateY(65px);
-            transform: translateY(65px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-.front-main {
-  -webkit-animation: show-top 1.2s 0.2s backwards;
-          animation: show-top 1.2s 0.2s backwards;
-}
-
-/* HACK: IEのみ適用(JSが動かないときに画面が真っ白になるのを防ぐため*/
 /*英語対応 (英語テキストにはhtmlでenとno-displayクラスをデフォルトで設定し、JSで制御する*/
 .en {
   font-size: 1.2rem;
@@ -733,6 +599,187 @@ a, a:link, a:visited, a:hover, a:active {
     -webkit-transform: translateX(5%);
             transform: translateX(5%);
   }
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -10;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -10;
+  }
+}
+
+.starting {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+@-webkit-keyframes show-text-top {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show-text-top {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.show-text-top span {
+  display: inline-block;
+  -webkit-animation: show-text-top 2s backwards;
+          animation: show-text-top 2s backwards;
+}
+
+@-webkit-keyframes show-text-member {
+  0% {
+    -webkit-transform: translateY(1.5em);
+            transform: translateY(1.5em);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes show-text-member {
+  0% {
+    -webkit-transform: translateY(1.5em);
+            transform: translateY(1.5em);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.show .show-text-member span {
+  display: inline-block;
+}
+
+.show .show-text-member > span {
+  overflow: hidden;
+  height: 1.3em;
+}
+
+.show .show-text-member > span > span {
+  -webkit-animation: show-text-member 0.6s linear backwards;
+          animation: show-text-member 0.6s linear backwards;
+}
+
+@-webkit-keyframes show-image {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(60%);
+            transform: translateY(60%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes show-image {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(60%);
+            transform: translateY(60%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.show .member-content-img {
+  -webkit-animation: show-image 1s backwards;
+          animation: show-image 1s backwards;
+}
+
+@-webkit-keyframes show-top {
+  0% {
+    -webkit-transform: translateY(65px);
+            transform: translateY(65px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes show-top {
+  0% {
+    -webkit-transform: translateY(65px);
+            transform: translateY(65px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.front-main {
+  -webkit-animation: show-top 1.2s 0.2s backwards;
+          animation: show-top 1.2s 0.2s backwards;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.scroll-imply {
+  -webkit-animation: flash .8s alternate infinite linear;
+          animation: flash .8s alternate infinite linear;
 }
 
 /* 各種固定ページの設定 */
@@ -919,6 +966,32 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 /*メンバー紹介ページ*/
+.scroll-imply {
+  display: block;
+  position: relative;
+  padding-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+.scroll-imply.hide {
+  display: none;
+}
+
+.scroll-imply > span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #333;
+  border-bottom: 1px solid #333;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
 .member-wrapper {
   display: block;
 }
@@ -931,7 +1004,24 @@ a, a:link, a:visited, a:hover, a:active {
   display: -ms-flexbox;
   display: flex;
   border-bottom: 1px solid #ccc;
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
   /*偶数順のコンテンツの配置*/
+}
+
+.member-content.show {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.member-content.show .member-content-post, .member-content.show .member-content-work, .member-content.show .member-content-work-text {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
 }
 
 .member-content-img {
@@ -965,12 +1055,22 @@ a, a:link, a:visited, a:hover, a:active {
 .member-content-post {
   font-size: 1.4rem;
   padding-bottom: 18px;
+  opacity: 0;
+  -webkit-transform: translate(30px, 0);
+          transform: translate(30px, 0);
+  -webkit-transition: 1s .3s;
+  transition: 1s .3s;
 }
 
 .member-content-work {
   font-size: 1.2rem;
   padding-bottom: 8px;
   padding-left: 5px;
+  opacity: 0;
+  -webkit-transform: translate(30px, 0);
+          transform: translate(30px, 0);
+  -webkit-transition: 1s .6s;
+  transition: 1s .6s;
 }
 
 .member-content-work-text {
@@ -981,6 +1081,11 @@ a, a:link, a:visited, a:hover, a:active {
   width: 77%;
   padding-bottom: 25px;
   padding-left: 2em;
+  opacity: 0;
+  -webkit-transform: translate(30px, 0);
+          transform: translate(30px, 0);
+  -webkit-transition: 1s .9s;
+  transition: 1s .9s;
 }
 
 .member-content-contact {

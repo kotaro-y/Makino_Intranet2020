@@ -454,140 +454,6 @@ a, a:link, a:visited, a:hover, a:active {
   transition: .2s;
 }
 
-/* JS用表示設定(初期表示をふわっとさせる */
-.starting {
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-}
-
-@-webkit-keyframes show-text-top {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes show-text-top {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.show-text-top span {
-  display: inline-block;
-  -webkit-animation: show-text-top 2s backwards;
-          animation: show-text-top 2s backwards;
-}
-
-@-webkit-keyframes show-text-member {
-  0% {
-    -webkit-transform: translateY(1.5em);
-            transform: translateY(1.5em);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes show-text-member {
-  0% {
-    -webkit-transform: translateY(1.5em);
-            transform: translateY(1.5em);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-.show-text-member span {
-  display: inline-block;
-}
-
-.show-text-member > span {
-  overflow: hidden;
-  height: 1.3em;
-}
-
-.show-text-member > span > span {
-  -webkit-animation: show-text-member 0.6s linear backwards;
-          animation: show-text-member 0.6s linear backwards;
-}
-
-@-webkit-keyframes show-image {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes show-image {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-.member-content-img {
-  -webkit-animation: show-image 1.2s 0.2s backwards;
-          animation: show-image 1.2s 0.2s backwards;
-}
-
-@-webkit-keyframes show-top {
-  0% {
-    -webkit-transform: translateY(65px);
-            transform: translateY(65px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes show-top {
-  0% {
-    -webkit-transform: translateY(65px);
-            transform: translateY(65px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-.front-main {
-  -webkit-animation: show-top 1.2s 0.2s backwards;
-          animation: show-top 1.2s 0.2s backwards;
-}
-
-/* HACK: IEのみ適用(JSが動かないときに画面が真っ白になるのを防ぐため*/
 /*英語対応 (英語テキストにはhtmlでenとno-displayクラスをデフォルトで設定し、JSで制御する*/
 .en {
   font-size: 1.2rem;
@@ -733,6 +599,187 @@ a, a:link, a:visited, a:hover, a:active {
     -webkit-transform: translateX(5%);
             transform: translateX(5%);
   }
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -10;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -10;
+  }
+}
+
+.starting {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+@-webkit-keyframes show-text-top {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show-text-top {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.show-text-top span {
+  display: inline-block;
+  -webkit-animation: show-text-top 2s backwards;
+          animation: show-text-top 2s backwards;
+}
+
+@-webkit-keyframes show-text-member {
+  0% {
+    -webkit-transform: translateY(1.5em);
+            transform: translateY(1.5em);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes show-text-member {
+  0% {
+    -webkit-transform: translateY(1.5em);
+            transform: translateY(1.5em);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.show .show-text-member span {
+  display: inline-block;
+}
+
+.show .show-text-member > span {
+  overflow: hidden;
+  height: 1.3em;
+}
+
+.show .show-text-member > span > span {
+  -webkit-animation: show-text-member 0.6s linear backwards;
+          animation: show-text-member 0.6s linear backwards;
+}
+
+@-webkit-keyframes show-image {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(60%);
+            transform: translateY(60%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes show-image {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(60%);
+            transform: translateY(60%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.show .member-content-img {
+  -webkit-animation: show-image 1s backwards;
+          animation: show-image 1s backwards;
+}
+
+@-webkit-keyframes show-top {
+  0% {
+    -webkit-transform: translateY(65px);
+            transform: translateY(65px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes show-top {
+  0% {
+    -webkit-transform: translateY(65px);
+            transform: translateY(65px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.front-main {
+  -webkit-animation: show-top 1.2s 0.2s backwards;
+          animation: show-top 1.2s 0.2s backwards;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.scroll-imply {
+  -webkit-animation: flash .8s alternate infinite linear;
+          animation: flash .8s alternate infinite linear;
 }
 
 /* メインビジュアル(スライドショー) */

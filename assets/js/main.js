@@ -101,8 +101,7 @@ $(function(){
       return false;
     });
 
-
-    // スマホ用 スワイプ時の挙動
+    // スマホ用 メインビジュアルスワイプ時の挙動
     const dist =30
     let startX,
         startY,
@@ -132,8 +131,6 @@ $(function(){
       }
     });
 
-    
-    
     // コンテンツの下部分ぼかしの制御
     $('.section-desc').scroll(function(){
       if($(this).scrollTop() > 0){
@@ -161,9 +158,7 @@ $(function(){
         $(this).find('p').remove();
       });
     });
-
-
-});
+}); //jQueryここまで
 
 
 
@@ -292,7 +287,18 @@ document.addEventListener('DOMContentLoaded',function(){
   //メンバー紹介ページの氏名のアニメーション
   setTimeout(textAnimation2('.show-text-member',0.1),600);
 
-
+  //メンバー紹介ページスクロール時に表示するアニメーション
+  const targetSection = document.querySelectorAll('.member-content');
+  document.addEventListener('scroll',function(){
+    document.querySelector('.scroll-imply').classList.add('hide');
+    for (let i = 0; i < targetSection.length; i++) {
+      const targetDistance = targetSection[i].getBoundingClientRect().top + targetSection[i].clientHeight * .5;
+      if(window.innerHeight > targetDistance){
+        targetSection[i].classList.add('show');  //showクラスをつけることで、cssアニメーションを制御する
+      }
+    }
+  });
+  
   //指定日までのカウントダウン表示
   const today = new Date();
   const year = today.getFullYear(),
