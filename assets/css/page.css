@@ -845,6 +845,13 @@ a, a:link, a:visited, a:hover, a:active {
   background-position: 50% 50%;
 }
 
+.page-title-wrapper._consultation {
+  background-image: url("../images/meadow-4411151_1920.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 70%;
+}
+
 .page-title {
   position: relative;
   top: 44%;

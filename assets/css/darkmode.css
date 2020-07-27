@@ -150,6 +150,10 @@
   background-color: #666;
 }
 
+.dark-mode .scroll-imply > span {
+  border-color: #fff;
+}
+
 @media screen and (max-width: 600px) {
   .dark-mode .globalnav a {
     color: #333;

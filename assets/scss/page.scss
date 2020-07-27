@@ -36,6 +36,9 @@ $base-color: rgb(18,39,74);
   &._tips{
     @include bg-img('../images/network-3537401_1920.jpg');
   }
+  &._consultation{
+    @include bg-img('../images/meadow-4411151_1920.jpg', 50%, 70%);
+  }
 }
 
 .page-title{
