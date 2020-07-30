@@ -343,13 +343,34 @@ a, a:link, a:visited, a:hover, a:active {
   width: 100%;
 }
 
+.btn-on-off-wrapper p {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  line-height: 1;
+  letter-spacing: 0.008em;
+  white-space: nowrap;
+}
+
 .btn-on-off-checkbox {
   display: none;
 }
 
-.btn-on-off-checkbox:checked ~ label span::after {
+.btn-on-off-checkbox:checked ~ label span::before {
   content: "OFF";
-  padding: 0 18px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  letter-spacing: 1px;
+  color: #eee;
+}
+
+.btn-on-off-checkbox:checked ~ label span::after {
+  display: none;
 }
 
 .btn-on-off-checkbox:checked ~ .btn-on-off-img {
@@ -372,8 +393,12 @@ a, a:link, a:visited, a:hover, a:active {
 
 .btn-on-off-label span::after {
   content: "ON";
+  position: absolute;
+  top: 0;
+  right: 30%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
   letter-spacing: 1px;
-  padding-left: 18px;
   color: #eee;
 }
 
@@ -401,14 +426,22 @@ a, a:link, a:visited, a:hover, a:active {
 
 .lang-select-label span::before {
   content: "JPN";
+  position: absolute;
+  top: 0;
+  left: 25%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   color: #333;
-  padding-right: 3px;
   font-weight: bold;
 }
 
 .lang-select-label span:after {
   content: "ENG";
-  padding-left: 6px;
+  position: absolute;
+  top: 0;
+  right: 25%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
   color: #eee;
   font-weight: normal;
   letter-spacing: 0px;
@@ -419,20 +452,24 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .lang-select-checkbox:checked ~ label span::before {
+  content: "JPN";
   color: #eee;
+  left: -8%;
   font-weight: normal;
+  letter-spacing: 0;
 }
 
 .lang-select-checkbox:checked ~ label span::after {
   content: "ENG";
-  padding: 0 0 0 6px;
+  display: inline-block;
+  right: 25%;
   color: #333;
   font-weight: bold;
 }
 
 .lang-select-checkbox:checked ~ .lang-select-img {
-  -webkit-transform: translateX(26.5px);
-          transform: translateX(26.5px);
+  -webkit-transform: translateX(27px);
+          transform: translateX(27px);
   background: #eee;
 }
 
@@ -635,6 +672,10 @@ a, a:link, a:visited, a:hover, a:active {
   width: 100%;
   height: 100%;
   background-color: #fff;
+  -webkit-animation: fade-out 1.0s .3s linear;
+          animation: fade-out 1.0s .3s linear;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 @-webkit-keyframes show-text-top {

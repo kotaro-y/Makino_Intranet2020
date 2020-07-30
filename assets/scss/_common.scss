@@ -267,13 +267,30 @@ a, a:link, a:visited, a:hover, a:active{
     text-align: center;
     letter-spacing: 0;
     width: 100%;
+    p{
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      line-height: 1;
+      letter-spacing: 0.008em;
+      white-space: nowrap;
+    }
   }
   &-checkbox{
     display: none;
     &:checked{
-      &~ label span::after{
+      &~ label span::before{
         content: "OFF";
-        padding: 0 18px 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(50%);
+        letter-spacing: 1px;
+        color: #eee;
+      }
+      &~ label span::after{
+        display: none;
       }
       &~ .btn-on-off-img{
         transform: translateX(29px);
@@ -292,8 +309,11 @@ a, a:link, a:visited, a:hover, a:active{
     cursor: pointer;
     span::after{
       content: "ON";
+      position: absolute;
+      top: 0;
+      right: 30%;
+      transform: translateX(50%);
       letter-spacing: 1px;
-      padding-left: 18px;
       color: #eee;
     }
   }
@@ -317,13 +337,19 @@ a, a:link, a:visited, a:hover, a:active{
     border-radius: 0%;
     span::before{
       content: "JPN";
+      position: absolute;
+      top: 0;
+      left: 25%;
+      transform: translateX(-50%);
       color: #333;
-      padding-right: 3px;
       font-weight: bold;
     }
     span:after{
       content: "ENG";
-      padding-left: 6px;
+      position: absolute;
+      top: 0;
+      right: 25%;
+      transform: translateX(50%);
       color: #eee;
       font-weight: normal;
       letter-spacing: 0px;
@@ -336,18 +362,22 @@ a, a:link, a:visited, a:hover, a:active{
       }
       &~ label span{
         &::before{
+          content: "JPN";
           color: #eee;
+          left: -8%;
           font-weight: normal;
+          letter-spacing: 0;
         }
         &::after{
           content: "ENG";
-          padding: 0 0 0 6px;
+          display: inline-block;
+          right: 25%;
           color: #333;
           font-weight: bold;
         }
       }
       &~ .lang-select-img{
-        transform: translateX(26.5px);
+        transform: translateX(27px);
         background: #eee;
       }
       &~ p{
