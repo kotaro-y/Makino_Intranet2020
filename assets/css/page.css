@@ -19,6 +19,11 @@ a, a:link, a:visited, a:hover, a:active {
           box-sizing: border-box;
 }
 
+/* 一時的スタイル */
+.prep {
+  color: #ccc !important;
+}
+
 /* 全体レイアウト */
 .body {
   display: -webkit-box;
@@ -1209,6 +1214,7 @@ a, a:link, a:visited, a:hover, a:active {
 
 .system-content .system-list {
   margin-left: 20%;
+  margin-bottom: 45px;
 }
 
 .system-content:not(:last-child) {
@@ -1227,6 +1233,10 @@ a, a:link, a:visited, a:hover, a:active {
   margin-left: 34%;
 }
 
+.learning-content {
+  width: 50%;
+}
+
 .form-content {
   width: 50%;
 }
@@ -1234,6 +1244,10 @@ a, a:link, a:visited, a:hover, a:active {
 .form-content .form-list {
   margin-left: 16%;
   margin-bottom: 54px;
+}
+
+.tips-content {
+  width: 50%;
 }
 
 .google-form {

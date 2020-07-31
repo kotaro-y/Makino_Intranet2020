@@ -18,6 +18,11 @@ a, a:link, a:visited, a:hover, a:active{
   box-sizing: border-box;
 }
 
+/* 一時的スタイル */
+.prep{
+  color: #ccc !important;
+}
+
 /* 全体レイアウト */
 .body{
   display: flex;            /* HACK: IE対応のための、親要素flex設定(flex-wrapperのmin-height適用のため)*/

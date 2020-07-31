@@ -317,6 +317,7 @@ $base-color: rgb(18,39,74);
   width: 50%;
   .system-list{
     margin-left: 20%;
+    margin-bottom: 45px;
   }
   &:not(:last-child){
     margin-bottom: 45px;
@@ -332,6 +333,11 @@ $base-color: rgb(18,39,74);
   }
 }
 
+//ラーニングのページ
+.learning-content{
+  width: 50%;
+}
+
 // 各種フォームのページ
 .form-content{
   width: 50%;
@@ -339,6 +345,11 @@ $base-color: rgb(18,39,74);
     margin-left: 16%;
     margin-bottom: 54px;
   }
+}
+
+// TIPSページ
+.tips-content{
+  width: 50%;
 }
 
 // 相談窓口ページ
