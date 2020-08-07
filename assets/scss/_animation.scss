@@ -28,6 +28,8 @@ $base-color: rgb(18,39,74);
   animation: fade-out 1.0s .3s linear;
   animation-fill-mode: both;
 }
+
+//トップページのヘッダ文字表示のエフェクト(2文字。文字ごとのdelayはJS設定)
 @keyframes show-text-top{
   0%{
     opacity: 0;
@@ -44,6 +46,20 @@ $base-color: rgb(18,39,74);
   }
 }
 
+//トップページのコンテンツをふわっと表示する
+@keyframes show-top{
+  0%{
+    transform: translateY(65px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+.front-main{
+  animation: show-top 1.2s 0.2s backwards;
+}
+
+//メンバーページで、氏名が1文字ずつ表示されるエフェクト(文字ごとのdelayはJS設定)
 @keyframes show-text-member{
   0%{
     transform: translateY(1.5em);
@@ -65,6 +81,7 @@ $base-color: rgb(18,39,74);
   }
 }
 
+//メンバーページで写真をふわっと表示させる
 @keyframes show-image{
   0%{
     opacity: 0;
@@ -79,18 +96,8 @@ $base-color: rgb(18,39,74);
   animation: show-image 1s backwards;
 }
 
-@keyframes show-top{
-  0%{
-    transform: translateY(65px);
-  }
-  100%{
-    transform: translateY(0);
-  }
-}
-.front-main{
-  animation: show-top 1.2s 0.2s backwards;
-}
 
+//メンバーページでスクロールを促すマークのエフェクト
 @keyframes flash{
   0%{
     opacity: 0;
