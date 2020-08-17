@@ -711,6 +711,33 @@ a, a:link, a:visited, a:hover, a:active {
           animation: show-text-top 2s backwards;
 }
 
+@-webkit-keyframes show-top {
+  0% {
+    -webkit-transform: translateY(65px);
+            transform: translateY(65px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes show-top {
+  0% {
+    -webkit-transform: translateY(65px);
+            transform: translateY(65px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.front-main {
+  -webkit-animation: show-top 1.2s 0.2s backwards;
+          animation: show-top 1.2s 0.2s backwards;
+}
+
 @-webkit-keyframes show-text-member {
   0% {
     -webkit-transform: translateY(1.5em);
@@ -776,33 +803,6 @@ a, a:link, a:visited, a:hover, a:active {
 .show .member-content-img {
   -webkit-animation: show-image 1s backwards;
           animation: show-image 1s backwards;
-}
-
-@-webkit-keyframes show-top {
-  0% {
-    -webkit-transform: translateY(65px);
-            transform: translateY(65px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes show-top {
-  0% {
-    -webkit-transform: translateY(65px);
-            transform: translateY(65px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-.front-main {
-  -webkit-animation: show-top 1.2s 0.2s backwards;
-          animation: show-top 1.2s 0.2s backwards;
 }
 
 @-webkit-keyframes flash {
