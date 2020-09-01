@@ -305,14 +305,14 @@ document.addEventListener('DOMContentLoaded',function(){
   const today = new Date();
   const year = today.getFullYear(),
         month = String(today.getMonth() + 1).padStart(2,'0'),
-        date = today.getDate(),
+        date = String(today.getDate()).padStart(2,'0'),
         days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat'],
         day = days[today.getDay()];
   
-  const dueDate = new Date(2020,7,31); //指定の日付 (月はマイナス１で記入する)
+  const dueDate = new Date(2020,8,23); //指定の日付 (月はマイナス１で記入する)
   const dMonth = dueDate.getMonth() + 1,
         dDate = dueDate.getDate(),
-        dDay = days[dueDate.getDay()];
+        dDay = String(days[dueDate.getDay()]).padStart(2,'0');
 
   const countdownDays = Math.ceil((dueDate - today) / (1000 * 60 * 60 * 24 ));
 
