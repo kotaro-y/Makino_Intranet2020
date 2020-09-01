@@ -1085,6 +1085,12 @@ a, a:link, a:visited, a:hover, a:active {
   margin-left: 5%;
 }
 
+.member-content-img img {
+  display: inline-block;
+  width: 100%;
+  border-radius: 10%;
+}
+
 .member-content-desc {
   position: relative;
   width: 66%;

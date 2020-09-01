@@ -175,7 +175,7 @@ $base-color: rgb(18,39,74);
   margin-top: 50px;
   display: flex;
   border-bottom: 1px solid #ccc;
-  opacity: 0;
+  opacity: 0; //通常時は透明にしておき、jsによりshowクラスがついたときに表示させる
   transform: translateY(20px);
   transition: 1.5s;
   &.show{
@@ -194,6 +194,12 @@ $base-color: rgb(18,39,74);
     border-radius: 10%;
     background-color: #eee;
     margin-left: 5%;
+    img{
+      display: inline-block;
+      width: 100%;
+      border-radius: 10%;
+    }
+
   }
   &-desc{
     position: relative;
