@@ -1050,6 +1050,12 @@ a, a:link, a:visited, a:hover, a:active {
           transform: rotate(-45deg);
 }
 
+noscript {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
 .member-wrapper {
   display: block;
 }
