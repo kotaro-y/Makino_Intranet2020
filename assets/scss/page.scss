@@ -166,12 +166,21 @@ $base-color: rgb(18,39,74);
   border-bottom: 1px solid #333;
   transform: rotate(-45deg);
 }
-.js-alert{
-  margin-top: 2rem;
+noscript{
   text-align: center;
-  font-size: 1.6rem;
-  letter-spacing: 2px;
+  p{
+    margin-top: 12rem;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+  }
+  a{
+    display: block;
+    margin-top: 4rem;
+    color: blue;
+    font-size: 1.4rem;
+  }
 }
+
 
 
 .member-wrapper{

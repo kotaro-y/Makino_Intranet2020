@@ -1050,11 +1050,21 @@ a, a:link, a:visited, a:hover, a:active {
           transform: rotate(-45deg);
 }
 
-.js-alert {
-  margin-top: 2rem;
+noscript {
   text-align: center;
+}
+
+noscript p {
+  margin-top: 12rem;
   font-size: 1.6rem;
   letter-spacing: 2px;
+}
+
+noscript a {
+  display: block;
+  margin-top: 4rem;
+  color: blue;
+  font-size: 1.4rem;
 }
 
 .member-wrapper {
