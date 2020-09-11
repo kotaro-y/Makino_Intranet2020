@@ -1043,7 +1043,7 @@ a, a:link, a:visited, a:hover, a:active {
   margin: 0 -10px;
   overflow: hidden;
   overflow-y: auto;
-  border: 0.5px solid #ddd;
+  border: 1px solid #ddd;
 }
 
 /* .section */
@@ -1358,6 +1358,7 @@ a, a:link, a:visited, a:hover, a:active {
   height: 650px;
   background-image: url("../images/paper-fibers.png");
   background-repeat: repeat;
+  border: 1px solid #ccc;
 }
 
 .news-list {
