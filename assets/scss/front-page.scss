@@ -406,6 +406,11 @@ $base-color: rgb(18,39,74);
       font-size: 1.4rem;
       left: 9rem;
     }
+    &.en{
+      .material-icons{
+        left: 17rem;
+      }
+    }
   }
 }
 

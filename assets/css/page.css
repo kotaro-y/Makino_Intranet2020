@@ -24,6 +24,11 @@ a, a:link, a:visited, a:hover, a:active {
   color: #ccc !important;
 }
 
+/* 部品のスタイル */
+.material-icons {
+  color: #888 !important;
+}
+
 /* 全体レイアウト */
 .body {
   display: -webkit-box;

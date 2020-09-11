@@ -24,6 +24,11 @@ a, a:link, a:visited, a:hover, a:active {
   color: #ccc !important;
 }
 
+/* 部品のスタイル */
+.material-icons {
+  color: #888 !important;
+}
+
 /* 全体レイアウト */
 .body {
   display: -webkit-box;
@@ -1326,6 +1331,10 @@ a, a:link, a:visited, a:hover, a:active {
   position: absolute;
   font-size: 1.4rem;
   left: 9rem;
+}
+
+.tips-item.en .material-icons {
+  left: 17rem;
 }
 
 /* サイド */
