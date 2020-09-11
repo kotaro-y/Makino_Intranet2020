@@ -1050,10 +1050,11 @@ a, a:link, a:visited, a:hover, a:active {
           transform: rotate(-45deg);
 }
 
-noscript {
+.js-alert {
   margin-top: 2rem;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
 }
 
 .member-wrapper {
