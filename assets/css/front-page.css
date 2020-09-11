@@ -992,6 +992,11 @@ a, a:link, a:visited, a:hover, a:active {
   border-bottom: 2px dotted #12274a;
 }
 
+.section-title .material-icons {
+  position: absolute;
+  left: 6rem;
+}
+
 .section::after {
   content: '';
   position: absolute;
@@ -1315,6 +1320,12 @@ a, a:link, a:visited, a:hover, a:active {
 
 .tips-item:hover ::before {
   color: #fff;
+}
+
+.tips-item .material-icons {
+  position: absolute;
+  font-size: 1.4rem;
+  left: 9rem;
 }
 
 /* サイド */

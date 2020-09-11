@@ -114,6 +114,10 @@ $base-color: rgb(18,39,74);
       width: 5%;
       border-bottom: 2px dotted $base-color;
     }
+    .material-icons{
+      position: absolute;
+      left: 6rem;
+    }
   }
   &::after{
     content: '';
@@ -396,6 +400,11 @@ $base-color: rgb(18,39,74);
       ::before{
         color: #fff;
       }
+    }
+    .material-icons{
+      position: absolute;
+      font-size: 1.4rem;
+      left: 9rem;
     }
   }
 }
