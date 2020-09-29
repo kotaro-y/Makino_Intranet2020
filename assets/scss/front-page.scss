@@ -550,7 +550,7 @@ $base-color: rgb(18,39,74);
   }
   .section:nth-child(2) .section-desc,
   .section:nth-child(5) .section-desc{
-    order: unset;   /* imgとdescの入れ替えを解除 */
+    order: 1;   /* imgとdescの入れ替えを解除 */
   }
   .section:nth-child(4),
   .section:nth-child(5),
@@ -584,6 +584,7 @@ $base-color: rgb(18,39,74);
         background-position: 30% 50%;
       }
     }
+    
     //横スクロール(スワイプ)の実装 (JSと併存難しいので却下)
     // &-list{
     //   scroll-snap-type: x mandatory;

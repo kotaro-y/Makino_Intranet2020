@@ -1506,9 +1506,9 @@ a, a:link, a:visited, a:hover, a:active {
   }
   .section:nth-child(2) .section-desc,
   .section:nth-child(5) .section-desc {
-    -webkit-box-ordinal-group: unset;
-        -ms-flex-order: unset;
-            order: unset;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
     /* imgとdescの入れ替えを解除 */
   }
   .section:nth-child(4),

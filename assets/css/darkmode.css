@@ -73,7 +73,7 @@
 }
 
 .dark-mode .news {
-  background-image: unset;
+  background-image: none;
   background-color: #3c3d34;
   border-left: 1px solid #666;
   border-right: 1px solid #666;
@@ -142,7 +142,7 @@
 
 /* 個別ページの設定 */
 .dark-mode .page-title-wrapper {
-  border: unset;
+  border: none;
 }
 
 .dark-mode .page-content-title > a:hover,

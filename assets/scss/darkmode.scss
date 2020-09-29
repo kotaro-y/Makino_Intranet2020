@@ -67,7 +67,7 @@ $dark-bgcolor-sub: #3c3d34;
     border-color: #666;
   }
   .news{
-    background-image: unset;
+    background-image: none;
     background-color: $dark-bgcolor-sub; 
     border-left: 1px solid #666;
     border-right: 1px solid #666;
@@ -128,7 +128,7 @@ $dark-bgcolor-sub: #3c3d34;
 /* 個別ページの設定 */
 .dark-mode{
   .page-title-wrapper{
-    border: unset;
+    border: none;
   }
   .page-content-title > a:hover,
   .page-content-item > a:hover{
