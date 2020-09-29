@@ -193,8 +193,8 @@ document.addEventListener('DOMContentLoaded',function(){
   //日⇔英切替 (no-display クラスで表示を制御する。切替状態はCookie保存する)
   const langSwitchBtn = document.getElementById('btn-lang');
   const EngSelect = Cookies.get('EngOn');
-  const JpnText = document.querySelectorAll('.ja');
-  const EngText = document.querySelectorAll('.en');
+  const JpnText = Array.prototype.slice.call(document.querySelectorAll('.ja'));
+  const EngText = Array.prototype.slice.call(document.querySelectorAll('.en'));
   
   if(EngSelect === 'on'){             // Cookieで取得した値がonの場合英字表記にする
     langSwitchBtn.checked = true;
