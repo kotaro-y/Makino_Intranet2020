@@ -146,11 +146,11 @@ $(function(){
     $('.section-img > a').each(function(index){
       $(this).hover(function(){
         if($('#eng-check').hasClass('no-display')){   //Englishモードになっていない場合の処理
-          $(this).append(`<p>${linkTextsJpn[index]}</p>`);
+          $(this).append('<p>'+ linkTextsJpn[index] + '</p>');
           $(this).find('p').addClass('link-text').hide();
           $(this).find('p').fadeIn(800);
         }else{
-          $(this).append(`<p>${linkTextsEng[index]}</p>`);
+          $(this).append('<p>' + linkTextsEng[index] + '</p>');
           $(this).find('p').addClass('link-text').hide();
           $(this).find('p').fadeIn(800);
         }
