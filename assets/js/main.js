@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded',function(){
     });
   }
   insertTextByClass('.today', year + '/' + month + '/' + date);
-  insertTextByClass('.due-date', dMonth + '/' + dDate + ' ' + (dDay));
+  insertTextByClass('.due-date', dMonth + '/' + dDate + ' ' + '(' + dDay + ')');
   insertTextByClass('.countdown', countdownDays);
 
 });
