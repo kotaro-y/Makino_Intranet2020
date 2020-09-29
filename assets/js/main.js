@@ -321,8 +321,8 @@ document.addEventListener('DOMContentLoaded',function(){
       eachClass.textContent = txt;
     });
   }
-  insertTextByClass('.today', `${year}/${month}/${date}`);
-  insertTextByClass('.due-date', `${dMonth}/${dDate} (${dDay})`);
+  insertTextByClass('.today', year + '/' + month + '/' + date);
+  insertTextByClass('.due-date', dMonth + '/' + dDate + ' ' + (dDay));
   insertTextByClass('.countdown', countdownDays);
 
 });
