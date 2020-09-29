@@ -5,7 +5,7 @@ const mobileWidth = 600; //スマホのメディアクエリ横幅指定
 // jQuery
 $(function(){
   // ページ表示時のエフェクト用(ふわっと表示する)
-  setTimeout(() => {
+  setTimeout(function(){
   $('.starting').fadeOut(1000);
   }, 200);
 
