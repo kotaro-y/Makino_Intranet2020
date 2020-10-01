@@ -31,7 +31,9 @@ a, a:link, a:visited, a:hover, a:active{
 /* 全体レイアウト */
 .body{
   display: flex;            /* HACK: IE対応のための、親要素flex設定(flex-wrapperのmin-height適用のため)*/
+  background-color: #fff;
 }
+
 .flex-wrapper{
   display: flex;
   flex-direction: column;

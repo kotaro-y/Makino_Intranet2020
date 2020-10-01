@@ -35,6 +35,7 @@ a, a:link, a:visited, a:hover, a:active {
   display: -ms-flexbox;
   display: flex;
   /* HACK: IE対応のための、親要素flex設定(flex-wrapperのmin-height適用のため)*/
+  background-color: #fff;
 }
 
 .flex-wrapper {
