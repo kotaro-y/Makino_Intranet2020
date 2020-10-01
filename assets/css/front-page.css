@@ -945,28 +945,6 @@ a, a:link, a:visited, a:hover, a:active {
   overflow: hidden;
 }
 
-.section:nth-child(2) .section-desc, .section:nth-child(5) .section-desc {
-  -webkit-box-ordinal-group: 0;
-      -ms-flex-order: -1;
-          order: -1;
-}
-
-.section:nth-child(2) .section-desc::after, .section:nth-child(5) .section-desc::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 18px;
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
-}
-
-.section:nth-child(2) .section-desc.no-blur::after, .section:nth-child(5) .section-desc.no-blur::after {
-  -webkit-backdrop-filter: blur(0px);
-          backdrop-filter: blur(0px);
-}
-
 .section:nth-child(4), .section:nth-child(5), .section:nth-child(6) {
   margin-top: 10px;
 }
