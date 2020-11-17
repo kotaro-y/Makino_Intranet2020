@@ -159,7 +159,7 @@ $(function(){
       });
     });
 
-      // YouTube埋め込みここから-----------------------------------------
+// YouTube埋め込みここから-----------------------------------------
     //プレイヤー変数
     var player;
 
@@ -174,6 +174,31 @@ $(function(){
                 height:'540',
                 width:'960',
                 videoId:'WbwXBA6hTzc', //ここに埋め込みたいYouTube動画のIDを記入
+                playerVars:{
+                    autohide:1,
+                    controls:1,
+                    modestbranding:1,
+                    iv_load_policy:3,
+                    showinfo:0,
+                    rel:0,
+                    autoplay:0,     //リンククリック時に自動再生する場合は1
+                    // loop:1,
+                    // playlist:'', //ここにもIDを記入する (ループのため)
+                },
+                  
+            });
+        };
+    }
+    function youtubeAPIInit2() {
+        var scriptTag = document.createElement('script');
+        scriptTag.src = "https://www.youtube.com/iframe_api";
+        var fsTag = document.getElementsByTagName('script')[0];
+        fsTag.parentNode.insertBefore(scriptTag, fsTag);
+        window.onYouTubeIframeAPIReady = function(){
+            player = new YT.Player('player', {
+                height:'540',
+                width:'960',
+                videoId:'YWWzUeaQXmA', //ここに埋め込みたいYouTube動画のIDを記入
                 playerVars:{
                     autohide:1,
                     controls:1,
@@ -208,6 +233,22 @@ $(function(){
             });
         });
     };
+    modal.inner2 = function() {
+        if($("#modal-overlay")[0]) return false;
+        $("body").append('<div id="modal-overlay"></div>');
+        $lay = $("#modal-overlay");
+        $content = $("#modal-content");
+        $lay.fadeIn("slow");
+        youtubeAPIInit2();
+        this.resize();
+        $content.fadeIn("fast");
+        $lay.unbind().click(function() {
+            player.pauseVideo();
+            $content.add($lay).fadeOut("fast",function(){
+                $lay.remove();
+            });
+        });
+    };
   
     //リサイズ処理
     modal.resize = function(){
@@ -227,6 +268,14 @@ $(function(){
         player.playVideo();
     });
     $(window).resize(modal.resize);
+
+    $("#modal-open2").click(function(){
+        modal.inner2();
+        player.playVideo();
+    });
+    $(window).resize(modal.resize);
+
+
 
 // YouTube埋め込みここまで-----------------------------------------
 
