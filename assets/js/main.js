@@ -214,6 +214,31 @@ $(function(){
             });
         };
     }
+    function youtubeAPIInit3() {
+        var scriptTag = document.createElement('script');
+        scriptTag.src = "https://www.youtube.com/iframe_api";
+        var fsTag = document.getElementsByTagName('script')[0];
+        fsTag.parentNode.insertBefore(scriptTag, fsTag);
+        window.onYouTubeIframeAPIReady = function(){
+            player = new YT.Player('player', {
+                height:'540',
+                width:'960',
+                videoId:'QQsETWSP2ng', //ここに埋め込みたいYouTube動画のIDを記入
+                playerVars:{
+                    autohide:1,
+                    controls:1,
+                    modestbranding:1,
+                    iv_load_policy:3,
+                    showinfo:0,
+                    rel:0,
+                    autoplay:0,     //リンククリック時に自動再生する場合は1
+                    // loop:1,
+                    // playlist:'', //ここにもIDを記入する (ループのため)
+                },
+                  
+            });
+        };
+    }
 
     //モーダル
     var modal = {}, $lay, $content;
@@ -233,6 +258,7 @@ $(function(){
             });
         });
     };
+    
     modal.inner2 = function() {
         if($("#modal-overlay")[0]) return false;
         $("body").append('<div id="modal-overlay"></div>');
@@ -249,7 +275,22 @@ $(function(){
             });
         });
     };
-  
+    modal.inner3 = function() {
+        if($("#modal-overlay")[0]) return false;
+        $("body").append('<div id="modal-overlay"></div>');
+        $lay = $("#modal-overlay");
+        $content = $("#modal-content");
+        $lay.fadeIn("slow");
+        youtubeAPIInit3();
+        this.resize();
+        $content.fadeIn("fast");
+        $lay.unbind().click(function() {
+            player.pauseVideo();
+            $content.add($lay).fadeOut("fast",function(){
+                $lay.remove();
+            });
+        });
+    };
     //リサイズ処理
     modal.resize = function(){
         var $winWidth = $(window).width();
@@ -271,6 +312,12 @@ $(function(){
 
     $("#modal-open2").click(function(){
         modal.inner2();
+        player.playVideo();
+    });
+    $(window).resize(modal.resize);
+
+    $("#modal-open3").click(function(){
+        modal.inner3();
         player.playVideo();
     });
     $(window).resize(modal.resize);
