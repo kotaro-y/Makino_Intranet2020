@@ -352,8 +352,6 @@ $(function(){
     $(window).resize(modal.resize);
 
     $("#modal-open2").click(function(){
-        player.stopVideo();
-        player.clearVideo();
         modal.inner2();
         player.playVideo();
     });
@@ -371,6 +369,10 @@ $(function(){
     });
     $(window).resize(modal.resize);
 
+    $("#modal-overlay").click(function(){
+      player.stopVideo();
+      player.clearVideo();
+    });
 
 
 // YouTube埋め込みここまで-----------------------------------------
