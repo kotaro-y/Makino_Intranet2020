@@ -326,8 +326,8 @@ $(function(){
         this.resize();
         $content.fadeIn("fast");
         $lay.unbind().click(function() {
-            player.pauseVideo();
-            player.clearVideo();
+            // player.pauseVideo();
+            // player.clearVideo();
             $content.add($lay).fadeOut("fast",function(){
                 $lay.remove();
             });
