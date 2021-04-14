@@ -370,7 +370,8 @@ $(function(){
     $(window).resize(modal.resize);
 
     $("#modal-overlay").click(function(){
-      $("#modal-content").empty();
+      this.remove();
+      $("#modal-content").remove();
     });
 
 
