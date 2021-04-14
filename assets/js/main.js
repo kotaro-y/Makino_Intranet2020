@@ -347,25 +347,25 @@ $(function(){
     //クリック処理
     $("#modal-open").click(function(){
         modal.inner();
-        player.playVideo();
+        // player.playVideo();
     });
     $(window).resize(modal.resize);
 
     $("#modal-open2").click(function(){
         modal.inner2();
-        player.playVideo();
+        // player.playVideo();
     });
     $(window).resize(modal.resize);
 
     $("#modal-open3").click(function(){
         modal.inner3();
-        player.playVideo();
+        // player.playVideo();
     });
     $(window).resize(modal.resize);
 
     $("#modal-open4").click(function(){
         modal.inner4();
-        player.playVideo();
+        // player.playVideo();
     });
     $(window).resize(modal.resize);
 
