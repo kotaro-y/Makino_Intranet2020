@@ -371,7 +371,7 @@ $(function(){
 
     $("#modal-overlay").click(function(){
       $("#modal-overlay").remove();
-      $("#player").empty();
+      $("#modal-content").empty();
     });
 
 
