@@ -327,6 +327,7 @@ $(function(){
         $content.fadeIn("fast");
         $lay.unbind().click(function() {
             player.pauseVideo();
+            player.clearVideo();
             $content.add($lay).fadeOut("fast",function(){
                 $lay.remove();
             });
@@ -369,10 +370,10 @@ $(function(){
     });
     $(window).resize(modal.resize);
 
-    $("#modal-overlay").click(function(){
-      $("#modal-overlay").remove();
-      $("#modal-content").empty();
-    });
+    // $("#modal-overlay").click(function(){
+    //   $("#modal-overlay").remove();
+    //   $("#modal-content").empty();
+    // });
 
 
 // YouTube埋め込みここまで-----------------------------------------
