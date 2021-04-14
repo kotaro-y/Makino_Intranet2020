@@ -372,6 +372,7 @@ $(function(){
     $("#modal-overlay").click(function(){
       player.stopVideo();
       player.clearVideo();
+      $("#modal-content").remove();
     });
 
 
