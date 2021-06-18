@@ -55,8 +55,12 @@ a, a:link, a:visited, a:hover, a:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
-  max-width: 1368px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  width: 100%;
+  max-width: 1230px;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -65,15 +69,12 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .main-contents {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  height: 100%;
+  width: 100%;
 }
 
 .aside {
-  width: 350px;
-  height: 100%;
+  width: 100%;
+  margin: 0 auto 40px;
 }
 
 .footer {
@@ -924,9 +925,11 @@ a, a:link, a:visited, a:hover, a:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding-right: 30px;
 }
 
 .section {
@@ -939,7 +942,6 @@ a, a:link, a:visited, a:hover, a:active {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 32%;
-  margin-right: 1%;
   height: 500px;
   padding: 1rem;
   overflow: hidden;
@@ -976,7 +978,7 @@ a, a:link, a:visited, a:hover, a:active {
   -webkit-box-ordinal-group: -1;
       -ms-flex-order: -2;
           order: -2;
-  font-size: 2.2rem;
+  font-size: 3rem;
   font-weight: bold;
   letter-spacing: 3px;
   margin-bottom: 14px;
@@ -986,7 +988,7 @@ a, a:link, a:visited, a:hover, a:active {
   content: '';
   position: absolute;
   display: inline-block;
-  top: 2.5rem;
+  top: 3.5rem;
   left: 0;
   width: 40%;
   border-bottom: 2px solid #12274a;
@@ -1007,7 +1009,7 @@ a, a:link, a:visited, a:hover, a:active {
   content: '';
   position: absolute;
   display: inline-block;
-  top: 3.5rem;
+  top: 4.5rem;
   left: 1rem;
   width: 47%;
   border-bottom: 2px dashed #12274a;
@@ -1344,7 +1346,7 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .aside-title {
-  font-size: 1.8rem;
+  font-size: 3.2rem;
   font-weight: bold;
   letter-spacing: 3px;
   text-align: center;
@@ -1356,7 +1358,7 @@ a, a:link, a:visited, a:hover, a:active {
 
 .news {
   width: 100%;
-  /* height: 650px; */
+  height: 400px;
   background-image: url("../images/paper-fibers.png");
   background-repeat: repeat;
   border: 1px solid #ccc;
@@ -1365,7 +1367,8 @@ a, a:link, a:visited, a:hover, a:active {
 .news-list {
   width: 100%;
   height: 100%;
-  padding: 3%;
+  overflow-y: scroll;
+  padding: 2%;
 }
 
 .news-item a {
@@ -1403,7 +1406,7 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .news-item-header > time {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .news-item-list {
@@ -1444,7 +1447,7 @@ a, a:link, a:visited, a:hover, a:active {
 
 .news-item-desc {
   padding-left: 10px;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: #666;
 }
 
@@ -1464,9 +1467,9 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .consultation-btn {
-  width: 73%;
+  width: 400px;
   height: 48px;
-  margin: 60px auto 0;
+  margin: 30px auto 0;
 }
 
 .consultation-btn-desc {

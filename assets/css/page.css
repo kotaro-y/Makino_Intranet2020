@@ -55,8 +55,12 @@ a, a:link, a:visited, a:hover, a:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
-  max-width: 1368px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  width: 100%;
+  max-width: 1230px;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -65,15 +69,12 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .main-contents {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  height: 100%;
+  width: 100%;
 }
 
 .aside {
-  width: 350px;
-  height: 100%;
+  width: 100%;
+  margin: 0 auto 40px;
 }
 
 .footer {
