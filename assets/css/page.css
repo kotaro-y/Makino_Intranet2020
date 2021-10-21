@@ -1107,6 +1107,8 @@ noscript a {
   border-radius: 10%;
   background-color: #eee;
   margin-left: 5%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .member-content-img img {
