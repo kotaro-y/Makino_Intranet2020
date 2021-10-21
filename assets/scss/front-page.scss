@@ -219,7 +219,7 @@ $base-color: rgb(18,39,74);
     @while $number <= 13{
       &:nth-of-type(#{$number}){
         .member-photo{
-          @include bg-img('../images/memberphotos/#{$number}.png');
+          @include bg-img('../images/#{$number}.png');
         }
       }
     $number: $number + 1; 
